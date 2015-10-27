@@ -1,0 +1,403 @@
+<!-- SVG graph renderer based on d3.js
+     Created as NoMaD experiment at 28.12.13
+     Author: Evgeny Blokhin -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Semantic Web Genealogical Trees</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+<style>
+*{font-family:Arial;margin:0;padding:0;}
+.edge{
+    fill:none;
+    stroke:#fc6;
+    stroke-width:1px;
+}
+.edge.isMotherOf{
+    stroke:#f00;
+}
+circle{
+    fill:#fff;
+    stroke:#ccc;
+    stroke-width:1px;
+    cursor:pointer;
+}
+text{
+    font-size:13px;
+    cursor:pointer;
+    /*text-shadow:0 2px 0 #fff, 2px 0 0 #fff, 0 -2px 0 #fff, -2px 0 0 #fff;*/
+    fill:#000;
+}
+text.shadow{
+    stroke:#fff;
+    stroke-width:3px;
+    stroke-opacity:0.8;
+}
+marker#isMotherOf{
+    fill:#f00;
+}
+#mmreasoner_legend{
+    position:fixed;z-index:99999;top:0;left:0;padding:10px;width:200px;height:auto;background:#fcfcfc;line-height:1.6em;font-size:0.85em;border-right:1px solid #ddd;border-bottom:1px solid #ddd;
+}
+ul li{
+    list-style:none;
+}
+span.leg_circ{
+    display:inline-block;width:10px;height:10px;border:1px solid #ccc;border-radius:6px;margin-right:10px;
+}
+span.i18n{
+    display:none;
+}
+#fileapi_container{
+    display:none;
+    width:100%;
+    height:30px;
+    position:relative;
+    margin-top:15px;
+}
+#fileapi_container button{
+    width:100%;
+    position:absolute;
+    top:0;left:0;
+}
+#fileapi_container input {
+    width:100%;
+    position:absolute;
+    top:0;left:0;
+    filter: alpha(opacity=0);
+    opacity: 0;
+}
+
+/* "Fork me on GitHub" CSS ribbon v0.1.1 */
+.github-fork-ribbon {
+position: fixed;
+padding: 2px 0;
+background-color: #666;
+background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.15)));
+background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+-webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+-moz-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+font: 500 9px "Helvetica Neue", Helvetica, Arial, sans-serif;
+z-index: 9999;
+pointer-events: auto;
+}
+.github-fork-ribbon a,
+.github-fork-ribbon a:hover {
+color: #fff;
+text-decoration: none;
+text-shadow: 0 -1px rgba(0, 0, 0, 0.5);
+text-align: center;
+width: 100px;
+line-height: 12px;
+display: inline-block;
+padding: 2px 0;
+border-width: 1px 0;
+border-style: dotted;
+border-color: #fff;
+border-color: rgba(255, 255, 255, 1);
+}
+.github-fork-ribbon-wrapper {
+width: 100px;
+height: 100px;
+position: fixed;
+overflow: hidden;
+top: 0;
+z-index: 9999;
+pointer-events: none;
+}
+.github-fork-ribbon-wrapper.right {
+right: 0;
+}
+.github-fork-ribbon-wrapper.right .github-fork-ribbon {
+top: 16px;
+right: -22px;
+-webkit-transform: rotate(45deg);
+-moz-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+-o-transform: rotate(45deg);
+transform: rotate(45deg);
+}
+</style>
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.ie.min.css" />
+<![endif]-->
+<script type="text/javascript" src="d3.v3.5.6.min.js"></script>
+</head>
+<body>
+<div id="mmreasoner_legend">
+    <div style="width:100%;text-align:center;"><b><span class="i18n i18n_ru">Обозначения</span><span class="i18n i18n_en">Legend</span></b>:</div>
+    <ul>
+        <li><span style="font-size:2em;color:#f00;">&rarr;</span> <span class="i18n i18n_ru">Связи мать &mdash; дети</span><span class="i18n i18n_en">Mother-children links</span></li>
+        <li><span style="font-size:2em;color:#fc6;">&mdash;</span> <span class="i18n i18n_ru">Брачные связи</span><span class="i18n i18n_en">Marriage links</span></li>
+        <li style="color:#f00;"><span class="leg_circ" style="background:#f00;"></span><span class="i18n i18n_ru">Отец</span><span class="i18n i18n_en">Father</span></li>
+        <li style="color:#c00;"><span class="leg_circ" style="background:#c00;"></span><span class="i18n i18n_ru">Дети по отцу</span><span class="i18n i18n_en">Father's children</span></li>
+        <li style="color:#06f;"><span class="leg_circ" style="background:#06f;"></span><span class="i18n i18n_ru">Деды и бабки</span><span class="i18n i18n_en">Grandparent</span></li>
+        <li style="color:#6cf;"><span class="leg_circ" style="background:#6cf;"></span><span class="i18n i18n_ru">Прадеды и прабабки</span><span class="i18n i18n_en">Great-grandparent</span></li>
+        <li style="color:#396;"><span class="leg_circ" style="background:#396;"></span><span class="i18n i18n_ru">Внуки</span><span class="i18n i18n_en">Grandchildren</span></li>
+        <li style="color:#9c6;"><span class="leg_circ" style="background:#9c6;"></span><span class="i18n i18n_ru">Правнуки</span><span class="i18n i18n_en">Great-grandchildren</span></li>
+        <li style="color:#90c;"><span class="leg_circ" style="background:#90c;"></span><span class="i18n i18n_ru">Дядьки и тётки</span><span class="i18n i18n_en">Uncles and aunts</span></li>
+        <li style="color:#f60;"><span class="leg_circ" style="background:#f60;"></span><span class="i18n i18n_ru">Племянники и племянницы</span><span class="i18n i18n_en">Nephews and nieces</span></li>
+        <li style="color:#f9f;"><span class="leg_circ" style="background:#f9f;"></span><span class="i18n i18n_ru">Братья, сёстры, кузены</span><span class="i18n i18n_en">Brothers, sisters, cousins</span></li>
+    </ul>
+    <div style="width:100%;text-align:center;"><b><span class="i18n i18n_ru">Язык</span><span class="i18n i18n_en">Language</span></b>: <a href="#en" style="font-size:1.2em;">EN</a> <a href="#ru" style="font-size:1.2em;">RU</a></div>
+    <div id="fileapi_container"><button><span class="i18n i18n_ru">Загрузить родословную</span><span class="i18n i18n_en">Upload genealogy</span></button><input type="file" id="fileapi" /></div>
+</div>
+<div class="github-fork-ribbon-wrapper right">
+    <div class="github-fork-ribbon">
+        <a href="https://github.com/blokhin/genealogical-trees" target="_top">See on GitHub</a>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+var rel2col = {
+    'hasFather':'#f00',
+    'isFatherOf':'#c00',
+
+    'isGrandParentOf':'#396',
+    'hasGrandParent':'#06f',
+    'isGreatGrandParentOf':'#9c6',
+    'hasGreatGrandParent':'#6cf',
+
+    'isUncleOf':'#f60',
+    'hasUncle':'#90c',
+    'isGreatUncleOf':'#f60',
+    'hasGreatUncle':'#90c',
+    'isAuntOf':'#f60',
+    'hasAunt':'#90c',
+    'isGreatAuntOf':'#f60',
+    'hasGreatAunt':'#90c',
+
+    'isFirstCousinOf':'#f9f',
+    'isSecondCousinOf':'#f9f',
+    'isThirdCousinOf':'#f9f'
+};
+var xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+xmlhttp.onreadystatechange = function(){
+    if (xmlhttp.readyState == 4){
+        if (xmlhttp.status == 200){
+
+            var source = JSON.parse(xmlhttp.responseText);
+            build_graph(source);
+
+        } else alert("Error loading data!");
+    }
+}
+xmlhttp.open("GET", "data/einstein.json");
+xmlhttp.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2000 00:00:00 GMT");
+xmlhttp.send();
+
+window.onhashchange = hash_redraw_react;
+document.location.hash ? hash_redraw_react() : document.location.replace('#en');
+
+if (window.File && window.FileReader && window.FileList && window.Blob){
+    var fileapi = document.getElementById('fileapi'), fileapi_container = document.getElementById('fileapi_container');
+    fileapi_container.style.display = 'block';
+
+    var reader = new FileReader();
+    fileapi.onchange = function(){
+        if (!this.files[0] || !this.files[0].size) return alert("Error: file cannot be read (unaccessible?)");
+        reader.currentFilename = this.files[0].name;
+        reader.readAsText(this.files[0]);
+    }
+    reader.onloadend = function(evt){
+        var str = evt.target.result;
+        if (str.indexOf('"type": "label",') > 7){
+            var source = JSON.parse(str);
+            build_graph(source);
+        } else return alert("Error: the file format is not supported!");
+    }
+}
+
+function hash_redraw_react(){
+    var hash = document.location.hash.substr(1);
+    if (hash == 'ru'){
+        var i18n = document.getElementsByClassName('i18n'), i18n_ru = document.getElementsByClassName('i18n_ru');
+        for (var i=0, i18n_len=i18n.length; i < i18n_len; i++){
+            i18n[i].style.display = 'none';
+        }
+        for (var i=0, i18n_ru_len=i18n_ru.length; i < i18n_ru_len; i++){
+            i18n_ru[i].style.display = 'inline-block';
+        }
+    } else {
+        var i18n = document.getElementsByClassName('i18n'), i18n_en = document.getElementsByClassName('i18n_en');
+        for (var i=0, i18n_len=i18n.length; i < i18n_len; i++){
+            i18n[i].style.display = 'none';
+        }
+        for (var i=0, i18n_en_len=i18n_en.length; i < i18n_en_len; i++){
+            i18n_en[i].style.display = 'inline-block';
+        }
+    }
+}
+
+function html2utf(s){
+    var c,m,d = s;
+    arr=d.match(/&#[0-9]{1,5};/g);
+    if(arr!=null){
+        var x;
+        for (x=0; x<arr.length; x++){
+            m = arr[x];
+            c = m.substring(2,m.length-1);
+            if(c >= -32768 && c <= 65535){
+                d = d.replace(m, String.fromCharCode(c));
+            } else {
+                d = d.replace(m, "");
+            }
+        }
+    }
+    return d;
+}
+
+function build_graph(source){
+    var edges = [], nodes = {}, relationships = {}, labels = {}, counter = 0;
+
+    // Filter edges and compute the distinct nodes from the links
+    source.forEach(function(link){
+        if (link.type == 'isWifeOf' || link.type == 'isMotherOf'){
+            link.source = nodes[link.source] || (nodes[link.source] = {name: link.source});
+            link.target = nodes[link.target] || (nodes[link.target] = {name: link.target});
+            edges.push(link);
+            counter++;
+        } else if (link.type == 'label') {
+            labels[link.source] = html2utf(link.target);
+        } else {
+            if (relationships[link.source]){
+                if (relationships[link.source][link.type]) relationships[link.source][link.type].push(link.target);
+                else relationships[link.source][link.type] = [link.target];
+            } else {
+                var o = {};
+                o[link.type] = [link.target];
+                relationships[link.source] = o;
+            }
+        }
+    });
+
+    var table = {};
+    var i=0;
+    for (var p in nodes){
+        table[p] = i++;
+    }
+
+    var width = (counter > 100) ? 2250 : document.body.clientWidth-50;
+    var height = parseInt(0.8*width);
+
+    d3.select("svg").remove();
+    var svg = d3.select("body").append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+    // Per-type markers
+    svg.append("defs").selectAll("marker")
+        .data(["isMotherOf"])
+        .enter().append("marker")
+        .attr("id", function(d){return d})
+        .attr("viewBox", "0 0 40 20")
+        .attr("refX", 55)
+        .attr("refY", 10)
+        .attr("markerWidth", 16)
+        .attr("markerHeight", 12)
+        .attr("orient", "auto")
+        .append("polyline")
+        .attr("points", "0,0 40,10 0,20 10,10");
+
+    var force = d3.layout.force()
+        .nodes(d3.values(nodes))
+        .links(edges)
+        .size([width, height])
+        .linkDistance(45)
+        .gravity(0.33)
+        .charge(-1650)
+        .on("tick", tick)
+        .start();
+
+    var path = svg.append("g").selectAll("path")
+        .data(force.links())
+        .enter().append("path")
+        .attr("class", function(d) { return "edge " + d.type; })
+        .attr("marker-end", function(d) { return "url(#" + d.type + ")"; });
+
+    //var link = svg.selectAll(".edge");
+
+    var circle = svg.append("g").selectAll("circle")
+        .data(force.nodes())
+        .enter().append("circle")
+        .attr("r", 5)
+        .attr("id", function(d,i) { return "c_"+table[d.name] })
+        .call(force.drag);
+
+    var text = svg.append("g").selectAll("g")
+        .data(force.nodes())
+        .enter().append("g");
+
+    // A copy of the text with a thick white stroke for legibility
+    text.append("text")
+        .attr("x", 11)
+        .attr("y", ".31em")
+        //.attr("class", "shadow")
+        .attr("id", function(d,i) { return "s_"+table[d.name] })
+        .text(function(d) { return labels[d.name]; });
+
+    text.append("text")
+        .attr("x", 11)
+        .attr("y", ".31em")
+        .attr("id", function(d,i) { return "t_"+table[d.name] })
+        .text(function(d) { return labels[d.name]; });
+
+    circle.on("mouseover", function(d) { handle(d) });
+    text.on("mouseover", function(d) { handle(d) });
+    circle.on("mouseout", function(d) { dehandle(d) });
+    text.on("mouseout", function(d) { dehandle(d) });
+
+    function tick() {
+        path.attr("d", direct);
+        circle.attr("transform", transform);
+        text.attr("transform", transform);
+    }
+
+    function direct(d) {
+        return "M" + d.source.x + "," + d.source.y + " " + d.target.x + "," + d.target.y;
+    }
+
+    function transform(d) {
+        return "translate(" + d.x + "," + d.y + ")";
+    }
+
+    function handle(x){
+        if (relationships[x.name]){
+            for (var key in relationships[x.name]){
+                if (relationships[x.name].hasOwnProperty(key)){
+                    var i;
+                    for (i=0; i<relationships[x.name][key].length; i++){
+                        d3.select('#c_' + table[relationships[x.name][key][i]]).style("fill", rel2col[key]);
+                        d3.select('#t_' + table[relationships[x.name][key][i]]).style("fill", rel2col[key]);
+                    }
+                }
+            }
+        }
+    }
+
+    function dehandle(x){
+        d3.selectAll('text').style("fill", "#000");
+        d3.selectAll('circle').style("fill", "#fff");
+        /*Array.prototype.forEach.call(l_a, function(i){ i.style.display = "none" });
+        l_3.style.display = "block";*/
+    }
+
+    // Speed up simulation convergence
+    var s=0;
+    while(force.alpha() > 0.01) {
+        force.tick();
+        if(s++ > 500) break;
+    }
+
+    /*Array.prototype.forEach.call(l_a, function(i){ i.style.display = "none" });
+    l_3.style.display = "block";*/
+};
+</script>
+</html>

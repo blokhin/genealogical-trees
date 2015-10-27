@@ -1,0 +1,2212 @@
+[
+{
+"source": "Uncle", 
+"type": "label", 
+"target": "Uncle"
+}, 
+{
+"source": "i17", 
+"type": "isUncleOf", 
+"target": "i14"
+}, 
+{
+"source": "i17", 
+"type": "hasGrandParent", 
+"target": "i19"
+}, 
+{
+"source": "i17", 
+"type": "hasGrandParent", 
+"target": "i18"
+}, 
+{
+"source": "i17", 
+"type": "hasFather", 
+"target": "i15"
+}, 
+{
+"source": "i17", 
+"type": "isSecondCousinOf", 
+"target": "i17"
+}, 
+{
+"source": "i17", 
+"type": "isSecondCousinOf", 
+"target": "i12"
+}, 
+{
+"source": "i17", 
+"type": "isGreatUncleOf", 
+"target": "i2"
+}, 
+{
+"source": "i17", 
+"type": "hasGreatGrandParent", 
+"target": "i20"
+}, 
+{
+"source": "i17", 
+"type": "hasGreatUncle", 
+"target": "i22"
+}, 
+{
+"source": "i17", 
+"type": "hasGreatUncle", 
+"target": "i21"
+}, 
+{
+"source": "i17", 
+"type": "isUncleOf", 
+"target": "i10"
+}, 
+{
+"source": "i17", 
+"type": "label", 
+"target": "Veit Hirsch Einstein"
+}, 
+{
+"source": "Husband", 
+"type": "label", 
+"target": "Husband"
+}, 
+{
+"source": "Person", 
+"type": "label", 
+"target": "Person"
+}, 
+{
+"source": "i19", 
+"type": "isGreatGrandParentOf", 
+"target": "i14"
+}, 
+{
+"source": "i19", 
+"type": "isMotherOf", 
+"target": "i15"
+}, 
+{
+"source": "i19", 
+"type": "isGrandParentOf", 
+"target": "i12"
+}, 
+{
+"source": "i19", 
+"type": "isGreatGrandParentOf", 
+"target": "i10"
+}, 
+{
+"source": "i19", 
+"type": "isGrandParentOf", 
+"target": "i17"
+}, 
+{
+"source": "i19", 
+"type": "isWifeOf", 
+"target": "i18"
+}, 
+{
+"source": "i19", 
+"type": "label", 
+"target": "Caroline Ehrlich"
+}, 
+{
+"source": "i9", 
+"type": "isSecondCousinOf", 
+"target": "i1"
+}, 
+{
+"source": "i9", 
+"type": "hasFather", 
+"target": "i2"
+}, 
+{
+"source": "i9", 
+"type": "hasGreatGrandParent", 
+"target": "i34"
+}, 
+{
+"source": "i9", 
+"type": "hasGrandParent", 
+"target": "i11"
+}, 
+{
+"source": "i9", 
+"type": "hasAunt", 
+"target": "i31"
+}, 
+{
+"source": "i9", 
+"type": "isFirstCousinOf", 
+"target": "i1"
+}, 
+{
+"source": "i9", 
+"type": "isSecondCousinOf", 
+"target": "i9"
+}, 
+{
+"source": "i9", 
+"type": "hasGreatGrandParent", 
+"target": "i32"
+}, 
+{
+"source": "i9", 
+"type": "hasGrandParent", 
+"target": "i29"
+}, 
+{
+"source": "i9", 
+"type": "hasGreatGrandParent", 
+"target": "i24"
+}, 
+{
+"source": "i9", 
+"type": "isThirdCousinOf", 
+"target": "i1"
+}, 
+{
+"source": "i9", 
+"type": "hasGreatGrandParent", 
+"target": "i12"
+}, 
+{
+"source": "i9", 
+"type": "isThirdCousinOf", 
+"target": "i9"
+}, 
+{
+"source": "i9", 
+"type": "isAuntOf", 
+"target": "i6"
+}, 
+{
+"source": "i9", 
+"type": "hasGreatGrandParent", 
+"target": "i35"
+}, 
+{
+"source": "i9", 
+"type": "isAuntOf", 
+"target": "i7"
+}, 
+{
+"source": "i9", 
+"type": "isAuntOf", 
+"target": "i8"
+}, 
+{
+"source": "i9", 
+"type": "hasGreatUncle", 
+"target": "i14"
+}, 
+{
+"source": "i9", 
+"type": "isFirstCousinOf", 
+"target": "i5"
+}, 
+{
+"source": "i9", 
+"type": "hasGrandParent", 
+"target": "i30"
+}, 
+{
+"source": "i9", 
+"type": "hasGrandParent", 
+"target": "i10"
+}, 
+{
+"source": "i9", 
+"type": "isFirstCousinOf", 
+"target": "i9"
+}, 
+{
+"source": "i9", 
+"type": "hasGreatGrandParent", 
+"target": "i13"
+}, 
+{
+"source": "i9", 
+"type": "hasGreatGrandParent", 
+"target": "i25"
+}, 
+{
+"source": "i9", 
+"type": "label", 
+"target": "Maria Einstein"
+}, 
+{
+"source": "i36", 
+"type": "isGreatGrandParentOf", 
+"target": "i31"
+}, 
+{
+"source": "i36", 
+"type": "isGrandParentOf", 
+"target": "i30"
+}, 
+{
+"source": "i36", 
+"type": "isGreatGrandParentOf", 
+"target": "i3"
+}, 
+{
+"source": "i36", 
+"type": "isFatherOf", 
+"target": "i35"
+}, 
+{
+"source": "i36", 
+"type": "hasFather", 
+"target": "i38"
+}, 
+{
+"source": "i36", 
+"type": "label", 
+"target": "Bernard Weil"
+}, 
+{
+"source": "SecondCousin", 
+"type": "label", 
+"target": "Second Cousin"
+}, 
+{
+"source": "i29", 
+"type": "isGreatGrandParentOf", 
+"target": "i6"
+}, 
+{
+"source": "i29", 
+"type": "isGreatGrandParentOf", 
+"target": "i7"
+}, 
+{
+"source": "i29", 
+"type": "hasFather", 
+"target": "i32"
+}, 
+{
+"source": "i29", 
+"type": "hasGrandParent", 
+"target": "i33"
+}, 
+{
+"source": "i29", 
+"type": "isGrandParentOf", 
+"target": "i1"
+}, 
+{
+"source": "i29", 
+"type": "isFatherOf", 
+"target": "i31"
+}, 
+{
+"source": "i29", 
+"type": "isFatherOf", 
+"target": "i3"
+}, 
+{
+"source": "i29", 
+"type": "isGreatGrandParentOf", 
+"target": "i8"
+}, 
+{
+"source": "i29", 
+"type": "isGrandParentOf", 
+"target": "i9"
+}, 
+{
+"source": "i29", 
+"type": "isGrandParentOf", 
+"target": "i5"
+}, 
+{
+"source": "i29", 
+"type": "label", 
+"target": "Julius Doerzbacher"
+}, 
+{
+"source": "i12", 
+"type": "isGreatGrandParentOf", 
+"target": "i1"
+}, 
+{
+"source": "i12", 
+"type": "hasGrandParent", 
+"target": "i19"
+}, 
+{
+"source": "i12", 
+"type": "isFatherOf", 
+"target": "i10"
+}, 
+{
+"source": "i12", 
+"type": "hasFather", 
+"target": "i15"
+}, 
+{
+"source": "i12", 
+"type": "isFatherOf", 
+"target": "i14"
+}, 
+{
+"source": "i12", 
+"type": "isGrandParentOf", 
+"target": "i2"
+}, 
+{
+"source": "i12", 
+"type": "hasGrandParent", 
+"target": "i18"
+}, 
+{
+"source": "i12", 
+"type": "isGreatGrandParentOf", 
+"target": "i9"
+}, 
+{
+"source": "i12", 
+"type": "hasGreatUncle", 
+"target": "i22"
+}, 
+{
+"source": "i12", 
+"type": "hasGreatGrandParent", 
+"target": "i20"
+}, 
+{
+"source": "i12", 
+"type": "hasGreatUncle", 
+"target": "i21"
+}, 
+{
+"source": "i12", 
+"type": "isSecondCousinOf", 
+"target": "i12"
+}, 
+{
+"source": "i12", 
+"type": "isSecondCousinOf", 
+"target": "i17"
+}, 
+{
+"source": "i12", 
+"type": "label", 
+"target": "Rupert Einstein"
+}, 
+{
+"source": "i3", 
+"type": "hasGrandParent", 
+"target": "i32"
+}, 
+{
+"source": "i3", 
+"type": "hasGreatGrandParent", 
+"target": "i37"
+}, 
+{
+"source": "i3", 
+"type": "isMotherOf", 
+"target": "i1"
+}, 
+{
+"source": "i3", 
+"type": "hasGreatGrandParent", 
+"target": "i33"
+}, 
+{
+"source": "i3", 
+"type": "hasGrandParent", 
+"target": "i35"
+}, 
+{
+"source": "i3", 
+"type": "isWifeOf", 
+"target": "i2"
+}, 
+{
+"source": "i3", 
+"type": "isAuntOf", 
+"target": "i5"
+}, 
+{
+"source": "i3", 
+"type": "isGrandParentOf", 
+"target": "i6"
+}, 
+{
+"source": "i3", 
+"type": "isGrandParentOf", 
+"target": "i8"
+}, 
+{
+"source": "i3", 
+"type": "isGrandParentOf", 
+"target": "i7"
+}, 
+{
+"source": "i3", 
+"type": "isMotherOf", 
+"target": "i9"
+}, 
+{
+"source": "i3", 
+"type": "hasGrandParent", 
+"target": "i34"
+}, 
+{
+"source": "i3", 
+"type": "hasGreatGrandParent", 
+"target": "i36"
+}, 
+{
+"source": "i3", 
+"type": "hasFather", 
+"target": "i29"
+}, 
+{
+"source": "i3", 
+"type": "label", 
+"target": "Pauline Koch"
+}, 
+{
+"source": "i20", 
+"type": "isFatherOf", 
+"target": "i21"
+}, 
+{
+"source": "i20", 
+"type": "isGrandParentOf", 
+"target": "i15"
+}, 
+{
+"source": "i20", 
+"type": "isGreatGrandParentOf", 
+"target": "i12"
+}, 
+{
+"source": "i20", 
+"type": "isGreatGrandParentOf", 
+"target": "i17"
+}, 
+{
+"source": "i20", 
+"type": "isFatherOf", 
+"target": "i22"
+}, 
+{
+"source": "i20", 
+"type": "hasFather", 
+"target": "i23"
+}, 
+{
+"source": "i20", 
+"type": "isFatherOf", 
+"target": "i18"
+}, 
+{
+"source": "i20", 
+"type": "label", 
+"target": "Moyses Einstein"
+}, 
+{
+"source": "Person", 
+"type": "label", 
+"target": "Person"
+}, 
+{
+"source": "GreatGrandfather", 
+"type": "label", 
+"target": "Great Grandfather"
+}, 
+{
+"source": "i6", 
+"type": "isSecondCousinOf", 
+"target": "i6"
+}, 
+{
+"source": "i6", 
+"type": "hasGreatAunt", 
+"target": "i31"
+}, 
+{
+"source": "i6", 
+"type": "hasGreatGrandParent", 
+"target": "i11"
+}, 
+{
+"source": "i6", 
+"type": "hasGrandParent", 
+"target": "i2"
+}, 
+{
+"source": "i6", 
+"type": "hasGreatGrandParent", 
+"target": "i10"
+}, 
+{
+"source": "i6", 
+"type": "hasAunt", 
+"target": "i9"
+}, 
+{
+"source": "i6", 
+"type": "hasGreatGrandParent", 
+"target": "i30"
+}, 
+{
+"source": "i6", 
+"type": "isThirdCousinOf", 
+"target": "i7"
+}, 
+{
+"source": "i6", 
+"type": "hasGrandParent", 
+"target": "i3"
+}, 
+{
+"source": "i6", 
+"type": "isFirstCousinOf", 
+"target": "i6"
+}, 
+{
+"source": "i6", 
+"type": "isFirstCousinOf", 
+"target": "i8"
+}, 
+{
+"source": "i6", 
+"type": "hasFather", 
+"target": "i1"
+}, 
+{
+"source": "i6", 
+"type": "isFirstCousinOf", 
+"target": "i7"
+}, 
+{
+"source": "i6", 
+"type": "isThirdCousinOf", 
+"target": "i8"
+}, 
+{
+"source": "i6", 
+"type": "isThirdCousinOf", 
+"target": "i6"
+}, 
+{
+"source": "i6", 
+"type": "isSecondCousinOf", 
+"target": "i8"
+}, 
+{
+"source": "i6", 
+"type": "isSecondCousinOf", 
+"target": "i7"
+}, 
+{
+"source": "i6", 
+"type": "hasGreatGrandParent", 
+"target": "i29"
+}, 
+{
+"source": "i6", 
+"type": "label", 
+"target": "Lieserl Einstein"
+}, 
+{
+"source": "GreatGrandparent", 
+"type": "label", 
+"target": "Great Grandparent"
+}, 
+{
+"source": "i15", 
+"type": "hasGreatGrandParent", 
+"target": "i23"
+}, 
+{
+"source": "i15", 
+"type": "hasGrandParent", 
+"target": "i20"
+}, 
+{
+"source": "i15", 
+"type": "isGreatGrandParentOf", 
+"target": "i2"
+}, 
+{
+"source": "i15", 
+"type": "isFatherOf", 
+"target": "i17"
+}, 
+{
+"source": "i15", 
+"type": "isFatherOf", 
+"target": "i12"
+}, 
+{
+"source": "i15", 
+"type": "isGrandParentOf", 
+"target": "i10"
+}, 
+{
+"source": "i15", 
+"type": "hasUncle", 
+"target": "i21"
+}, 
+{
+"source": "i15", 
+"type": "hasFather", 
+"target": "i18"
+}, 
+{
+"source": "i15", 
+"type": "hasUncle", 
+"target": "i22"
+}, 
+{
+"source": "i15", 
+"type": "isFirstCousinOf", 
+"target": "i15"
+}, 
+{
+"source": "i15", 
+"type": "isGrandParentOf", 
+"target": "i14"
+}, 
+{
+"source": "i15", 
+"type": "label", 
+"target": "Naphtali Hirsch Einstein"
+}, 
+{
+"source": "i13", 
+"type": "isWifeOf", 
+"target": "i12"
+}, 
+{
+"source": "i13", 
+"type": "isMotherOf", 
+"target": "i10"
+}, 
+{
+"source": "i13", 
+"type": "isMotherOf", 
+"target": "i14"
+}, 
+{
+"source": "i13", 
+"type": "isGreatGrandParentOf", 
+"target": "i9"
+}, 
+{
+"source": "i13", 
+"type": "isGrandParentOf", 
+"target": "i2"
+}, 
+{
+"source": "i13", 
+"type": "isGreatGrandParentOf", 
+"target": "i1"
+}, 
+{
+"source": "i13", 
+"type": "label", 
+"target": "Rebekka Obernauer"
+}, 
+{
+"source": "Grandparent", 
+"type": "label", 
+"target": "Grandparent"
+}, 
+{
+"source": "i25", 
+"type": "hasGrandParent", 
+"target": "i28"
+}, 
+{
+"source": "i25", 
+"type": "hasFather", 
+"target": "i26"
+}, 
+{
+"source": "i25", 
+"type": "isMotherOf", 
+"target": "i11"
+}, 
+{
+"source": "i25", 
+"type": "isGreatGrandParentOf", 
+"target": "i1"
+}, 
+{
+"source": "i25", 
+"type": "isWifeOf", 
+"target": "i24"
+}, 
+{
+"source": "i25", 
+"type": "isGrandParentOf", 
+"target": "i2"
+}, 
+{
+"source": "i25", 
+"type": "isGreatGrandParentOf", 
+"target": "i9"
+}, 
+{
+"source": "i25", 
+"type": "label", 
+"target": "Helene Schmal"
+}, 
+{
+"source": "i40", 
+"type": "label", 
+"target": "Rudolf Einstein"
+}, 
+{
+"source": "MaleDescendant", 
+"type": "label", 
+"target": "Male Descendant"
+}, 
+{
+"source": "i2", 
+"type": "hasGrandParent", 
+"target": "i24"
+}, 
+{
+"source": "i2", 
+"type": "hasGreatGrandParent", 
+"target": "i27"
+}, 
+{
+"source": "i2", 
+"type": "hasGrandParent", 
+"target": "i25"
+}, 
+{
+"source": "i2", 
+"type": "hasGrandParent", 
+"target": "i12"
+}, 
+{
+"source": "i2", 
+"type": "hasGreatGrandParent", 
+"target": "i15"
+}, 
+{
+"source": "i2", 
+"type": "isFatherOf", 
+"target": "i9"
+}, 
+{
+"source": "i2", 
+"type": "isFatherOf", 
+"target": "i1"
+}, 
+{
+"source": "i2", 
+"type": "hasGreatUncle", 
+"target": "i17"
+}, 
+{
+"source": "i2", 
+"type": "isSecondCousinOf", 
+"target": "i2"
+}, 
+{
+"source": "i2", 
+"type": "hasGreatGrandParent", 
+"target": "i26"
+}, 
+{
+"source": "i2", 
+"type": "isFirstCousinOf", 
+"target": "i2"
+}, 
+{
+"source": "i2", 
+"type": "hasUncle", 
+"target": "i14"
+}, 
+{
+"source": "i2", 
+"type": "hasGrandParent", 
+"target": "i13"
+}, 
+{
+"source": "i2", 
+"type": "isGrandParentOf", 
+"target": "i6"
+}, 
+{
+"source": "i2", 
+"type": "hasFather", 
+"target": "i10"
+}, 
+{
+"source": "i2", 
+"type": "hasGreatGrandParent", 
+"target": "i16"
+}, 
+{
+"source": "i2", 
+"type": "isGrandParentOf", 
+"target": "i8"
+}, 
+{
+"source": "i2", 
+"type": "isGrandParentOf", 
+"target": "i7"
+}, 
+{
+"source": "i2", 
+"type": "label", 
+"target": "Hermann Moos Einstein"
+}, 
+{
+"source": "i31", 
+"type": "isGreatAuntOf", 
+"target": "i7"
+}, 
+{
+"source": "i31", 
+"type": "hasGreatGrandParent", 
+"target": "i36"
+}, 
+{
+"source": "i31", 
+"type": "hasFather", 
+"target": "i29"
+}, 
+{
+"source": "i31", 
+"type": "hasGrandParent", 
+"target": "i34"
+}, 
+{
+"source": "i31", 
+"type": "isMotherOf", 
+"target": "i5"
+}, 
+{
+"source": "i31", 
+"type": "hasGreatGrandParent", 
+"target": "i37"
+}, 
+{
+"source": "i31", 
+"type": "isGreatAuntOf", 
+"target": "i6"
+}, 
+{
+"source": "i31", 
+"type": "isWifeOf", 
+"target": "i40"
+}, 
+{
+"source": "i31", 
+"type": "isGreatAuntOf", 
+"target": "i8"
+}, 
+{
+"source": "i31", 
+"type": "hasGrandParent", 
+"target": "i35"
+}, 
+{
+"source": "i31", 
+"type": "isAuntOf", 
+"target": "i1"
+}, 
+{
+"source": "i31", 
+"type": "hasGreatGrandParent", 
+"target": "i33"
+}, 
+{
+"source": "i31", 
+"type": "isAuntOf", 
+"target": "i9"
+}, 
+{
+"source": "i31", 
+"type": "hasGrandParent", 
+"target": "i32"
+}, 
+{
+"source": "i31", 
+"type": "label", 
+"target": "Fanny Koch"
+}, 
+{
+"source": "i35", 
+"type": "isGreatGrandParentOf", 
+"target": "i1"
+}, 
+{
+"source": "i35", 
+"type": "hasGrandParent", 
+"target": "i38"
+}, 
+{
+"source": "i35", 
+"type": "hasFather", 
+"target": "i36"
+}, 
+{
+"source": "i35", 
+"type": "isWifeOf", 
+"target": "i34"
+}, 
+{
+"source": "i35", 
+"type": "isGrandParentOf", 
+"target": "i3"
+}, 
+{
+"source": "i35", 
+"type": "isGreatGrandParentOf", 
+"target": "i5"
+}, 
+{
+"source": "i35", 
+"type": "isMotherOf", 
+"target": "i30"
+}, 
+{
+"source": "i35", 
+"type": "isGrandParentOf", 
+"target": "i31"
+}, 
+{
+"source": "i35", 
+"type": "isGreatGrandParentOf", 
+"target": "i9"
+}, 
+{
+"source": "i35", 
+"type": "label", 
+"target": "Elcha Weil"
+}, 
+{
+"source": "i26", 
+"type": "isFatherOf", 
+"target": "i25"
+}, 
+{
+"source": "i26", 
+"type": "hasFather", 
+"target": "i28"
+}, 
+{
+"source": "i26", 
+"type": "isGrandParentOf", 
+"target": "i11"
+}, 
+{
+"source": "i26", 
+"type": "isGreatGrandParentOf", 
+"target": "i2"
+}, 
+{
+"source": "i26", 
+"type": "label", 
+"target": "Isak Schmal"
+}, 
+{
+"source": "Brother", 
+"type": "label", 
+"target": "Brother"
+}, 
+{
+"source": "i21", 
+"type": "isUncleOf", 
+"target": "i15"
+}, 
+{
+"source": "i21", 
+"type": "isGreatUncleOf", 
+"target": "i12"
+}, 
+{
+"source": "i21", 
+"type": "hasFather", 
+"target": "i20"
+}, 
+{
+"source": "i21", 
+"type": "isGreatUncleOf", 
+"target": "i17"
+}, 
+{
+"source": "i21", 
+"type": "hasGrandParent", 
+"target": "i23"
+}, 
+{
+"source": "i21", 
+"type": "label", 
+"target": "Abraham Einstein"
+}, 
+{
+"source": "MaleAncestor", 
+"type": "label", 
+"target": "Male Ancestor"
+}, 
+{
+"source": "i16", 
+"type": "isGreatGrandParentOf", 
+"target": "i2"
+}, 
+{
+"source": "i16", 
+"type": "isWifeOf", 
+"target": "i15"
+}, 
+{
+"source": "i16", 
+"type": "isMotherOf", 
+"target": "i12"
+}, 
+{
+"source": "i16", 
+"type": "isMotherOf", 
+"target": "i17"
+}, 
+{
+"source": "i16", 
+"type": "isGrandParentOf", 
+"target": "i14"
+}, 
+{
+"source": "i16", 
+"type": "isGrandParentOf", 
+"target": "i10"
+}, 
+{
+"source": "i16", 
+"type": "label", 
+"target": "Helene Steppach"
+}, 
+{
+"source": "Descendant", 
+"type": "label", 
+"target": "Descendant"
+}, 
+{
+"source": "i30", 
+"type": "hasFather", 
+"target": "i34"
+}, 
+{
+"source": "i30", 
+"type": "hasGrandParent", 
+"target": "i36"
+}, 
+{
+"source": "i30", 
+"type": "isGreatGrandParentOf", 
+"target": "i8"
+}, 
+{
+"source": "i30", 
+"type": "isGrandParentOf", 
+"target": "i1"
+}, 
+{
+"source": "i30", 
+"type": "isWifeOf", 
+"target": "i29"
+}, 
+{
+"source": "i30", 
+"type": "hasGreatGrandParent", 
+"target": "i38"
+}, 
+{
+"source": "i30", 
+"type": "hasGrandParent", 
+"target": "i37"
+}, 
+{
+"source": "i30", 
+"type": "isMotherOf", 
+"target": "i31"
+}, 
+{
+"source": "i30", 
+"type": "isGreatGrandParentOf", 
+"target": "i6"
+}, 
+{
+"source": "i30", 
+"type": "isGreatGrandParentOf", 
+"target": "i7"
+}, 
+{
+"source": "i30", 
+"type": "isMotherOf", 
+"target": "i3"
+}, 
+{
+"source": "i30", 
+"type": "isGrandParentOf", 
+"target": "i5"
+}, 
+{
+"source": "i30", 
+"type": "isGrandParentOf", 
+"target": "i9"
+}, 
+{
+"source": "i30", 
+"type": "label", 
+"target": "Jette Bernheimer"
+}, 
+{
+"source": "Grandfather", 
+"type": "label", 
+"target": "Grandfather"
+}, 
+{
+"source": "GreatAunt", 
+"type": "label", 
+"target": "Great Aunt"
+}, 
+{
+"source": "i11", 
+"type": "hasGreatGrandParent", 
+"target": "i28"
+}, 
+{
+"source": "i11", 
+"type": "isWifeOf", 
+"target": "i10"
+}, 
+{
+"source": "i11", 
+"type": "hasFather", 
+"target": "i24"
+}, 
+{
+"source": "i11", 
+"type": "isGreatGrandParentOf", 
+"target": "i7"
+}, 
+{
+"source": "i11", 
+"type": "isGreatGrandParentOf", 
+"target": "i6"
+}, 
+{
+"source": "i11", 
+"type": "hasGrandParent", 
+"target": "i26"
+}, 
+{
+"source": "i11", 
+"type": "isGrandParentOf", 
+"target": "i1"
+}, 
+{
+"source": "i11", 
+"type": "isGreatGrandParentOf", 
+"target": "i8"
+}, 
+{
+"source": "i11", 
+"type": "isMotherOf", 
+"target": "i2"
+}, 
+{
+"source": "i11", 
+"type": "hasGrandParent", 
+"target": "i27"
+}, 
+{
+"source": "i11", 
+"type": "isGrandParentOf", 
+"target": "i9"
+}, 
+{
+"source": "i11", 
+"type": "label", 
+"target": "Helene Moos"
+}, 
+{
+"source": "i27", 
+"type": "isMotherOf", 
+"target": "i25"
+}, 
+{
+"source": "i27", 
+"type": "isWifeOf", 
+"target": "i26"
+}, 
+{
+"source": "i27", 
+"type": "isGreatGrandParentOf", 
+"target": "i2"
+}, 
+{
+"source": "i27", 
+"type": "isGrandParentOf", 
+"target": "i11"
+}, 
+{
+"source": "i27", 
+"type": "label", 
+"target": "Johanna Bernheim"
+}, 
+{
+"source": "i4", 
+"type": "isMotherOf", 
+"target": "i7"
+}, 
+{
+"source": "i4", 
+"type": "isMotherOf", 
+"target": "i6"
+}, 
+{
+"source": "i4", 
+"type": "isWifeOf", 
+"target": "i1"
+}, 
+{
+"source": "i4", 
+"type": "isMotherOf", 
+"target": "i8"
+}, 
+{
+"source": "i4", 
+"type": "label", 
+"target": "Mileva Mari&#263;"
+}, 
+{
+"source": "i38", 
+"type": "isFatherOf", 
+"target": "i36"
+}, 
+{
+"source": "i38", 
+"type": "isGrandParentOf", 
+"target": "i35"
+}, 
+{
+"source": "i38", 
+"type": "isGreatGrandParentOf", 
+"target": "i30"
+}, 
+{
+"source": "i38", 
+"type": "label", 
+"target": "Jakob Weil"
+}, 
+{
+"source": "Cousin", 
+"type": "label", 
+"target": "Cousin"
+}, 
+{
+"source": "Spouse", 
+"type": "label", 
+"target": "Spouse"
+}, 
+{
+"source": "i10", 
+"type": "hasGrandParent", 
+"target": "i15"
+}, 
+{
+"source": "i10", 
+"type": "hasGrandParent", 
+"target": "i16"
+}, 
+{
+"source": "i10", 
+"type": "isGrandParentOf", 
+"target": "i1"
+}, 
+{
+"source": "i10", 
+"type": "isThirdCousinOf", 
+"target": "i14"
+}, 
+{
+"source": "i10", 
+"type": "isFirstCousinOf", 
+"target": "i10"
+}, 
+{
+"source": "i10", 
+"type": "hasUncle", 
+"target": "i17"
+}, 
+{
+"source": "i10", 
+"type": "isGrandParentOf", 
+"target": "i9"
+}, 
+{
+"source": "i10", 
+"type": "isGreatGrandParentOf", 
+"target": "i6"
+}, 
+{
+"source": "i10", 
+"type": "isGreatGrandParentOf", 
+"target": "i7"
+}, 
+{
+"source": "i10", 
+"type": "isFatherOf", 
+"target": "i2"
+}, 
+{
+"source": "i10", 
+"type": "isThirdCousinOf", 
+"target": "i10"
+}, 
+{
+"source": "i10", 
+"type": "hasGreatGrandParent", 
+"target": "i18"
+}, 
+{
+"source": "i10", 
+"type": "isFirstCousinOf", 
+"target": "i14"
+}, 
+{
+"source": "i10", 
+"type": "hasFather", 
+"target": "i12"
+}, 
+{
+"source": "i10", 
+"type": "hasGreatGrandParent", 
+"target": "i19"
+}, 
+{
+"source": "i10", 
+"type": "isGreatGrandParentOf", 
+"target": "i8"
+}, 
+{
+"source": "i10", 
+"type": "label", 
+"target": "Abraham Einstein"
+}, 
+{
+"source": "i32", 
+"type": "isGrandParentOf", 
+"target": "i31"
+}, 
+{
+"source": "i32", 
+"type": "hasFather", 
+"target": "i33"
+}, 
+{
+"source": "i32", 
+"type": "isGreatGrandParentOf", 
+"target": "i5"
+}, 
+{
+"source": "i32", 
+"type": "isGrandParentOf", 
+"target": "i3"
+}, 
+{
+"source": "i32", 
+"type": "isGreatGrandParentOf", 
+"target": "i9"
+}, 
+{
+"source": "i32", 
+"type": "isGreatGrandParentOf", 
+"target": "i1"
+}, 
+{
+"source": "i32", 
+"type": "isFatherOf", 
+"target": "i29"
+}, 
+{
+"source": "i32", 
+"type": "label", 
+"target": "Zadok D Loeb Doerzbacher"
+}, 
+{
+"source": "Sibling", 
+"type": "label", 
+"target": "Sibling"
+}, 
+{
+"source": "Father", 
+"type": "label", 
+"target": "Father"
+}, 
+{
+"source": "GreatGreatGrandparent", 
+"type": "label", 
+"target": "Great Great Grandparent"
+}, 
+{
+"source": "FirstCousin", 
+"type": "label", 
+"target": "First Cousin"
+}, 
+{
+"source": "i1", 
+"type": "hasGreatGrandParent", 
+"target": "i24"
+}, 
+{
+"source": "i1", 
+"type": "hasGrandParent", 
+"target": "i30"
+}, 
+{
+"source": "i1", 
+"type": "hasGreatGrandParent", 
+"target": "i12"
+}, 
+{
+"source": "i1", 
+"type": "isFatherOf", 
+"target": "i8"
+}, 
+{
+"source": "i1", 
+"type": "isSecondCousinOf", 
+"target": "i1"
+}, 
+{
+"source": "i1", 
+"type": "hasGrandParent", 
+"target": "i11"
+}, 
+{
+"source": "i1", 
+"type": "hasGreatGrandParent", 
+"target": "i34"
+}, 
+{
+"source": "i1", 
+"type": "hasGreatGrandParent", 
+"target": "i25"
+}, 
+{
+"source": "i1", 
+"type": "hasGrandParent", 
+"target": "i10"
+}, 
+{
+"source": "i1", 
+"type": "isThirdCousinOf", 
+"target": "i1"
+}, 
+{
+"source": "i1", 
+"type": "hasGreatGrandParent", 
+"target": "i32"
+}, 
+{
+"source": "i1", 
+"type": "isSecondCousinOf", 
+"target": "i9"
+}, 
+{
+"source": "i1", 
+"type": "hasGrandParent", 
+"target": "i29"
+}, 
+{
+"source": "i1", 
+"type": "hasAunt", 
+"target": "i31"
+}, 
+{
+"source": "i1", 
+"type": "hasFather", 
+"target": "i2"
+}, 
+{
+"source": "i1", 
+"type": "hasGreatGrandParent", 
+"target": "i35"
+}, 
+{
+"source": "i1", 
+"type": "isThirdCousinOf", 
+"target": "i9"
+}, 
+{
+"source": "i1", 
+"type": "isFatherOf", 
+"target": "i6"
+}, 
+{
+"source": "i1", 
+"type": "isFatherOf", 
+"target": "i7"
+}, 
+{
+"source": "i1", 
+"type": "isFirstCousinOf", 
+"target": "i1"
+}, 
+{
+"source": "i1", 
+"type": "isFirstCousinOf", 
+"target": "i5"
+}, 
+{
+"source": "i1", 
+"type": "hasGreatUncle", 
+"target": "i14"
+}, 
+{
+"source": "i1", 
+"type": "hasGreatGrandParent", 
+"target": "i13"
+}, 
+{
+"source": "i1", 
+"type": "isFirstCousinOf", 
+"target": "i9"
+}, 
+{
+"source": "i1", 
+"type": "label", 
+"target": "Albert Einstein"
+}, 
+{
+"source": "SiblingInLaw", 
+"type": "label", 
+"target": "Sibling In Law"
+}, 
+{
+"source": "Ancestor", 
+"type": "label", 
+"target": "Ancestor"
+}, 
+{
+"source": "i5", 
+"type": "hasGreatGrandParent", 
+"target": "i32"
+}, 
+{
+"source": "i5", 
+"type": "hasGreatGrandParent", 
+"target": "i34"
+}, 
+{
+"source": "i5", 
+"type": "hasGrandParent", 
+"target": "i30"
+}, 
+{
+"source": "i5", 
+"type": "isFirstCousinOf", 
+"target": "i5"
+}, 
+{
+"source": "i5", 
+"type": "hasGreatGrandParent", 
+"target": "i35"
+}, 
+{
+"source": "i5", 
+"type": "isFirstCousinOf", 
+"target": "i1"
+}, 
+{
+"source": "i5", 
+"type": "hasAunt", 
+"target": "i3"
+}, 
+{
+"source": "i5", 
+"type": "isWifeOf", 
+"target": "i1"
+}, 
+{
+"source": "i5", 
+"type": "isFirstCousinOf", 
+"target": "i9"
+}, 
+{
+"source": "i5", 
+"type": "hasGrandParent", 
+"target": "i29"
+}, 
+{
+"source": "i5", 
+"type": "label", 
+"target": "Elsa Einstein"
+}, 
+{
+"source": "i18", 
+"type": "isGreatGrandParentOf", 
+"target": "i14"
+}, 
+{
+"source": "i18", 
+"type": "isGrandParentOf", 
+"target": "i12"
+}, 
+{
+"source": "i18", 
+"type": "hasGrandParent", 
+"target": "i23"
+}, 
+{
+"source": "i18", 
+"type": "isGreatGrandParentOf", 
+"target": "i10"
+}, 
+{
+"source": "i18", 
+"type": "isGrandParentOf", 
+"target": "i17"
+}, 
+{
+"source": "i18", 
+"type": "hasFather", 
+"target": "i20"
+}, 
+{
+"source": "i18", 
+"type": "isFatherOf", 
+"target": "i15"
+}, 
+{
+"source": "i18", 
+"type": "label", 
+"target": "David Veit Einstein"
+}, 
+{
+"source": "Man", 
+"type": "label", 
+"target": "Man"
+}, 
+{
+"source": "GreatUncle", 
+"type": "label", 
+"target": "Great Uncle"
+}, 
+{
+"source": "i14", 
+"type": "isUncleOf", 
+"target": "i2"
+}, 
+{
+"source": "i14", 
+"type": "isThirdCousinOf", 
+"target": "i14"
+}, 
+{
+"source": "i14", 
+"type": "isFirstCousinOf", 
+"target": "i10"
+}, 
+{
+"source": "i14", 
+"type": "isGreatUncleOf", 
+"target": "i1"
+}, 
+{
+"source": "i14", 
+"type": "hasGreatGrandParent", 
+"target": "i18"
+}, 
+{
+"source": "i14", 
+"type": "hasGreatGrandParent", 
+"target": "i19"
+}, 
+{
+"source": "i14", 
+"type": "hasGrandParent", 
+"target": "i16"
+}, 
+{
+"source": "i14", 
+"type": "hasGrandParent", 
+"target": "i15"
+}, 
+{
+"source": "i14", 
+"type": "isThirdCousinOf", 
+"target": "i10"
+}, 
+{
+"source": "i14", 
+"type": "hasUncle", 
+"target": "i17"
+}, 
+{
+"source": "i14", 
+"type": "isFirstCousinOf", 
+"target": "i14"
+}, 
+{
+"source": "i14", 
+"type": "isGreatUncleOf", 
+"target": "i9"
+}, 
+{
+"source": "i14", 
+"type": "hasFather", 
+"target": "i12"
+}, 
+{
+"source": "i14", 
+"type": "label", 
+"target": "Raphael Einstein"
+}, 
+{
+"source": "Son", 
+"type": "label", 
+"target": "Son"
+}, 
+{
+"source": "i37", 
+"type": "isGrandParentOf", 
+"target": "i30"
+}, 
+{
+"source": "i37", 
+"type": "isWifeOf", 
+"target": "i36"
+}, 
+{
+"source": "i37", 
+"type": "isMotherOf", 
+"target": "i35"
+}, 
+{
+"source": "i37", 
+"type": "isGreatGrandParentOf", 
+"target": "i3"
+}, 
+{
+"source": "i37", 
+"type": "isGreatGrandParentOf", 
+"target": "i31"
+}, 
+{
+"source": "i37", 
+"type": "label", 
+"target": "Roesle Katz"
+}, 
+{
+"source": "BloodRelation", 
+"type": "label", 
+"target": "Blood Relation"
+}, 
+{
+"source": "UncleInLaw", 
+"type": "label", 
+"target": "Uncle In Law"
+}, 
+{
+"source": "i8", 
+"type": "isSecondCousinOf", 
+"target": "i7"
+}, 
+{
+"source": "i8", 
+"type": "hasAunt", 
+"target": "i9"
+}, 
+{
+"source": "i8", 
+"type": "isThirdCousinOf", 
+"target": "i7"
+}, 
+{
+"source": "i8", 
+"type": "hasGrandParent", 
+"target": "i2"
+}, 
+{
+"source": "i8", 
+"type": "hasGreatGrandParent", 
+"target": "i10"
+}, 
+{
+"source": "i8", 
+"type": "isFirstCousinOf", 
+"target": "i6"
+}, 
+{
+"source": "i8", 
+"type": "hasFather", 
+"target": "i1"
+}, 
+{
+"source": "i8", 
+"type": "isSecondCousinOf", 
+"target": "i8"
+}, 
+{
+"source": "i8", 
+"type": "hasGreatGrandParent", 
+"target": "i11"
+}, 
+{
+"source": "i8", 
+"type": "hasGreatGrandParent", 
+"target": "i29"
+}, 
+{
+"source": "i8", 
+"type": "isFirstCousinOf", 
+"target": "i8"
+}, 
+{
+"source": "i8", 
+"type": "isSecondCousinOf", 
+"target": "i6"
+}, 
+{
+"source": "i8", 
+"type": "isThirdCousinOf", 
+"target": "i8"
+}, 
+{
+"source": "i8", 
+"type": "isThirdCousinOf", 
+"target": "i6"
+}, 
+{
+"source": "i8", 
+"type": "isFirstCousinOf", 
+"target": "i7"
+}, 
+{
+"source": "i8", 
+"type": "hasGreatAunt", 
+"target": "i31"
+}, 
+{
+"source": "i8", 
+"type": "hasGreatGrandParent", 
+"target": "i30"
+}, 
+{
+"source": "i8", 
+"type": "hasGrandParent", 
+"target": "i3"
+}, 
+{
+"source": "i8", 
+"type": "label", 
+"target": "Eduard Einstein"
+}, 
+{
+"source": "Person", 
+"type": "label", 
+"target": "Person"
+}, 
+{
+"source": "BrotherInLaw", 
+"type": "label", 
+"target": "Brother In Law"
+}, 
+{
+"source": "SonInLaw", 
+"type": "label", 
+"target": "Son In Law"
+}, 
+{
+"source": "i28", 
+"type": "isGrandParentOf", 
+"target": "i25"
+}, 
+{
+"source": "i28", 
+"type": "isFatherOf", 
+"target": "i26"
+}, 
+{
+"source": "i28", 
+"type": "isGreatGrandParentOf", 
+"target": "i11"
+}, 
+{
+"source": "i28", 
+"type": "label", 
+"target": "Heinrich Israel Schmal"
+}, 
+{
+"source": "Parent", 
+"type": "label", 
+"target": "Parent"
+}, 
+{
+"source": "i22", 
+"type": "hasFather", 
+"target": "i20"
+}, 
+{
+"source": "i22", 
+"type": "isGreatUncleOf", 
+"target": "i17"
+}, 
+{
+"source": "i22", 
+"type": "hasGrandParent", 
+"target": "i23"
+}, 
+{
+"source": "i22", 
+"type": "isGreatUncleOf", 
+"target": "i12"
+}, 
+{
+"source": "i22", 
+"type": "isUncleOf", 
+"target": "i15"
+}, 
+{
+"source": "i22", 
+"type": "label", 
+"target": "Leopold Einstein"
+}, 
+{
+"source": "ThirdCousin", 
+"type": "label", 
+"target": "Third Cousin"
+}, 
+{
+"source": "FatherInLaw", 
+"type": "label", 
+"target": "Father In Law"
+}, 
+{
+"source": "ParentInLaw", 
+"type": "label", 
+"target": "Parent In Law"
+}, 
+{
+"source": "i23", 
+"type": "isGrandParentOf", 
+"target": "i18"
+}, 
+{
+"source": "i23", 
+"type": "isGreatGrandParentOf", 
+"target": "i15"
+}, 
+{
+"source": "i23", 
+"type": "isFatherOf", 
+"target": "i20"
+}, 
+{
+"source": "i23", 
+"type": "isGrandParentOf", 
+"target": "i21"
+}, 
+{
+"source": "i23", 
+"type": "isGrandParentOf", 
+"target": "i22"
+}, 
+{
+"source": "i23", 
+"type": "label", 
+"target": "Baruch Moyses Einstein"
+}, 
+{
+"source": "i24", 
+"type": "isFatherOf", 
+"target": "i11"
+}, 
+{
+"source": "i24", 
+"type": "isGreatGrandParentOf", 
+"target": "i9"
+}, 
+{
+"source": "i24", 
+"type": "isGrandParentOf", 
+"target": "i2"
+}, 
+{
+"source": "i24", 
+"type": "isGreatGrandParentOf", 
+"target": "i1"
+}, 
+{
+"source": "i24", 
+"type": "label", 
+"target": "Hayum Moos"
+}, 
+{
+"source": "InLaw", 
+"type": "label", 
+"target": "In Law"
+}, 
+{
+"source": "i33", 
+"type": "isGrandParentOf", 
+"target": "i29"
+}, 
+{
+"source": "i33", 
+"type": "isGreatGrandParentOf", 
+"target": "i31"
+}, 
+{
+"source": "i33", 
+"type": "isFatherOf", 
+"target": "i32"
+}, 
+{
+"source": "i33", 
+"type": "isGreatGrandParentOf", 
+"target": "i3"
+}, 
+{
+"source": "i33", 
+"type": "label", 
+"target": "Loeb Samuel Doerzbacher"
+}, 
+{
+"source": "i7", 
+"type": "hasGreatGrandParent", 
+"target": "i30"
+}, 
+{
+"source": "i7", 
+"type": "isSecondCousinOf", 
+"target": "i7"
+}, 
+{
+"source": "i7", 
+"type": "isThirdCousinOf", 
+"target": "i7"
+}, 
+{
+"source": "i7", 
+"type": "hasGreatGrandParent", 
+"target": "i10"
+}, 
+{
+"source": "i7", 
+"type": "isSecondCousinOf", 
+"target": "i8"
+}, 
+{
+"source": "i7", 
+"type": "isThirdCousinOf", 
+"target": "i8"
+}, 
+{
+"source": "i7", 
+"type": "hasGreatGrandParent", 
+"target": "i29"
+}, 
+{
+"source": "i7", 
+"type": "hasGreatGrandParent", 
+"target": "i11"
+}, 
+{
+"source": "i7", 
+"type": "isFirstCousinOf", 
+"target": "i6"
+}, 
+{
+"source": "i7", 
+"type": "isFirstCousinOf", 
+"target": "i8"
+}, 
+{
+"source": "i7", 
+"type": "isThirdCousinOf", 
+"target": "i6"
+}, 
+{
+"source": "i7", 
+"type": "hasGrandParent", 
+"target": "i3"
+}, 
+{
+"source": "i7", 
+"type": "isSecondCousinOf", 
+"target": "i6"
+}, 
+{
+"source": "i7", 
+"type": "hasGrandParent", 
+"target": "i2"
+}, 
+{
+"source": "i7", 
+"type": "isFirstCousinOf", 
+"target": "i7"
+}, 
+{
+"source": "i7", 
+"type": "hasFather", 
+"target": "i1"
+}, 
+{
+"source": "i7", 
+"type": "hasAunt", 
+"target": "i9"
+}, 
+{
+"source": "i7", 
+"type": "hasGreatAunt", 
+"target": "i31"
+}, 
+{
+"source": "i7", 
+"type": "label", 
+"target": "Hans Albert Einstein"
+}, 
+{
+"source": "i34", 
+"type": "isGrandParentOf", 
+"target": "i3"
+}, 
+{
+"source": "i34", 
+"type": "isGreatGrandParentOf", 
+"target": "i9"
+}, 
+{
+"source": "i34", 
+"type": "isGrandParentOf", 
+"target": "i31"
+}, 
+{
+"source": "i34", 
+"type": "isGreatGrandParentOf", 
+"target": "i5"
+}, 
+{
+"source": "i34", 
+"type": "isGreatGrandParentOf", 
+"target": "i1"
+}, 
+{
+"source": "i34", 
+"type": "isFatherOf", 
+"target": "i30"
+}, 
+{
+"source": "i34", 
+"type": "label", 
+"target": "Gedalja Chaim Bernheimer"
+}
+]

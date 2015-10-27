@@ -1,0 +1,5 @@
+-e git://github.com/RDFLib/rdflib.git
+-e git://github.com/RDFLib/OWL-RL.git
+isodate
+pyparsing
+-e git://github.com/madprime/python-gedcom.git
