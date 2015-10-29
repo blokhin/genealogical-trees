@@ -7,7 +7,6 @@
 <title>Semantic Web Genealogical Trees</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
 <style>
 *{font-family:Arial;margin:0;padding:0;}
 .edge{
@@ -284,7 +283,7 @@ function build_graph(source){
         table[p] = i++;
     }
 
-    var width = (counter > 100) ? 2250 : document.body.clientWidth-50;
+    var width = (counter > 75) ? 2250 : document.body.clientWidth-50;
     var height = parseInt(0.8*width);
 
     d3.select("svg").remove();

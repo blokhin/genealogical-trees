@@ -12,6 +12,10 @@ RELS_OF_INTEREST = RELS_TO_DRAW + RELS_TO_INFER
 
 try: workpath = sys.argv[1]
 except IndexError: sys.exit("No path defined!")
+try: recursion_limit = int(sys.argv[2])
+except IndexError: recursion_limit = 0
+
+if recursion_limit > 0: sys.setrecursionlimit(recursion_limit)
 
 g = rdflib.Graph()
 g.parse(workpath, format="turtle")
