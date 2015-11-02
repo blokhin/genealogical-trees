@@ -309,9 +309,9 @@ function build_graph(source){
         .nodes(d3.values(nodes))
         .links(edges)
         .size([width, height])
-        .linkDistance(45)
-        .gravity(0.33)
-        .charge(-1650)
+        .linkDistance(50)
+        .gravity(0.225)
+        .charge(-1800)
         .on("tick", tick)
         .start();
 
@@ -336,15 +336,15 @@ function build_graph(source){
 
     // A copy of the text with a thick white stroke for legibility
     text.append("text")
-        .attr("x", 11)
-        .attr("y", ".31em")
-        //.attr("class", "shadow")
+        .attr("x", -20)
+        .attr("y", -10)
+        .attr("class", "shadow")
         .attr("id", function(d,i) { return "s_"+table[d.name] })
         .text(function(d) { return labels[d.name]; });
 
     text.append("text")
-        .attr("x", 11)
-        .attr("y", ".31em")
+        .attr("x", -20)
+        .attr("y", -10)
         .attr("id", function(d,i) { return "t_"+table[d.name] })
         .text(function(d) { return labels[d.name]; });
 
