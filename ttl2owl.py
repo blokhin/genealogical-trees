@@ -1,15 +1,9 @@
 #!/usr/bin/env python
 '''
 NB / TODO
-The ontologies generated with this script have 2 issues:
-(1)
-missing IRI, e.g. the following may be used
-<owl:Ontology rdf:about="">
-<owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lorem ipsum dolor sit amet, consectetur, adipisci velit, ...</owl:versionInfo>
-</owl:Ontology>
+The ontologies generated with this script have the following issue:
 
-(2)
-non-standard node attribute:
+non-standard rdflib node attribute:
  rdf:nodeID="(\w*)"
 must be removed
 '''
