@@ -12,7 +12,7 @@ if [ ! -d "$TMPDIR" ]; then
     mkdir -p $TMPDIR
 fi
 
-cp data/header2.ttl $TMPDIR/$ONTONAME.ttl
+cp data/header.ttl $TMPDIR/$ONTONAME.ttl
 ./gedcom2ttl.py $1 >> $TMPDIR/$ONTONAME.ttl
 ./infer.py $TMPDIR/$ONTONAME.ttl
 ./ttl2json.py $TMPDIR/$ONTONAME.ttl.inferred > $2

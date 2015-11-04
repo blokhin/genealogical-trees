@@ -15,13 +15,16 @@
     stroke-width:1px;
 }
 .edge.isMotherOf{
-    stroke:#f00;
+    stroke:#f09;
+}
+.edge.isFatherOf{
+    stroke:#09f;
 }
 circle{
     fill:#fff;
-    stroke:#ccc;
+    stroke:#999;
     stroke-width:1px;
-    cursor:pointer;
+    cursor:move;
 }
 text{
     font-size:13px;
@@ -35,7 +38,10 @@ text.shadow{
     stroke-opacity:0.8;
 }
 marker#isMotherOf{
-    fill:#f00;
+    fill:#f09;
+}
+marker#isFatherOf{
+    fill:#09f;
 }
 #mmreasoner_legend{
     position:fixed;z-index:99999;top:0;left:0;padding:10px;width:220px;height:auto;background:#fcfcfc;line-height:1.6em;font-size:0.85em;border-right:1px solid #ddd;border-bottom:1px solid #ddd;
@@ -44,7 +50,7 @@ ul li{
     list-style:none;
 }
 span.leg_circ{
-    display:inline-block;width:10px;height:10px;border:1px solid #ccc;border-radius:6px;margin-right:10px;
+    display:inline-block;width:10px;height:10px;border:1px solid #999;border-radius:6px;margin-right:10px;
 }
 span.i18n{
     display:none;
@@ -133,17 +139,16 @@ transform: rotate(45deg);
 <div id="mmreasoner_legend">
     <div style="width:100%;text-align:center;"><b><span class="i18n i18n_ru">Обозначения</span><span class="i18n i18n_en">Legend</span></b>:</div>
     <ul>
-        <li><span style="font-size:2em;color:#f00;">&rarr;</span> <span class="i18n i18n_ru">Связи мать &mdash; дети</span><span class="i18n i18n_en">Mother-children links</span></li>
+        <li><span style="font-size:2em;color:#f09;">&rarr;</span> <span class="i18n i18n_ru">Связи мать &mdash; дети</span><span class="i18n i18n_en">Mother-children links</span></li>
+        <li><span style="font-size:2em;color:#09f;">&rarr;</span> <span class="i18n i18n_ru">Связи отец &mdash; дети</span><span class="i18n i18n_en">Father-children links</span></li>
         <li><span style="font-size:2em;color:#fc6;">&mdash;</span> <span class="i18n i18n_ru">Брачные связи</span><span class="i18n i18n_en">Marriage links</span></li>
-        <li style="color:#f00;"><span class="leg_circ" style="background:#f00;"></span><span class="i18n i18n_ru">Отец</span><span class="i18n i18n_en">Father</span></li>
-        <li style="color:#c00;"><span class="leg_circ" style="background:#c00;"></span><span class="i18n i18n_ru">Дети по отцу</span><span class="i18n i18n_en">Father's children</span></li>
         <li style="color:#06f;"><span class="leg_circ" style="background:#06f;"></span><span class="i18n i18n_ru">Деды и бабки</span><span class="i18n i18n_en">Grandparent</span></li>
         <li style="color:#6cf;"><span class="leg_circ" style="background:#6cf;"></span><span class="i18n i18n_ru">Прадеды и прабабки</span><span class="i18n i18n_en">Great-grandparent</span></li>
         <li style="color:#396;"><span class="leg_circ" style="background:#396;"></span><span class="i18n i18n_ru">Внуки</span><span class="i18n i18n_en">Grandchildren</span></li>
         <li style="color:#9c6;"><span class="leg_circ" style="background:#9c6;"></span><span class="i18n i18n_ru">Правнуки</span><span class="i18n i18n_en">Great-grandchildren</span></li>
         <li style="color:#90c;"><span class="leg_circ" style="background:#90c;"></span><span class="i18n i18n_ru">Дядьки и тётки</span><span class="i18n i18n_en">Uncles and aunts</span></li>
-        <li style="color:#f60;"><span class="leg_circ" style="background:#f60;"></span><span class="i18n i18n_ru">Племянники и племянницы</span><span class="i18n i18n_en">Nephews and nieces</span></li>
-        <li style="color:#f9f;"><span class="leg_circ" style="background:#f9f;"></span><span class="i18n i18n_ru">Братья, сёстры, кузены</span><span class="i18n i18n_en">Brothers, sisters, cousins</span></li>
+        <li style="color:#f90;"><span class="leg_circ" style="background:#f90;"></span><span class="i18n i18n_ru">Племянники и племянницы</span><span class="i18n i18n_en">Nephews and nieces</span></li>
+        <li style="color:#f00;"><span class="leg_circ" style="background:#f00;"></span><span class="i18n i18n_ru">Братья, сёстры, кузены</span><span class="i18n i18n_en">Brothers, sisters, cousins</span></li>
     </ul>
     <div style="width:100%;text-align:center;"><b><span class="i18n i18n_ru">Язык</span><span class="i18n i18n_en">Language</span></b>: <a href="#en" style="font-size:1.2em;">EN</a> <a href="#ru" style="font-size:1.2em;">RU</a></div>
     <div id="fileapi_container"><button><span class="i18n i18n_ru">Загрузить родословную</span><span class="i18n i18n_en">Upload genealogy</span></button><input type="file" id="fileapi" /></div>
@@ -156,26 +161,23 @@ transform: rotate(45deg);
 </body>
 <script type="text/javascript">
 var rel2col = {
-    'hasFather':'#f00',
-    'isFatherOf':'#c00',
-
     'isGrandParentOf':'#396',
     'hasGrandParent':'#06f',
     'isGreatGrandParentOf':'#9c6',
     'hasGreatGrandParent':'#6cf',
 
-    'isUncleOf':'#f60',
+    'isUncleOf':'#f90',
     'hasUncle':'#90c',
-    'isGreatUncleOf':'#f60',
+    'isGreatUncleOf':'#f90',
     'hasGreatUncle':'#90c',
-    'isAuntOf':'#f60',
+    'isAuntOf':'#f90',
     'hasAunt':'#90c',
-    'isGreatAuntOf':'#f60',
+    'isGreatAuntOf':'#f90',
     'hasGreatAunt':'#90c',
 
-    'isFirstCousinOf':'#f9f',
-    'isSecondCousinOf':'#f9f',
-    'isThirdCousinOf':'#f9f'
+    'isFirstCousinOf':'#f00',
+    'isSecondCousinOf':'#f00',
+    'isThirdCousinOf':'#f00'
 };
 var xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
 xmlhttp.onreadystatechange = function(){
@@ -258,7 +260,7 @@ function build_graph(source){
 
     // Filter edges and compute the distinct nodes from the links
     source.forEach(function(link){
-        if (link.type == 'isWifeOf' || link.type == 'isMotherOf'){
+        if (link.type == 'isWifeOf' || link.type == 'isMotherOf' || link.type == 'isFatherOf'){
             link.source = nodes[link.source] || (nodes[link.source] = {name: link.source});
             link.target = nodes[link.target] || (nodes[link.target] = {name: link.target});
             edges.push(link);
@@ -293,7 +295,7 @@ function build_graph(source){
 
     // Per-type markers
     svg.append("defs").selectAll("marker")
-        .data(["isMotherOf"])
+        .data(["isMotherOf", "isFatherOf"])
         .enter().append("marker")
         .attr("id", function(d){return d})
         .attr("viewBox", "0 0 40 20")
@@ -306,14 +308,18 @@ function build_graph(source){
         .attr("points", "0,0 40,10 0,20 10,10");
 
     var force = d3.layout.force()
-        .nodes(d3.values(nodes))
-        .links(edges)
         .size([width, height])
+        .nodes(d3.values(nodes)).links(edges)
         .linkDistance(50)
-        .gravity(0.225)
-        .charge(-1800)
-        .on("tick", tick)
-        .start();
+        .gravity(0.3)
+        .charge(-2500)
+        .on("tick", tick);
+        //.start();
+
+    var drag = force.drag()
+        .on("dragstart", function(d){
+            d3.select(this).classed("fixed", d.fixed = true);
+        });
 
     var path = svg.append("g").selectAll("path")
         .data(force.links())
@@ -321,14 +327,12 @@ function build_graph(source){
         .attr("class", function(d) { return "edge " + d.type; })
         .attr("marker-end", function(d) { return "url(#" + d.type + ")"; });
 
-    //var link = svg.selectAll(".edge");
-
     var circle = svg.append("g").selectAll("circle")
         .data(force.nodes())
         .enter().append("circle")
         .attr("r", 5)
         .attr("id", function(d,i) { return "c_"+table[d.name] })
-        .call(force.drag);
+        .call(drag);
 
     var text = svg.append("g").selectAll("g")
         .data(force.nodes())
@@ -384,19 +388,11 @@ function build_graph(source){
     function dehandle(x){
         d3.selectAll('text').style("fill", "#000");
         d3.selectAll('circle').style("fill", "#fff");
-        /*Array.prototype.forEach.call(l_a, function(i){ i.style.display = "none" });
-        l_3.style.display = "block";*/
     }
 
-    // Speed up simulation convergence
-    var s=0;
-    while(force.alpha() > 0.01) {
-        force.tick();
-        if(s++ > 500) break;
-    }
-
-    /*Array.prototype.forEach.call(l_a, function(i){ i.style.display = "none" });
-    l_3.style.display = "block";*/
-};
+    force.start();
+    for (var i = 5000; i > 0; --i) force.tick();
+    force.stop();
+}
 </script>
 </html>
