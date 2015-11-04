@@ -7,7 +7,7 @@ import rdflib
 
 
 RELS_TO_DRAW = ['isWifeOf', 'isMotherOf', 'isFatherOf']
-RELS_TO_INFER = ['hasGrandParent', 'isGrandParentOf', 'isGreatGrandParentOf', 'hasGreatGrandParent', 'isUncleOf', 'hasUncle', 'isGreatUncleOf', 'hasGreatUncle', 'isAuntOf', 'hasAunt', 'isGreatAuntOf', 'hasGreatAunt', 'isFirstCousinOf', 'isSecondCousinOf', 'isThirdCousinOf']
+RELS_TO_INFER = ['hasGrandParent', 'isGrandParentOf', 'hasGreatGrandParent', 'isGreatGrandParentOf', 'isUncleOf', 'hasUncle', 'isGreatUncleOf', 'hasGreatUncle', 'isAuntOf', 'hasAunt', 'isGreatAuntOf', 'hasGreatAunt', 'isFirstCousinOf', 'isSecondCousinOf', 'isThirdCousinOf']
 RELS_OF_INTEREST = RELS_TO_DRAW + RELS_TO_INFER
 
 try: workpath = sys.argv[1]
