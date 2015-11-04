@@ -5,6 +5,8 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<http://www.example.com/genealogy.owl#> a owl:Ontology .
+
 fhkb:DomainEntity a owl:Class .
 
 fhkb:Partnership a owl:Class ;
@@ -38,25 +40,23 @@ fhkb:Man a owl:Class ;
 fhkb:Woman a owl:Class .
 
 fhkb:Person a owl:Class ;
-    rdfs:subClassOf [ a owl:Class ;
-            owl:intersectionOf ( fhkb:DomainEntity [ a owl:Restriction ;
-                        owl:onProperty fhkb:hasFather ;
-                        owl:someValuesFrom fhkb:Man ] [ a owl:Restriction ;
-                        owl:onProperty fhkb:hasMother ;
-                        owl:someValuesFrom fhkb:Woman ] [ a owl:Restriction ;
-                        owl:onProperty fhkb:hasSex ;
-                        owl:someValuesFrom fhkb:Sex ] ) ],
-        [ a owl:Class ;
-            owl:intersectionOf ( fhkb:DomainEntity [ a owl:Restriction ;
-                        owl:onProperty fhkb:hasFather ;
-                        owl:someValuesFrom fhkb:Man ] [ a owl:Restriction ;
-                        owl:onProperty fhkb:hasMother ;
-                        owl:someValuesFrom fhkb:Woman ] [ a owl:Restriction ;
-                        owl:onProperty fhkb:hasSex ;
-                        owl:someValuesFrom fhkb:Sex ] [ a owl:Restriction ;
-                        owl:maxQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
-                        owl:onClass fhkb:Person ;
-                        owl:onProperty fhkb:hasParent ] ) ] .
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty fhkb:hasMother ;
+            owl:someValuesFrom fhkb:Woman ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass fhkb:Person ;
+            owl:onProperty fhkb:hasParent ],
+        [ a owl:Restriction ;
+            owl:onProperty fhkb:hasFather ;
+            owl:someValuesFrom fhkb:Man ],
+        [ a owl:Restriction ;
+            owl:onProperty fhkb:hasSex ;
+            owl:someValuesFrom fhkb:Sex ],
+        fhkb:DomainEntity ;
+    owl:disjointWith fhkb:Sex ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( fhkb:Man fhkb:Woman ) ] .
 
 fhkb:Male a owl:Class ;
     rdfs:subClassOf fhkb:Sex .
@@ -356,26 +356,6 @@ fhkb:Wife a owl:Class ;
                                 owl:intersectionOf ( fhkb:Marriage [ a owl:Restriction ;
                                             owl:onProperty fhkb:hasMalePartner ;
                                             owl:someValuesFrom fhkb:Man ] ) ] ] ) ] .
-
-fhkb:childlessMan a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Man [ a owl:Class ;
-                        owl:complementOf [ a owl:Class ;
-                                owl:unionOf ( [ a owl:Restriction ;
-                                            owl:onProperty fhkb:hasChild ;
-                                            owl:someValuesFrom fhkb:Person ] [ a owl:Restriction ;
-                                            owl:onProperty fhkb:isFatherOf ;
-                                            owl:someValuesFrom fhkb:Person ] ) ] ] ) ] .
-
-fhkb:childlessPerson a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Person [ a owl:Class ;
-                        owl:complementOf [ a owl:Class ;
-                                owl:unionOf ( [ a owl:Restriction ;
-                                            owl:onProperty fhkb:hasChild ;
-                                            owl:someValuesFrom fhkb:Person ] [ a owl:Restriction ;
-                                            owl:onProperty fhkb:isParentOf ;
-                                            owl:someValuesFrom fhkb:Person ] ) ] ] ) ] .
 
 fhkb:hasPartner a owl:ObjectProperty .
 
