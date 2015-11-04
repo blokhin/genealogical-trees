@@ -9,35 +9,17 @@
 
 fhkb:DomainEntity a owl:Class .
 
-fhkb:Partnership a owl:Class ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
-            owl:onClass fhkb:Person ;
-            owl:onProperty fhkb:hasPartner ],
-        fhkb:DomainEntity .
-
-fhkb:Marriage a owl:Class ;
-    rdfs:subClassOf [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Partnership [ a owl:Restriction ;
-                        owl:onClass fhkb:Person ;
-                        owl:onProperty fhkb:hasFemalePartner ;
-                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
-                        owl:onClass fhkb:Person ;
-                        owl:onProperty fhkb:hasMalePartner ;
-                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
-
-fhkb:Sex a owl:Class ;
-    rdfs:subClassOf fhkb:DomainEntity ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( fhkb:Female fhkb:Male ) ] .
-
 fhkb:Man a owl:Class ;
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
                         owl:onProperty fhkb:hasSex ;
                         owl:someValuesFrom fhkb:Male ] ) ] .
 
-fhkb:Woman a owl:Class .
+fhkb:Woman a owl:Class ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
+                        owl:onProperty fhkb:hasSex ;
+                        owl:someValuesFrom fhkb:Female ] ) ] .
 
 fhkb:Person a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -58,6 +40,9 @@ fhkb:Person a owl:Class ;
     owl:equivalentClass [ a owl:Class ;
             owl:unionOf ( fhkb:Man fhkb:Woman ) ] .
 
+fhkb:Marriage a owl:Class ;
+    rdfs:subClassOf fhkb:DomainEntity .
+
 fhkb:Male a owl:Class ;
     rdfs:subClassOf fhkb:Sex .
 
@@ -65,493 +50,99 @@ fhkb:Female a owl:Class ;
     rdfs:subClassOf fhkb:Sex ;
     owl:disjointWith fhkb:Male .
 
+fhkb:Sex a owl:Class ;
+    rdfs:subClassOf fhkb:DomainEntity ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( fhkb:Female fhkb:Male ) ] .
+
 fhkb:Ancestor a owl:Class ;
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
                         owl:onProperty fhkb:isAncestorOf ;
                         owl:someValuesFrom fhkb:Person ] ) ] .
 
-fhkb:MaleAncestor a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Man [ a owl:Restriction ;
-                        owl:onProperty fhkb:isAncestorOf ;
-                        owl:someValuesFrom fhkb:Person ] ) ] .
+fhkb:hasFemalePartner a owl:ObjectProperty ;
+    rdfs:range fhkb:Woman ;
+    rdfs:domain fhkb:Marriage ;
+    rdfs:subPropertyOf fhkb:hasPartner ;
+    owl:inverseOf fhkb:isFemalePartnerIn .
 
-fhkb:MaleDescendant a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Man [ a owl:Restriction ;
-                        owl:onProperty fhkb:hasAncestor ;
-                        owl:someValuesFrom fhkb:Person ] ) ] .
-
-fhkb:FemaleAncestor a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Woman [ a owl:Restriction ;
-                        owl:onProperty fhkb:isAncestorOf ;
-                        owl:someValuesFrom fhkb:Person ] ) ] .
-
-fhkb:FemaleDescendant a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Woman [ a owl:Restriction ;
-                        owl:onProperty fhkb:hasAncestor ;
-                        owl:someValuesFrom fhkb:Person ] ) ] .
-
-fhkb:Cousin a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                        owl:onProperty fhkb:hasAncestor ;
-                        owl:someValuesFrom [ a owl:Class ;
-                                owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                                            owl:onProperty fhkb:isSiblingOf ;
-                                            owl:someValuesFrom [ a owl:Class ;
-                                                    owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                                                                owl:onProperty fhkb:isParentOf ;
-                                                                owl:someValuesFrom fhkb:Person ] ) ] ] ) ] ] ) ] .
-
-fhkb:FirstCousin a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                        owl:onProperty fhkb:hasParent ;
-                        owl:someValuesFrom [ a owl:Class ;
-                                owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                                            owl:onProperty fhkb:isSiblingOf ;
-                                            owl:someValuesFrom [ a owl:Class ;
-                                                    owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                                                                owl:onProperty fhkb:isParentOf ;
-                                                                owl:someValuesFrom fhkb:Person ] ) ] ] ) ] ] ) ] .
-
-fhkb:SecondCousin a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                        owl:onProperty fhkb:hasParent ;
-                        owl:someValuesFrom [ a owl:Class ;
-                                owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                                            owl:onProperty fhkb:hasParent ;
-                                            owl:someValuesFrom [ a owl:Class ;
-                                                    owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                                                                owl:onProperty fhkb:isSiblingOf ;
-                                                                owl:someValuesFrom [ a owl:Class ;
-                                                                        owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                                                                                    owl:onProperty fhkb:isParentOf ;
-                                                                                    owl:someValuesFrom [ a owl:Class ;
-                                                                                            owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                                                                                                        owl:onProperty fhkb:isParentOf ;
-                                                                                                        owl:someValuesFrom fhkb:Person ] ) ] ] ) ] ] ) ] ] ) ] ] ) ] .
-
-fhkb:ThirdCousin a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                        owl:onProperty fhkb:hasParent ;
-                        owl:someValuesFrom [ a owl:Restriction ;
-                                owl:onProperty fhkb:hasParent ;
-                                owl:someValuesFrom [ a owl:Class ;
-                                        owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                                                    owl:onProperty fhkb:hasParent ;
-                                                    owl:someValuesFrom [ a owl:Class ;
-                                                            owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                                                                        owl:onProperty fhkb:isSiblingOf ;
-                                                                        owl:someValuesFrom [ a owl:Class ;
-                                                                                owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                                                                                            owl:onProperty fhkb:isParentOf ;
-                                                                                            owl:someValuesFrom [ a owl:Class ;
-                                                                                                    owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                                                                                                                owl:onProperty fhkb:isParentOf ;
-                                                                                                                owl:someValuesFrom [ a owl:Class ;
-                                                                                                                        owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                                                                                                                                    owl:onProperty fhkb:isParentOf ;
-                                                                                                                                    owl:someValuesFrom fhkb:Person ] ) ] ] ) ] ] ) ] ] ) ] ] ) ] ] ] ) ] .
-fhkb:Aunt a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Woman [ a owl:Restriction ;
-                        owl:onProperty fhkb:isSiblingOf ;
-                        owl:someValuesFrom [ a owl:Class ;
-                                owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                                            owl:onProperty fhkb:isParentOf ;
-                                            owl:someValuesFrom fhkb:Person ] ) ] ] ) ] .
-
-fhkb:BloodRelation a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                        owl:onProperty fhkb:isBloodRelationOf ;
-                        owl:someValuesFrom fhkb:Person ] ) ] .
-
-fhkb:Brother a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Man [ a owl:Restriction ;
-                        owl:onProperty fhkb:isSiblingOf ;
-                        owl:someValuesFrom fhkb:Person ] ) ] .
-
-fhkb:Child a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                        owl:onProperty fhkb:hasParent ;
-                        owl:someValuesFrom fhkb:Person ] ) ] .
-
-fhkb:Daughter a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Woman [ a owl:Restriction ;
-                        owl:onProperty fhkb:hasParent ;
-                        owl:someValuesFrom fhkb:Person ] ) ] .
-
-fhkb:Descendant a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                        owl:onProperty fhkb:hasAncestor ;
-                        owl:someValuesFrom fhkb:Person ] ) ] .
-
-fhkb:Father a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Man [ a owl:Restriction ;
-                        owl:onProperty fhkb:isFatherOf ;
-                        owl:someValuesFrom fhkb:Person ] ) ] .
-
-fhkb:Grandfather a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Man [ a owl:Restriction ;
-                        owl:onProperty fhkb:isFatherOf ;
-                        owl:someValuesFrom [ a owl:Class ;
-                                owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                                            owl:onProperty fhkb:isParentOf ;
-                                            owl:someValuesFrom fhkb:Person ] ) ] ] ) ] .
-
-fhkb:Grandmother a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Woman [ a owl:Restriction ;
-                        owl:onProperty fhkb:isMotherOf ;
-                        owl:someValuesFrom [ a owl:Class ;
-                                owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                                            owl:onProperty fhkb:isParentOf ;
-                                            owl:someValuesFrom fhkb:Person ] ) ] ] ) ] .
-
-
-fhkb:Grandparent a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                        owl:onProperty fhkb:isParentOf ;
-                        owl:someValuesFrom [ a owl:Class ;
-                                owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                                            owl:onProperty fhkb:isParentOf ;
-                                            owl:someValuesFrom fhkb:Person ] ) ] ] ) ] .
-
-fhkb:GreatAunt a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                        owl:onProperty fhkb:isAuntOf ;
-                        owl:someValuesFrom [ a owl:Class ;
-                                owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                                            owl:onProperty fhkb:isParentOf ;
-                                            owl:someValuesFrom fhkb:Person ] ) ] ] ) ] .
-
-
-fhkb:GreatGrandfather a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Man [ a owl:Restriction ;
-                        owl:onProperty fhkb:isFatherOf ;
-                        owl:someValuesFrom [ a owl:Class ;
-                                owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                                            owl:onProperty fhkb:isParentOf ;
-                                            owl:someValuesFrom [ a owl:Class ;
-                                                    owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                                                                owl:onProperty fhkb:isParentOf ;
-                                                                owl:someValuesFrom fhkb:Person ] ) ] ] ) ] ] ) ] .
-
-fhkb:GreatGrandparent a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                        owl:onProperty fhkb:isParentOf ;
-                        owl:someValuesFrom [ a owl:Class ;
-                                owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                                            owl:onProperty fhkb:isParentOf ;
-                                            owl:someValuesFrom [ a owl:Class ;
-                                                    owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                                                                owl:onProperty fhkb:isParentOf ;
-                                                                owl:someValuesFrom fhkb:Person ] ) ] ] ) ] ] ) ] .
-
-
-fhkb:GreatGreatGrandparent a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                        owl:onProperty fhkb:isParentOf ;
-                        owl:someValuesFrom [ a owl:Class ;
-                                owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                                            owl:onProperty fhkb:isParentOf ;
-                                            owl:someValuesFrom [ a owl:Class ;
-                                                    owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                                                                owl:onProperty fhkb:isParentOf ;
-                                                                owl:someValuesFrom [ a owl:Class ;
-                                                                        owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                                                                                    owl:onProperty fhkb:isParentOf ;
-                                                                                    owl:someValuesFrom fhkb:Person ] ) ] ] ) ] ] ) ] ] ) ] .
-
-fhkb:GreatUncle a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Man [ a owl:Restriction ;
-                        owl:onProperty fhkb:isBrotherOf ;
-                        owl:someValuesFrom [ a owl:Class ;
-                                owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                                            owl:onProperty fhkb:isParentOf ;
-                                            owl:someValuesFrom [ a owl:Class ;
-                                                    owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                                                                owl:onProperty fhkb:isParentOf ;
-                                                                owl:someValuesFrom fhkb:Person ] ) ] ] ) ] ] ) ] .
-
-fhkb:Husband a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Man [ a owl:Restriction ;
-                        owl:onProperty fhkb:isMalePartnerIn ;
-                        owl:someValuesFrom [ a owl:Class ;
-                                owl:intersectionOf ( fhkb:Marriage [ a owl:Restriction ;
-                                            owl:onProperty fhkb:hasFemalePartner ;
-                                            owl:someValuesFrom fhkb:Woman ] ) ] ] ) ] .
-
-fhkb:Mother a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Woman [ a owl:Restriction ;
-                        owl:onProperty fhkb:isMotherOf ;
-                        owl:someValuesFrom fhkb:Person ] ) ] .
-
-fhkb:Parent a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                        owl:onProperty fhkb:isParentOf ;
-                        owl:someValuesFrom fhkb:Person ] ) ] .
-
-fhkb:Sibling a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                        owl:onProperty fhkb:isSiblingOf ;
-                        owl:someValuesFrom fhkb:Person ] ) ] .
-
-fhkb:Sister a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Woman [ a owl:Restriction ;
-                        owl:onProperty fhkb:isSiblingOf ;
-                        owl:someValuesFrom fhkb:Person ] ) ] .
-
-fhkb:Son a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Man [ a owl:Restriction ;
-                        owl:onProperty fhkb:hasParent ;
-                        owl:someValuesFrom fhkb:Person ] ) ] .
-
-fhkb:Spouse a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                        owl:onProperty fhkb:isSpouseOf ;
-                        owl:someValuesFrom fhkb:Person ] ) ] .
-
-fhkb:Uncle a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Man [ a owl:Restriction ;
-                        owl:onProperty fhkb:isSiblingOf ;
-                        owl:someValuesFrom [ a owl:Class ;
-                                owl:intersectionOf ( fhkb:Person [ a owl:Restriction ;
-                                            owl:onProperty fhkb:isParentOf ;
-                                            owl:someValuesFrom fhkb:Person ] ) ] ] ) ] .
-
-fhkb:Wife a owl:Class ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( fhkb:Woman [ a owl:Restriction ;
-                        owl:onProperty fhkb:isFemalePartnerIn ;
-                        owl:someValuesFrom [ a owl:Class ;
-                                owl:intersectionOf ( fhkb:Marriage [ a owl:Restriction ;
-                                            owl:onProperty fhkb:hasMalePartner ;
-                                            owl:someValuesFrom fhkb:Man ] ) ] ] ) ] .
-
-fhkb:hasPartner a owl:ObjectProperty .
-
-fhkb:hasFemalePartner a owl:ObjectProperty .
-
-fhkb:hasMalePartner a owl:ObjectProperty .
-
-fhkb:isFemalePartnerIn a owl:ObjectProperty ;
-    rdfs:domain fhkb:Woman ;
-    rdfs:range fhkb:Marriage ;
-    owl:inverseOf fhkb:hasFemalePartner .
-
-fhkb:isMalePartnerIn a owl:ObjectProperty ;
-    rdfs:domain fhkb:Man ;
-    rdfs:range fhkb:Marriage ;
-    owl:inverseOf fhkb:hasMalePartner .
-
-fhkb:isChildOf a owl:ObjectProperty .
-
-fhkb:isWifeOf a owl:ObjectProperty .
-
-fhkb:isHusbandOf a owl:ObjectProperty .
-
-fhkb:isParentOf a owl:ObjectProperty .
-
-fhkb:isMotherOf a owl:ObjectProperty .
+fhkb:hasMalePartner a owl:ObjectProperty ;
+    rdfs:range fhkb:Man ;
+    rdfs:domain fhkb:Marriage ;
+    rdfs:subPropertyOf fhkb:hasPartner ;
+    owl:inverseOf fhkb:isMalePartnerIn .
 
 fhkb:isFatherOf a owl:ObjectProperty .
 
-fhkb:isGrandParentOf a owl:ObjectProperty .
-
-fhkb:isGrandfatherOf a owl:ObjectProperty .
-
-fhkb:isGrandmotherOf a owl:ObjectProperty .
-
-fhkb:isGreatGrandParentOf a owl:ObjectProperty .
-
-fhkb:isGreatGrandfatherOf a owl:ObjectProperty .
-
-fhkb:isGreatGrandmotherOf a owl:ObjectProperty .
-
-fhkb:isAncestorOf a owl:ObjectProperty .
-
-fhkb:hasAncestor a owl:ObjectProperty,
-        owl:TransitiveProperty ;
-    rdfs:domain fhkb:Person ;
-    rdfs:range fhkb:Person ;
-    rdfs:subPropertyOf fhkb:isBloodRelationOf ;
-    owl:inverseOf fhkb:isAncestorOf .
-
-fhkb:hasSex a owl:FunctionalProperty,
-        owl:ObjectProperty ;
-    rdfs:domain fhkb:Person ;
-    rdfs:range fhkb:Sex .
-
-fhkb:hasSister a owl:ObjectProperty .
-
-fhkb:hasBrother a owl:ObjectProperty ;
-    rdfs:domain fhkb:Person ;
-    rdfs:range fhkb:Man .
-
-fhkb:hasParent a owl:ObjectProperty ;
-    rdfs:domain fhkb:Person ;
-    rdfs:range fhkb:Person ;
-    rdfs:subPropertyOf fhkb:hasAncestor ;
-    owl:inverseOf fhkb:isParentOf .
-
-fhkb:hasGreatAunt a owl:ObjectProperty ;
-    rdfs:domain fhkb:Person ;
-    rdfs:range fhkb:Woman ;
-    rdfs:subPropertyOf fhkb:isBloodRelationOf ;
-    owl:inverseOf fhkb:isGreatAuntOf .
-
-fhkb:hasGreatGrandParent a owl:ObjectProperty ;
-    rdfs:domain fhkb:Person ;
-    rdfs:range fhkb:Person ;
-    rdfs:subPropertyOf fhkb:hasAncestor ;
-    owl:inverseOf fhkb:isGreatGrandParentOf .
-
-fhkb:hasGreatGrandfather a owl:ObjectProperty ;
-    rdfs:domain fhkb:Person ;
-    rdfs:range fhkb:Man ;
-    rdfs:subPropertyOf fhkb:hasGreatGrandParent ;
-    owl:inverseOf fhkb:isGreatGrandfatherOf ;
-    owl:propertyChainAxiom ( fhkb:hasParent fhkb:hasGrandfather ) .
-
-fhkb:hasGreatGrandmother a owl:ObjectProperty ;
-    rdfs:domain fhkb:Person ;
-    rdfs:range fhkb:Woman ;
-    rdfs:subPropertyOf fhkb:hasGreatGrandParent ;
-    owl:inverseOf fhkb:isGreatGrandmotherOf ;
-    owl:propertyChainAxiom ( fhkb:hasParent fhkb:hasGrandmother ) .
-
-fhkb:hasGreatUncle a owl:ObjectProperty ;
-    rdfs:domain fhkb:Person ;
-    rdfs:range fhkb:Man ;
-    rdfs:subPropertyOf fhkb:isBloodRelationOf ;
-    owl:inverseOf fhkb:isGreatUncleOf .
-
-fhkb:isGreatUncleOf a owl:ObjectProperty ;
-    rdfs:domain fhkb:Man ;
-    rdfs:range fhkb:Person ;
-    owl:propertyChainAxiom ( fhkb:isBrotherOf fhkb:isGrandParentOf ) .
-
-fhkb:hasHusband a owl:ObjectProperty ;
-    rdfs:domain fhkb:Woman ;
-    rdfs:range fhkb:Man ;
-    rdfs:subPropertyOf fhkb:isSpouseOf ;
-    owl:inverseOf fhkb:isHusbandOf ;
-    owl:propertyChainAxiom ( fhkb:isFemalePartnerIn fhkb:hasMalePartner ) .
-
-fhkb:isDaughterOf a owl:ObjectProperty ;
-    rdfs:subPropertyOf fhkb:hasParent .
-
-fhkb:hasDaughter a owl:ObjectProperty ;
-    rdfs:domain fhkb:Person ;
-    rdfs:range fhkb:Woman ;
-    rdfs:subPropertyOf fhkb:hasChild ;
-    owl:inverseOf fhkb:isDaughterOf .
-
-fhkb:hasAunt a owl:ObjectProperty ;
-    rdfs:domain fhkb:Person ;
-    rdfs:range fhkb:Woman ;
-    rdfs:subPropertyOf fhkb:isBloodRelationOf ;
-    owl:inverseOf fhkb:isAuntOf .
-
-fhkb:isAuntOf a owl:ObjectProperty ;
-    rdfs:domain fhkb:Woman ;
-    rdfs:range fhkb:Person ;
-    rdfs:subPropertyOf fhkb:isBloodRelationOf ;
-    owl:propertyChainAxiom ( fhkb:isSisterOf fhkb:isParentOf ) .
-
-fhkb:hasSon a owl:ObjectProperty ;
-    rdfs:domain fhkb:Person ;
-    rdfs:range fhkb:Man ;
-    rdfs:subPropertyOf fhkb:hasChild ;
-    owl:inverseOf fhkb:isSonOf .
-
-fhkb:isSonOf a owl:ObjectProperty ;
-    rdfs:subPropertyOf fhkb:hasParent .
-
-fhkb:hasUncle a owl:ObjectProperty ;
-    rdfs:domain fhkb:Person ;
-    rdfs:range fhkb:Man ;
-    rdfs:subPropertyOf fhkb:isBloodRelationOf ;
-    owl:inverseOf fhkb:isUncleOf .
-
-fhkb:hasWife a owl:ObjectProperty ;
-    rdfs:domain fhkb:Man ;
-    rdfs:range fhkb:Woman ;
-    rdfs:subPropertyOf fhkb:isSpouseOf ;
-    owl:inverseOf fhkb:isWifeOf ;
-    owl:propertyChainAxiom ( fhkb:isMalePartnerIn fhkb:hasFemalePartner ) .
-
-fhkb:isUncleOf a owl:ObjectProperty ;
-    rdfs:domain fhkb:Man ;
-    rdfs:range fhkb:Person ;
-    rdfs:subPropertyOf fhkb:isBloodRelationOf ;
-    owl:propertyChainAxiom ( fhkb:isBrotherOf fhkb:isParentOf ) .
-
-fhkb:isRelationOf a owl:ObjectProperty,
-        owl:SymmetricProperty,
-        owl:TransitiveProperty ;
-    rdfs:domain fhkb:Person ;
-    rdfs:range fhkb:Person ;
-    rdfs:subPropertyOf owl:topObjectProperty .
-
-fhkb:isDirectSiblingOf a owl:ObjectProperty,
-        owl:SymmetricProperty ;
-    rdfs:domain fhkb:Person ;
-    rdfs:range fhkb:Person ;
-    rdfs:subPropertyOf fhkb:isSiblingOf .
-
-fhkb:isNephewOf a owl:ObjectProperty ;
-    rdfs:domain fhkb:Man ;
-    rdfs:range fhkb:Person ;
-    rdfs:subPropertyOf fhkb:isBloodRelationOf ;
-    owl:propertyChainAxiom ( fhkb:isSonOf fhkb:isSiblingOf ) .
-
-fhkb:isNieceOf a owl:ObjectProperty ;
-    rdfs:domain fhkb:Woman ;
-    rdfs:range fhkb:Person ;
-    rdfs:subPropertyOf fhkb:isBloodRelationOf ;
-    owl:propertyChainAxiom ( fhkb:isDaughterOf fhkb:isSiblingOf ) .
-
-fhkb:isSisterOf a owl:ObjectProperty ;
-    rdfs:domain fhkb:Woman ;
-    rdfs:range fhkb:Person ;
-    rdfs:subPropertyOf fhkb:isDirectSiblingOf ;
-    owl:inverseOf fhkb:hasSister .
+fhkb:isMotherOf a owl:ObjectProperty .
 
 fhkb:isBrotherOf a owl:ObjectProperty ;
     rdfs:domain fhkb:Man ;
     rdfs:range fhkb:Person ;
-    rdfs:subPropertyOf fhkb:isDirectSiblingOf ;
-    owl:inverseOf fhkb:hasBrother .
+    rdfs:subPropertyOf fhkb:isSiblingOf .
+
+fhkb:isSisterOf a owl:ObjectProperty ;
+    rdfs:domain fhkb:Woman ;
+    rdfs:range fhkb:Person ;
+    rdfs:subPropertyOf fhkb:isSiblingOf .
+
+fhkb:hasHusband a owl:ObjectProperty ;
+    rdfs:range fhkb:Man ;
+    rdfs:subPropertyOf fhkb:hasSpouse ;
+    owl:propertyChainAxiom ( fhkb:isFemalePartnerIn fhkb:hasMalePartner ) .
+
+fhkb:hasWife a owl:ObjectProperty ;
+    rdfs:range fhkb:Woman ;
+    rdfs:subPropertyOf fhkb:hasSpouse ;
+    owl:propertyChainAxiom ( fhkb:isMalePartnerIn fhkb:hasFemalePartner ) .
+
+fhkb:isHusbandOf a owl:ObjectProperty ;
+    owl:inverseOf fhkb:hasHusband .
+
+fhkb:isWifeOf a owl:ObjectProperty ;
+    owl:inverseOf fhkb:hasWife .
+
+fhkb:isPartnerIn a owl:ObjectProperty .
+
+fhkb:hasPartner a owl:ObjectProperty ;
+    rdfs:domain fhkb:Marriage ;
+    rdfs:range fhkb:Person ;
+    owl:inverseOf fhkb:isPartnerIn .
+
+fhkb:isSpouseOf a owl:ObjectProperty .
+
+fhkb:hasSpouse a owl:ObjectProperty ;
+    owl:inverseOf fhkb:isSpouseOf .
+
+fhkb:isFemalePartnerIn a owl:ObjectProperty .
+
+fhkb:isMalePartnerIn a owl:ObjectProperty .
+
+fhkb:isSiblingOf a owl:ObjectProperty,
+        owl:SymmetricProperty,
+        owl:TransitiveProperty ;
+    rdfs:subPropertyOf fhkb:isBloodrelationOf ;
+    owl:propertyChainAxiom ( fhkb:hasParent fhkb:isParentOf ) .
+
+fhkb:hasChild a owl:ObjectProperty .
+
+fhkb:isChildOf a owl:ObjectProperty ;
+    owl:inverseOf fhkb:hasChild .
+
+fhkb:hasDaughter a owl:ObjectProperty ;
+    rdfs:subPropertyOf fhkb:hasChild .
+
+fhkb:hasSon a owl:ObjectProperty ;
+    rdfs:subPropertyOf fhkb:hasChild .
+
+fhkb:isDaughterOf a owl:ObjectProperty ;
+    rdfs:subPropertyOf fhkb:isChildOf ;
+    owl:inverseOf fhkb:hasDaughter .
+
+fhkb:isSonOf a owl:ObjectProperty ;
+    rdfs:subPropertyOf fhkb:isChildOf ;
+    owl:inverseOf fhkb:hasSon .
 
 fhkb:hasFather a owl:FunctionalProperty,
         owl:ObjectProperty ;
@@ -567,76 +158,131 @@ fhkb:hasMother a owl:FunctionalProperty,
     rdfs:subPropertyOf fhkb:hasParent ;
     owl:inverseOf fhkb:isMotherOf .
 
-fhkb:hasGrandParent a owl:ObjectProperty ;
+fhkb:hasParent a owl:ObjectProperty ;
     rdfs:domain fhkb:Person ;
     rdfs:range fhkb:Person ;
     rdfs:subPropertyOf fhkb:hasAncestor ;
-    owl:inverseOf fhkb:isGrandParentOf .
+    owl:equivalentProperty fhkb:isChildOf ;
+    owl:inverseOf fhkb:isParentOf .
 
-fhkb:hasGrandfather a owl:ObjectProperty ;
-    rdfs:domain fhkb:Person ;
-    rdfs:range fhkb:Man ;
-    rdfs:subPropertyOf fhkb:hasGrandParent ;
-    owl:inverseOf fhkb:isGrandfatherOf ;
-    owl:propertyChainAxiom ( fhkb:hasParent fhkb:hasFather ) .
+fhkb:isParentOf a owl:ObjectProperty .
 
-fhkb:hasGrandmother a owl:ObjectProperty ;
+fhkb:hasSex a owl:FunctionalProperty,
+        owl:ObjectProperty ;
     rdfs:domain fhkb:Person ;
-    rdfs:range fhkb:Woman ;
-    rdfs:subPropertyOf fhkb:hasGrandParent ;
-    owl:inverseOf fhkb:isGrandmotherOf ;
-    owl:propertyChainAxiom ( fhkb:hasParent fhkb:hasMother ) .
+    rdfs:range fhkb:Sex .
+
+fhkb:isAncestorOf a owl:ObjectProperty ;
+    owl:inverseOf fhkb:hasAncestor .
+
+fhkb:hasRelation a owl:ObjectProperty,
+        owl:SymmetricProperty ;
+    rdfs:domain fhkb:Person ;
+    rdfs:range fhkb:Person .
+
+fhkb:isBloodrelationOf a owl:ObjectProperty ;
+    rdfs:subPropertyOf fhkb:hasRelation .
+
+fhkb:hasAncestor a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:subPropertyOf fhkb:hasRelation .
+
+fhkb:hasUncle a owl:ObjectProperty ;
+    owl:inverseOf fhkb:isUncleOf .
+
+fhkb:isUncleOf a owl:ObjectProperty ;
+    rdfs:domain fhkb:Man ;
+    rdfs:range fhkb:Person ;
+    owl:propertyChainAxiom ( fhkb:isBrotherOf fhkb:isParentOf ) .
+
+fhkb:hasGreatUncle a owl:ObjectProperty ;
+    owl:inverseOf fhkb:isGreatUncleOf .
+
+fhkb:isGreatUncleOf a owl:ObjectProperty ;
+    rdfs:domain fhkb:Man ;
+    rdfs:range fhkb:Person ;
+    owl:propertyChainAxiom ( fhkb:isBrotherOf fhkb:isGrandParentOf ) .
+
+fhkb:hasAunt a owl:ObjectProperty ;
+    owl:inverseOf fhkb:isAuntOf .
+
+fhkb:isAuntOf a owl:ObjectProperty ;
+    rdfs:domain fhkb:Woman ;
+    rdfs:range fhkb:Person ;
+    owl:propertyChainAxiom ( fhkb:isSisterOf fhkb:isParentOf ) .
+
+fhkb:hasGreatAunt a owl:ObjectProperty ;
+    owl:inverseOf fhkb:isGreatAuntOf .
 
 fhkb:isGreatAuntOf a owl:ObjectProperty ;
     rdfs:domain fhkb:Woman ;
     rdfs:range fhkb:Person ;
     owl:propertyChainAxiom ( fhkb:isSisterOf fhkb:isGrandParentOf ) .
 
-fhkb:isSiblingOf a owl:ObjectProperty,
-        owl:SymmetricProperty,
-        owl:TransitiveProperty ;
-    rdfs:domain fhkb:Person ;
-    rdfs:range fhkb:Person ;
-    rdfs:subPropertyOf fhkb:isBloodRelationOf .
-
-fhkb:isBloodRelationOf a owl:ObjectProperty,
-        owl:SymmetricProperty ;
-    rdfs:domain fhkb:Person ;
-    rdfs:range fhkb:Person ;
-    rdfs:subPropertyOf fhkb:isRelationOf ;
-    owl:propertyChainAxiom ( fhkb:hasAncestor fhkb:isAncestorOf ) .
-
-fhkb:isSpouseOf a owl:ObjectProperty,
-        owl:SymmetricProperty ;
-    rdfs:domain fhkb:Person ;
-    rdfs:range fhkb:Person .
-
-fhkb:hasChild a owl:ObjectProperty ;
-    rdfs:domain fhkb:Person ;
-    rdfs:range fhkb:Person ;
-    owl:equivalentProperty fhkb:isParentOf ;
-    owl:inverseOf fhkb:isChildOf .
+fhkb:isCousinOf a owl:ObjectProperty ;
+    rdfs:subPropertyOf fhkb:isBloodrelationOf .
 
 fhkb:isFirstCousinOf a owl:ObjectProperty,
         owl:SymmetricProperty ;
-    rdfs:domain fhkb:Person ;
-    rdfs:range fhkb:Person ;
-    rdfs:subPropertyOf fhkb:isBloodRelationOf ;
+    rdfs:subPropertyOf fhkb:isCousinOf ;
     owl:propertyChainAxiom ( fhkb:hasParent fhkb:isSiblingOf fhkb:isParentOf ) .
 
 fhkb:isSecondCousinOf a owl:ObjectProperty,
         owl:SymmetricProperty ;
-    rdfs:domain fhkb:Person ;
-    rdfs:range fhkb:Person ;
-    rdfs:subPropertyOf fhkb:isBloodRelationOf ;
+    rdfs:subPropertyOf fhkb:isCousinOf ;
     owl:propertyChainAxiom ( fhkb:hasGrandParent fhkb:isSiblingOf fhkb:isGrandParentOf ) .
 
 fhkb:isThirdCousinOf a owl:ObjectProperty,
         owl:SymmetricProperty ;
-    rdfs:domain fhkb:Person ;
-    rdfs:range fhkb:Person ;
-    rdfs:subPropertyOf fhkb:isBloodRelationOf ;
+    rdfs:subPropertyOf fhkb:isCousinOf ;
     owl:propertyChainAxiom ( fhkb:hasGreatGrandParent fhkb:isSiblingOf fhkb:isGreatGrandParentOf ) .
 
-[] a owl:AllDisjointClasses ;
-    owl:members ( fhkb:Partnership fhkb:Person ) .
+fhkb:isGrandfatherOf a owl:ObjectProperty ;
+    owl:inverseOf fhkb:hasGrandfather .
+
+fhkb:isGrandmotherOf a owl:ObjectProperty ;
+    owl:inverseOf fhkb:hasGrandmother .
+
+fhkb:isGrandParentOf a owl:ObjectProperty ;
+    owl:inverseOf fhkb:hasGrandParent .
+
+fhkb:hasGrandfather a owl:ObjectProperty ;
+    rdfs:range fhkb:Man ;
+    rdfs:subPropertyOf fhkb:hasGrandParent ;
+    owl:propertyChainAxiom ( fhkb:hasParent fhkb:hasFather ) .
+
+fhkb:hasGrandmother a owl:ObjectProperty ;
+    rdfs:range fhkb:Woman ;
+    rdfs:subPropertyOf fhkb:hasGrandParent ;
+    owl:propertyChainAxiom ( fhkb:hasParent fhkb:hasMother ) .
+
+fhkb:hasGrandParent a owl:ObjectProperty ;
+    rdfs:domain fhkb:Person ;
+    rdfs:range fhkb:Person ;
+    rdfs:subPropertyOf fhkb:hasAncestor ;
+    owl:propertyChainAxiom ( fhkb:hasParent fhkb:hasParent ) .
+
+fhkb:isGreatGrandfatherOf a owl:ObjectProperty ;
+    owl:inverseOf fhkb:hasGreatGrandfather .
+
+fhkb:isGreatGrandmotherOf a owl:ObjectProperty ;
+    owl:inverseOf fhkb:hasGreatGrandmother .
+
+fhkb:isGreatGrandParentOf a owl:ObjectProperty ;
+    owl:inverseOf fhkb:hasGreatGrandParent .
+
+fhkb:hasGreatGrandfather a owl:ObjectProperty ;
+    rdfs:range fhkb:Man ;
+    rdfs:subPropertyOf fhkb:hasGreatGrandParent ;
+    owl:propertyChainAxiom ( fhkb:hasParent fhkb:hasGrandfather ) .
+
+fhkb:hasGreatGrandmother a owl:ObjectProperty ;
+    rdfs:range fhkb:Woman ;
+    rdfs:subPropertyOf fhkb:hasGreatGrandParent ;
+    owl:propertyChainAxiom ( fhkb:hasParent fhkb:hasGrandmother ) .
+
+fhkb:hasGreatGrandParent a owl:ObjectProperty ;
+    rdfs:domain fhkb:Person ;
+    rdfs:range fhkb:Person ;
+    rdfs:subPropertyOf fhkb:hasAncestor ;
+    owl:propertyChainAxiom ( fhkb:hasParent fhkb:hasParent fhkb:hasParent ) .

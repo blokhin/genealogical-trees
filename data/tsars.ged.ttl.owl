@@ -5,168 +5,88 @@
   xmlns:fhkb="http://www.example.com/genealogy.owl#"
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Aunt">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Woman"/>
-          <owl:Restriction>
-            <owl:someValuesFrom>
-              <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                  <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-                  <owl:Restriction>
-                    <owl:onProperty>
-                      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isParentOf"/>
-                    </owl:onProperty>
-                    <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-                  </owl:Restriction>
-                </owl:intersectionOf>
-              </owl:Class>
-            </owl:someValuesFrom>
-            <owl:onProperty>
-              <owl:SymmetricProperty rdf:about="http://www.example.com/genealogy.owl#isSiblingOf">
-                <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-                <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#isBloodRelationOf"/>
-                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-                <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-              </owl:SymmetricProperty>
-            </owl:onProperty>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Sister">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Woman"/>
-          <owl:Restriction>
-            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isSiblingOf"/>
-            <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#GreatGrandfather">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Man"/>
-          <owl:Restriction>
-            <owl:onProperty>
-              <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isFatherOf"/>
-            </owl:onProperty>
-            <owl:someValuesFrom>
-              <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                  <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-                  <owl:Restriction>
-                    <owl:someValuesFrom>
-                      <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-                          <owl:Restriction>
-                            <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-                            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isParentOf"/>
-                          </owl:Restriction>
-                        </owl:intersectionOf>
-                      </owl:Class>
-                    </owl:someValuesFrom>
-                    <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isParentOf"/>
-                  </owl:Restriction>
-                </owl:intersectionOf>
-              </owl:Class>
-            </owl:someValuesFrom>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasGreatGrandmother">
-    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Woman"/>
+  <owl:SymmetricProperty rdf:about="http://www.example.com/genealogy.owl#isThirdCousinOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isCousinOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#isBloodrelationOf"/>
+      </owl:ObjectProperty>
+    </rdfs:subPropertyOf>
+    <owl:propertyChainAxiom rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasGreatGrandParent"/>
+      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isSiblingOf"/>
+      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isGreatGrandParentOf"/>
+    </owl:propertyChainAxiom>
+  </owl:SymmetricProperty>
+  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isFirstCousinOf">
     <owl:propertyChainAxiom rdf:parseType="Collection">
       <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasParent"/>
-      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasGrandmother"/>
+      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isSiblingOf"/>
+      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isParentOf"/>
     </owl:propertyChainAxiom>
-    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-    <owl:inverseOf>
-      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isGreatGrandmotherOf"/>
-    </owl:inverseOf>
-    <rdfs:subPropertyOf>
-      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasGreatGrandParent">
-        <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#hasAncestor"/>
-        <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-        <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-        <owl:inverseOf rdf:resource="http://www.example.com/genealogy.owl#isGreatGrandParentOf"/>
-      </owl:ObjectProperty>
-    </rdfs:subPropertyOf>
+    <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#isCousinOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
   </owl:ObjectProperty>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#FemaleDescendant">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Woman"/>
-          <owl:Restriction>
-            <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-            <owl:onProperty>
-              <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasAncestor">
-                <owl:inverseOf rdf:resource="http://www.example.com/genealogy.owl#isAncestorOf"/>
-                <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#isBloodRelationOf"/>
-                <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-                <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-              </owl:ObjectProperty>
-            </owl:onProperty>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#BloodRelation">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-          <owl:Restriction>
-            <owl:onProperty>
-              <owl:SymmetricProperty rdf:about="http://www.example.com/genealogy.owl#isBloodRelationOf">
-                <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#isRelationOf"/>
-                <owl:propertyChainAxiom rdf:parseType="Collection">
-                  <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasAncestor"/>
-                  <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isAncestorOf"/>
-                </owl:propertyChainAxiom>
-                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-                <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-                <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-              </owl:SymmetricProperty>
-            </owl:onProperty>
-            <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasWife">
-    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Woman"/>
+  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasAunt">
     <owl:inverseOf>
-      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isWifeOf"/>
-    </owl:inverseOf>
-    <owl:propertyChainAxiom rdf:parseType="Collection">
-      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isMalePartnerIn"/>
-      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasFemalePartner"/>
-    </owl:propertyChainAxiom>
-    <rdfs:subPropertyOf>
-      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isSpouseOf">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isAuntOf">
+        <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Woman"/>
         <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-        <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isSisterOf"/>
+          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isParentOf"/>
+        </owl:propertyChainAxiom>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isHusbandOf">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasHusband">
+        <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#hasSpouse"/>
+        <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Man"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isFemalePartnerIn"/>
+          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasMalePartner"/>
+        </owl:propertyChainAxiom>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isGreatGrandmotherOf">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasGreatGrandmother">
+        <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Woman"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#hasGreatGrandParent"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasParent"/>
+          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasGrandmother"/>
+        </owl:propertyChainAxiom>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasGreatAunt">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isGreatAuntOf">
+        <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Woman"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isSisterOf"/>
+          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isGrandParentOf"/>
+        </owl:propertyChainAxiom>
+        <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:Ontology rdf:about="http://www.example.com/genealogy.owl#"/>
+  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isDaughterOf">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isChildOf">
+        <owl:inverseOf rdf:resource="http://www.example.com/genealogy.owl#hasChild"/>
       </owl:ObjectProperty>
     </rdfs:subPropertyOf>
-    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Man"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasDaughter">
+        <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#hasChild"/>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
   </owl:ObjectProperty>
   <owl:AllDifferent>
     <owl:distinctMembers rdf:parseType="Collection">
@@ -228,813 +148,30 @@
       <rdf:Description rdf:about="http://www.example.com/genealogy.owl#i44"/>
     </owl:distinctMembers>
   </owl:AllDifferent>
-  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isThirdCousinOf">
-    <owl:propertyChainAxiom rdf:parseType="Collection">
-      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasGreatGrandParent"/>
-      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isSiblingOf"/>
-      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isGreatGrandParentOf"/>
-    </owl:propertyChainAxiom>
-    <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#isBloodRelationOf"/>
-    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasHusband">
-    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Man"/>
-    <owl:propertyChainAxiom rdf:parseType="Collection">
-      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isFemalePartnerIn"/>
-      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasMalePartner"/>
-    </owl:propertyChainAxiom>
-    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Woman"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#isSpouseOf"/>
+  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isWifeOf">
     <owl:inverseOf>
-      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isHusbandOf"/>
-    </owl:inverseOf>
-  </owl:ObjectProperty>
-  <owl:SymmetricProperty rdf:about="http://www.example.com/genealogy.owl#isSecondCousinOf">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#isBloodRelationOf"/>
-    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-    <owl:propertyChainAxiom rdf:parseType="Collection">
-      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasGrandParent"/>
-      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isSiblingOf"/>
-      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isGrandParentOf"/>
-    </owl:propertyChainAxiom>
-  </owl:SymmetricProperty>
-  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasGreatUncle">
-    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#isBloodRelationOf"/>
-    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Man"/>
-    <owl:inverseOf>
-      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isGreatUncleOf">
-        <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-        <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Man"/>
+      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasWife">
         <owl:propertyChainAxiom rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isBrotherOf"/>
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isGrandParentOf"/>
+          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isMalePartnerIn"/>
+          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasFemalePartner"/>
         </owl:propertyChainAxiom>
+        <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#hasSpouse"/>
+        <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Woman"/>
       </owl:ObjectProperty>
     </owl:inverseOf>
   </owl:ObjectProperty>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#ThirdCousin">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-          <owl:Restriction>
-            <owl:onProperty>
-              <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasParent">
-                <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-                <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#hasAncestor"/>
-                <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-                <owl:inverseOf rdf:resource="http://www.example.com/genealogy.owl#isParentOf"/>
-              </owl:ObjectProperty>
-            </owl:onProperty>
-            <owl:someValuesFrom>
-              <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#hasParent"/>
-                <owl:someValuesFrom>
-                  <owl:Class>
-                    <owl:intersectionOf rdf:parseType="Collection">
-                      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-                      <owl:Restriction>
-                        <owl:someValuesFrom>
-                          <owl:Class>
-                            <owl:intersectionOf rdf:parseType="Collection">
-                              <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-                              <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isSiblingOf"/>
-                                <owl:someValuesFrom>
-                                  <owl:Class>
-                                    <owl:intersectionOf rdf:parseType="Collection">
-                                      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-                                      <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isParentOf"/>
-                                        <owl:someValuesFrom>
-                                          <owl:Class>
-                                            <owl:intersectionOf rdf:parseType="Collection">
-                                              <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-                                              <owl:Restriction>
-                                                <owl:someValuesFrom>
-                                                  <owl:Class>
-                                                    <owl:intersectionOf rdf:parseType="Collection">
-                                                      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-                                                      <owl:Restriction>
-                                                        <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isParentOf"/>
-                                                        <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-                                                      </owl:Restriction>
-                                                    </owl:intersectionOf>
-                                                  </owl:Class>
-                                                </owl:someValuesFrom>
-                                                <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isParentOf"/>
-                                              </owl:Restriction>
-                                            </owl:intersectionOf>
-                                          </owl:Class>
-                                        </owl:someValuesFrom>
-                                      </owl:Restriction>
-                                    </owl:intersectionOf>
-                                  </owl:Class>
-                                </owl:someValuesFrom>
-                              </owl:Restriction>
-                            </owl:intersectionOf>
-                          </owl:Class>
-                        </owl:someValuesFrom>
-                        <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#hasParent"/>
-                      </owl:Restriction>
-                    </owl:intersectionOf>
-                  </owl:Class>
-                </owl:someValuesFrom>
-              </owl:Restriction>
-            </owl:someValuesFrom>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Grandmother">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Woman"/>
-          <owl:Restriction>
-            <owl:onProperty>
-              <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isMotherOf"/>
-            </owl:onProperty>
-            <owl:someValuesFrom>
-              <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                  <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-                  <owl:Restriction>
-                    <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isParentOf"/>
-                    <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-                  </owl:Restriction>
-                </owl:intersectionOf>
-              </owl:Class>
-            </owl:someValuesFrom>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isNieceOf">
-    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-    <owl:propertyChainAxiom rdf:parseType="Collection">
-      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isDaughterOf"/>
-      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isSiblingOf"/>
-    </owl:propertyChainAxiom>
-    <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#isBloodRelationOf"/>
-    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Woman"/>
-  </owl:ObjectProperty>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#GreatAunt">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-          <owl:Restriction>
-            <owl:onProperty>
-              <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isAuntOf">
-                <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Woman"/>
-                <owl:propertyChainAxiom rdf:parseType="Collection">
-                  <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isSisterOf"/>
-                  <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isParentOf"/>
-                </owl:propertyChainAxiom>
-                <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-                <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#isBloodRelationOf"/>
-              </owl:ObjectProperty>
-            </owl:onProperty>
-            <owl:someValuesFrom>
-              <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                  <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-                  <owl:Restriction>
-                    <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isParentOf"/>
-                    <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-                  </owl:Restriction>
-                </owl:intersectionOf>
-              </owl:Class>
-            </owl:someValuesFrom>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Parent">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-          <owl:Restriction>
-            <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isParentOf"/>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#FirstCousin">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-          <owl:Restriction>
-            <owl:someValuesFrom>
-              <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                  <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-                  <owl:Restriction>
-                    <owl:someValuesFrom>
-                      <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-                          <owl:Restriction>
-                            <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-                            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isParentOf"/>
-                          </owl:Restriction>
-                        </owl:intersectionOf>
-                      </owl:Class>
-                    </owl:someValuesFrom>
-                    <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isSiblingOf"/>
-                  </owl:Restriction>
-                </owl:intersectionOf>
-              </owl:Class>
-            </owl:someValuesFrom>
-            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#hasParent"/>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasSon">
-    <rdfs:subPropertyOf>
-      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasChild">
-        <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-        <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-        <owl:equivalentProperty rdf:resource="http://www.example.com/genealogy.owl#isParentOf"/>
-        <owl:inverseOf rdf:resource="http://www.example.com/genealogy.owl#isChildOf"/>
-      </owl:ObjectProperty>
-    </rdfs:subPropertyOf>
-    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-    <owl:inverseOf>
-      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isSonOf">
-        <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#hasParent"/>
-      </owl:ObjectProperty>
-    </owl:inverseOf>
-    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Man"/>
-  </owl:ObjectProperty>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Cousin">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-          <owl:Restriction>
-            <owl:someValuesFrom>
-              <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                  <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-                  <owl:Restriction>
-                    <owl:someValuesFrom>
-                      <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-                          <owl:Restriction>
-                            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isParentOf"/>
-                            <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-                          </owl:Restriction>
-                        </owl:intersectionOf>
-                      </owl:Class>
-                    </owl:someValuesFrom>
-                    <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isSiblingOf"/>
-                  </owl:Restriction>
-                </owl:intersectionOf>
-              </owl:Class>
-            </owl:someValuesFrom>
-            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#hasAncestor"/>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasDaughter">
-    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-    <owl:inverseOf>
-      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isDaughterOf">
-        <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#hasParent"/>
-      </owl:ObjectProperty>
-    </owl:inverseOf>
-    <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#hasChild"/>
-    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Woman"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasGreatGrandfather">
-    <owl:propertyChainAxiom rdf:parseType="Collection">
-      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasParent"/>
-      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasGrandfather"/>
-    </owl:propertyChainAxiom>
-    <owl:inverseOf>
-      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isGreatGrandfatherOf"/>
-    </owl:inverseOf>
-    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#hasGreatGrandParent"/>
-    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Man"/>
-  </owl:ObjectProperty>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Husband">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Man"/>
-          <owl:Restriction>
-            <owl:someValuesFrom>
-              <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                  <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Marriage"/>
-                  <owl:Restriction>
-                    <owl:onProperty>
-                      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasFemalePartner"/>
-                    </owl:onProperty>
-                    <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Woman"/>
-                  </owl:Restriction>
-                </owl:intersectionOf>
-              </owl:Class>
-            </owl:someValuesFrom>
-            <owl:onProperty>
-              <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isMalePartnerIn">
-                <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Marriage"/>
-                <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Man"/>
-                <owl:inverseOf rdf:resource="http://www.example.com/genealogy.owl#hasMalePartner"/>
-              </owl:ObjectProperty>
-            </owl:onProperty>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
   <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasUncle">
-    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Man"/>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isUncleOf">
+        <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
           <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isBrotherOf"/>
           <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isParentOf"/>
         </owl:propertyChainAxiom>
         <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Man"/>
-        <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#isBloodRelationOf"/>
       </owl:ObjectProperty>
     </owl:inverseOf>
-    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#isBloodRelationOf"/>
   </owl:ObjectProperty>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#MaleAncestor">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Man"/>
-          <owl:Restriction>
-            <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-            <owl:onProperty>
-              <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isAncestorOf"/>
-            </owl:onProperty>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#FemaleAncestor">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Woman"/>
-          <owl:Restriction>
-            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isAncestorOf"/>
-            <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#GreatGrandparent">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-          <owl:Restriction>
-            <owl:someValuesFrom>
-              <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                  <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-                  <owl:Restriction>
-                    <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isParentOf"/>
-                    <owl:someValuesFrom>
-                      <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-                          <owl:Restriction>
-                            <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-                            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isParentOf"/>
-                          </owl:Restriction>
-                        </owl:intersectionOf>
-                      </owl:Class>
-                    </owl:someValuesFrom>
-                  </owl:Restriction>
-                </owl:intersectionOf>
-              </owl:Class>
-            </owl:someValuesFrom>
-            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isParentOf"/>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:AllDisjointClasses>
-    <owl:members rdf:parseType="Collection">
-      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Partnership"/>
-      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-    </owl:members>
-  </owl:AllDisjointClasses>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Son">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Man"/>
-          <owl:Restriction>
-            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#hasParent"/>
-            <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Father">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Man"/>
-          <owl:Restriction>
-            <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isFatherOf"/>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#GreatGreatGrandparent">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-          <owl:Restriction>
-            <owl:someValuesFrom>
-              <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                  <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-                  <owl:Restriction>
-                    <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isParentOf"/>
-                    <owl:someValuesFrom>
-                      <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-                          <owl:Restriction>
-                            <owl:someValuesFrom>
-                              <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                  <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-                                  <owl:Restriction>
-                                    <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isParentOf"/>
-                                    <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-                                  </owl:Restriction>
-                                </owl:intersectionOf>
-                              </owl:Class>
-                            </owl:someValuesFrom>
-                            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isParentOf"/>
-                          </owl:Restriction>
-                        </owl:intersectionOf>
-                      </owl:Class>
-                    </owl:someValuesFrom>
-                  </owl:Restriction>
-                </owl:intersectionOf>
-              </owl:Class>
-            </owl:someValuesFrom>
-            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isParentOf"/>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Spouse">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-          <owl:Restriction>
-            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isSpouseOf"/>
-            <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#GreatUncle">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Man"/>
-          <owl:Restriction>
-            <owl:onProperty>
-              <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isBrotherOf">
-                <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-                <owl:inverseOf rdf:resource="http://www.example.com/genealogy.owl#hasBrother"/>
-                <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Man"/>
-                <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#isDirectSiblingOf"/>
-              </owl:ObjectProperty>
-            </owl:onProperty>
-            <owl:someValuesFrom>
-              <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                  <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-                  <owl:Restriction>
-                    <owl:someValuesFrom>
-                      <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-                          <owl:Restriction>
-                            <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-                            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isParentOf"/>
-                          </owl:Restriction>
-                        </owl:intersectionOf>
-                      </owl:Class>
-                    </owl:someValuesFrom>
-                    <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isParentOf"/>
-                  </owl:Restriction>
-                </owl:intersectionOf>
-              </owl:Class>
-            </owl:someValuesFrom>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasAunt">
-    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Woman"/>
-    <owl:inverseOf rdf:resource="http://www.example.com/genealogy.owl#isAuntOf"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#isBloodRelationOf"/>
-  </owl:ObjectProperty>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Descendant">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-          <owl:Restriction>
-            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#hasAncestor"/>
-            <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Wife">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Woman"/>
-          <owl:Restriction>
-            <owl:onProperty>
-              <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isFemalePartnerIn">
-                <owl:inverseOf rdf:resource="http://www.example.com/genealogy.owl#hasFemalePartner"/>
-                <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Woman"/>
-                <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Marriage"/>
-              </owl:ObjectProperty>
-            </owl:onProperty>
-            <owl:someValuesFrom>
-              <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                  <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Marriage"/>
-                  <owl:Restriction>
-                    <owl:onProperty>
-                      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasMalePartner"/>
-                    </owl:onProperty>
-                    <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Man"/>
-                  </owl:Restriction>
-                </owl:intersectionOf>
-              </owl:Class>
-            </owl:someValuesFrom>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Brother">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Man"/>
-          <owl:Restriction>
-            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isSiblingOf"/>
-            <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isFirstCousinOf">
-    <owl:propertyChainAxiom rdf:parseType="Collection">
-      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasParent"/>
-      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isSiblingOf"/>
-      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isParentOf"/>
-    </owl:propertyChainAxiom>
-    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#isBloodRelationOf"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasGreatAunt">
-    <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#isBloodRelationOf"/>
-    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-    <owl:inverseOf>
-      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isGreatAuntOf">
-        <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Woman"/>
-        <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isSisterOf"/>
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isGrandParentOf"/>
-        </owl:propertyChainAxiom>
-      </owl:ObjectProperty>
-    </owl:inverseOf>
-    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Woman"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isNephewOf">
-    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Man"/>
-    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-    <owl:propertyChainAxiom rdf:parseType="Collection">
-      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isSonOf"/>
-      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isSiblingOf"/>
-    </owl:propertyChainAxiom>
-    <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#isBloodRelationOf"/>
-  </owl:ObjectProperty>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Child">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-          <owl:Restriction>
-            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#hasParent"/>
-            <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Grandparent">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-          <owl:Restriction>
-            <owl:someValuesFrom>
-              <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                  <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-                  <owl:Restriction>
-                    <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isParentOf"/>
-                    <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-                  </owl:Restriction>
-                </owl:intersectionOf>
-              </owl:Class>
-            </owl:someValuesFrom>
-            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isParentOf"/>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#MaleDescendant">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Man"/>
-          <owl:Restriction>
-            <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#hasAncestor"/>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#SecondCousin">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-          <owl:Restriction>
-            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#hasParent"/>
-            <owl:someValuesFrom>
-              <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                  <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-                  <owl:Restriction>
-                    <owl:someValuesFrom>
-                      <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-                          <owl:Restriction>
-                            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isSiblingOf"/>
-                            <owl:someValuesFrom>
-                              <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                  <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-                                  <owl:Restriction>
-                                    <owl:someValuesFrom>
-                                      <owl:Class>
-                                        <owl:intersectionOf rdf:parseType="Collection">
-                                          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-                                          <owl:Restriction>
-                                            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isParentOf"/>
-                                            <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-                                          </owl:Restriction>
-                                        </owl:intersectionOf>
-                                      </owl:Class>
-                                    </owl:someValuesFrom>
-                                    <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isParentOf"/>
-                                  </owl:Restriction>
-                                </owl:intersectionOf>
-                              </owl:Class>
-                            </owl:someValuesFrom>
-                          </owl:Restriction>
-                        </owl:intersectionOf>
-                      </owl:Class>
-                    </owl:someValuesFrom>
-                    <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#hasParent"/>
-                  </owl:Restriction>
-                </owl:intersectionOf>
-              </owl:Class>
-            </owl:someValuesFrom>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Sibling">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-          <owl:Restriction>
-            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isSiblingOf"/>
-            <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Daughter">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Woman"/>
-          <owl:Restriction>
-            <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#hasParent"/>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Mother">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Woman"/>
-          <owl:Restriction>
-            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isMotherOf"/>
-            <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Grandfather">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Man"/>
-          <owl:Restriction>
-            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isFatherOf"/>
-            <owl:someValuesFrom>
-              <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                  <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-                  <owl:Restriction>
-                    <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-                    <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isParentOf"/>
-                  </owl:Restriction>
-                </owl:intersectionOf>
-              </owl:Class>
-            </owl:someValuesFrom>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
   <owl:Class rdf:about="http://www.example.com/genealogy.owl#Ancestor">
     <owl:equivalentClass>
       <owl:Class>
@@ -1042,152 +179,284 @@
           <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
           <owl:Restriction>
             <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isAncestorOf"/>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isAncestorOf">
+                <owl:inverseOf rdf:resource="http://www.example.com/genealogy.owl#hasAncestor"/>
+              </owl:ObjectProperty>
+            </owl:onProperty>
           </owl:Restriction>
         </owl:intersectionOf>
       </owl:Class>
     </owl:equivalentClass>
   </owl:Class>
-  <owl:Ontology rdf:about="http://www.example.com/genealogy.owl#"/>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Uncle">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Man"/>
-          <owl:Restriction>
-            <owl:someValuesFrom>
-              <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                  <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-                  <owl:Restriction>
-                    <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-                    <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isParentOf"/>
-                  </owl:Restriction>
-                </owl:intersectionOf>
-              </owl:Class>
-            </owl:someValuesFrom>
-            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#isSiblingOf"/>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i9">
-    <fhkb:isMotherOf>
-      <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i11">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <fhkb:isSisterOf rdf:resource="http://www.example.com/genealogy.owl#i10"/>
-        <rdfs:label>&amp;#1040;&amp;#1085;&amp;#1085;&amp;#1072; &amp;#1048;&amp;#1074;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;&amp;#1072;</rdfs:label>
-      </owl:NamedIndividual>
-    </fhkb:isMotherOf>
-    <fhkb:isMotherOf>
-      <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i10">
-        <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i14"/>
-        <fhkb:isSisterOf rdf:resource="http://www.example.com/genealogy.owl#i11"/>
-        <rdfs:label>&amp;#1045;&amp;#1082;&amp;#1072;&amp;#1090;&amp;#1077;&amp;#1088;&amp;#1080;&amp;#1085;&amp;#1072; &amp;#1048;&amp;#1074;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;&amp;#1072;</rdfs:label>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-      </owl:Thing>
-    </fhkb:isMotherOf>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label>&amp;#1055;&amp;#1088;&amp;#1072;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1074;&amp;#1100;&amp;#1103; &amp;#1060;&amp;#1077;&amp;#1076;&amp;#1086;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1057;&amp;#1072;&amp;#1083;&amp;#1090;&amp;#1099;&amp;#1082;&amp;#1086;&amp;#1074;&amp;#1072;</rdfs:label>
-  </owl:Thing>
-  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i42">
-    <fhkb:hasFemalePartner>
-      <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i3">
-        <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i6"/>
-        <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i8"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-        <rdfs:label>&amp;#1052;&amp;#1072;&amp;#1088;&amp;#1080;&amp;#1103; &amp;#1048;&amp;#1083;&amp;#1100;&amp;#1080;&amp;#1085;&amp;#1080;&amp;#1095;&amp;#1085;&amp;#1072; &amp;#1052;&amp;#1080;&amp;#1083;&amp;#1086;&amp;#1089;&amp;#1083;&amp;#1072;&amp;#1074;&amp;#1089;&amp;#1082;&amp;#1072;&amp;#1103;</rdfs:label>
-        <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i7"/>
-      </owl:Thing>
-    </fhkb:hasFemalePartner>
-    <fhkb:hasMalePartner>
-      <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i2">
-        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i17"/>
-        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i7"/>
-        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i8"/>
-        <rdfs:label>&amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1077;&amp;#1081; &amp;#1052;&amp;#1080;&amp;#1093;&amp;#1072;&amp;#1081;&amp;#1083;&amp;#1086;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;</rdfs:label>
-        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i6"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-      </owl:NamedIndividual>
-    </fhkb:hasMalePartner>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  </owl:Thing>
-  <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i0">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <rdfs:label>&amp;#1052;&amp;#1080;&amp;#1093;&amp;#1072;&amp;#1080;&amp;#1083; &amp;#1060;&amp;#1077;&amp;#1076;&amp;#1086;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;</rdfs:label>
-    <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i2"/>
-  </owl:NamedIndividual>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#DomainEntity"/>
-  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasSister"/>
-  <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i31">
-    <fhkb:isBrotherOf>
-      <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i33">
-        <fhkb:isBrotherOf rdf:resource="http://www.example.com/genealogy.owl#i31"/>
-        <rdfs:label>&amp;#1053;&amp;#1080;&amp;#1082;&amp;#1086;&amp;#1083;&amp;#1072;&amp;#1081; I &amp;#1055;&amp;#1072;&amp;#1074;&amp;#1083;&amp;#1086;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;</rdfs:label>
-        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i35"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-      </owl:NamedIndividual>
-    </fhkb:isBrotherOf>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <rdfs:label>&amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1072;&amp;#1085;&amp;#1076;&amp;#1088; I &amp;#1055;&amp;#1072;&amp;#1074;&amp;#1083;&amp;#1086;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;</rdfs:label>
-  </owl:NamedIndividual>
-  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isSisterOf">
-    <owl:inverseOf rdf:resource="http://www.example.com/genealogy.owl#hasSister"/>
-    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Woman"/>
-    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-    <rdfs:subPropertyOf>
-      <owl:SymmetricProperty rdf:about="http://www.example.com/genealogy.owl#isDirectSiblingOf">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isSecondCousinOf">
+    <owl:propertyChainAxiom rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasGrandParent"/>
+      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isSiblingOf"/>
+      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isGrandParentOf"/>
+    </owl:propertyChainAxiom>
+    <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#isCousinOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isSonOf">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasSon">
+        <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#hasChild"/>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#isChildOf"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasGreatUncle">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isGreatUncleOf">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isBrotherOf"/>
+          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isGrandParentOf"/>
+        </owl:propertyChainAxiom>
+        <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Man"/>
         <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-        <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#isSiblingOf"/>
-      </owl:SymmetricProperty>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isGrandfatherOf">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasGrandfather">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasParent"/>
+          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasFather"/>
+        </owl:propertyChainAxiom>
+        <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Man"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#hasGrandParent"/>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isGrandmotherOf">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasGrandmother">
+        <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Woman"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#hasGrandParent"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasParent"/>
+          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasMother"/>
+        </owl:propertyChainAxiom>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isGreatGrandfatherOf">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasGreatGrandfather">
+        <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Man"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#hasGreatGrandParent"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasParent"/>
+          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasGrandfather"/>
+        </owl:propertyChainAxiom>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i35">
+    <rdfs:label>&amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1072;&amp;#1085;&amp;#1076;&amp;#1088; II &amp;#1053;&amp;#1080;&amp;#1082;&amp;#1086;&amp;#1083;&amp;#1072;&amp;#1077;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;</rdfs:label>
+    <fhkb:isFatherOf>
+      <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i37">
+        <rdfs:label>&amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1072;&amp;#1085;&amp;#1076;&amp;#1088; III &amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1072;&amp;#1085;&amp;#1076;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;</rdfs:label>
+        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i39"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+      </owl:Thing>
+    </fhkb:isFatherOf>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </owl:Thing>
+  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i31">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>&amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1072;&amp;#1085;&amp;#1076;&amp;#1088; I &amp;#1055;&amp;#1072;&amp;#1074;&amp;#1083;&amp;#1086;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;</rdfs:label>
+    <fhkb:isBrotherOf>
+      <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i33">
+        <rdfs:label>&amp;#1053;&amp;#1080;&amp;#1082;&amp;#1086;&amp;#1083;&amp;#1072;&amp;#1081; I &amp;#1055;&amp;#1072;&amp;#1074;&amp;#1083;&amp;#1086;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;</rdfs:label>
+        <fhkb:isBrotherOf rdf:resource="http://www.example.com/genealogy.owl#i31"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i35"/>
+      </owl:Thing>
+    </fhkb:isBrotherOf>
+  </owl:Thing>
+  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasGreatGrandParent">
+    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
+    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
+    <owl:propertyChainAxiom rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasParent"/>
+      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasParent"/>
+      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasParent"/>
+    </owl:propertyChainAxiom>
+    <rdfs:subPropertyOf>
+      <owl:TransitiveProperty rdf:about="http://www.example.com/genealogy.owl#hasAncestor">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#hasRelation"/>
+      </owl:TransitiveProperty>
     </rdfs:subPropertyOf>
   </owl:ObjectProperty>
-  <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i5">
-    <rdfs:label>&amp;#1052;&amp;#1072;&amp;#1088;&amp;#1092;&amp;#1072; &amp;#1052;&amp;#1072;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1077;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1040;&amp;#1087;&amp;#1088;&amp;#1072;&amp;#1082;&amp;#1089;&amp;#1080;&amp;#1085;&amp;#1072;</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-  </owl:NamedIndividual>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Female">
-    <rdfs:subClassOf rdf:resource="http://www.example.com/genealogy.owl#Sex"/>
-    <owl:disjointWith rdf:resource="http://www.example.com/genealogy.owl#Male"/>
-  </owl:Class>
   <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i15">
     <fhkb:isFatherOf>
-      <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i16">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+      <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i16">
         <rdfs:label>&amp;#1048;&amp;#1074;&amp;#1072;&amp;#1085; VI &amp;#1040;&amp;#1085;&amp;#1090;&amp;#1086;&amp;#1085;&amp;#1086;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1041;&amp;#1088;&amp;#1072;&amp;#1091;&amp;#1085;&amp;#1096;&amp;#1074;&amp;#1077;&amp;#1081;&amp;#1075;-&amp;#1042;&amp;#1086;&amp;#1083;&amp;#1100;&amp;#1092;&amp;#1077;&amp;#1085;&amp;#1073;&amp;#1102;&amp;#1090;&amp;#1090;&amp;#1077;&amp;#1083;&amp;#1100;&amp;#1089;&amp;#1082;&amp;#1080;&amp;#1081;</rdfs:label>
-      </owl:NamedIndividual>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+      </owl:Thing>
     </fhkb:isFatherOf>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdfs:label>&amp;#1040;&amp;#1085;&amp;#1090;&amp;#1086;&amp;#1085; &amp;#1059;&amp;#1083;&amp;#1100;&amp;#1088;&amp;#1080;&amp;#1093; &amp;#1041;&amp;#1088;&amp;#1072;&amp;#1091;&amp;#1085;&amp;#1096;&amp;#1074;&amp;#1077;&amp;#1081;&amp;#1075;-&amp;#1042;&amp;#1086;&amp;#1083;&amp;#1100;&amp;#1092;&amp;#1077;&amp;#1085;&amp;#1073;&amp;#1102;&amp;#1090;&amp;#1090;&amp;#1077;&amp;#1083;&amp;#1100;&amp;#1089;&amp;#1082;&amp;#1080;&amp;#1081;</rdfs:label>
   </owl:Thing>
-  <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i39">
+  <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i23">
+    <fhkb:isMotherOf>
+      <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i26">
+        <rdfs:label>&amp;#1055;&amp;#1077;&amp;#1090;&amp;#1088; III &amp;#1060;&amp;#1077;&amp;#1076;&amp;#1086;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i28"/>
+      </owl:NamedIndividual>
+    </fhkb:isMotherOf>
+    <fhkb:isSisterOf>
+      <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i24">
+        <fhkb:isSisterOf rdf:resource="http://www.example.com/genealogy.owl#i23"/>
+        <rdfs:label>&amp;#1045;&amp;#1083;&amp;#1080;&amp;#1079;&amp;#1072;&amp;#1074;&amp;#1077;&amp;#1090;&amp;#1072; &amp;#1055;&amp;#1077;&amp;#1090;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;&amp;#1072;</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+      </owl:Thing>
+    </fhkb:isSisterOf>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <rdfs:label>&amp;#1053;&amp;#1080;&amp;#1082;&amp;#1086;&amp;#1083;&amp;#1072;&amp;#1081; II &amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1072;&amp;#1085;&amp;#1076;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;</rdfs:label>
+    <rdfs:label>&amp;#1040;&amp;#1085;&amp;#1085;&amp;#1072; &amp;#1055;&amp;#1077;&amp;#1090;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;&amp;#1072;</rdfs:label>
   </owl:NamedIndividual>
-  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i22">
+  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i10">
+    <fhkb:isMotherOf>
+      <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i14">
+        <rdfs:label>&amp;#1040;&amp;#1085;&amp;#1085;&amp;#1072; &amp;#1051;&amp;#1077;&amp;#1086;&amp;#1087;&amp;#1086;&amp;#1083;&amp;#1100;&amp;#1076;&amp;#1086;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1052;&amp;#1077;&amp;#1082;&amp;#1083;&amp;#1077;&amp;#1085;&amp;#1073;&amp;#1091;&amp;#1088;&amp;#1075;-&amp;#1064;&amp;#1074;&amp;#1077;&amp;#1088;&amp;#1080;&amp;#1085;&amp;#1089;&amp;#1082;&amp;#1072;&amp;#1103;</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i16"/>
+      </owl:Thing>
+    </fhkb:isMotherOf>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label>&amp;#1055;&amp;#1077;&amp;#1090;&amp;#1088; II &amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1077;&amp;#1077;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;</rdfs:label>
+    <fhkb:isSisterOf>
+      <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i11">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <fhkb:isSisterOf rdf:resource="http://www.example.com/genealogy.owl#i10"/>
+        <rdfs:label>&amp;#1040;&amp;#1085;&amp;#1085;&amp;#1072; &amp;#1048;&amp;#1074;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;&amp;#1072;</rdfs:label>
+      </owl:Thing>
+    </fhkb:isSisterOf>
+    <rdfs:label>&amp;#1045;&amp;#1082;&amp;#1072;&amp;#1090;&amp;#1077;&amp;#1088;&amp;#1080;&amp;#1085;&amp;#1072; &amp;#1048;&amp;#1074;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;&amp;#1072;</rdfs:label>
   </owl:Thing>
-  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i30">
+  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasGrandParent">
+    <owl:propertyChainAxiom rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasParent"/>
+      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasParent"/>
+    </owl:propertyChainAxiom>
+    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#hasAncestor"/>
+    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
+  </owl:ObjectProperty>
+  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i6">
+    <fhkb:isBrotherOf>
+      <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i7">
+        <fhkb:isSisterOf rdf:resource="http://www.example.com/genealogy.owl#i6"/>
+        <rdfs:label>&amp;#1057;&amp;#1086;&amp;#1092;&amp;#1100;&amp;#1103; &amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1077;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;&amp;#1072;</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <fhkb:isSisterOf rdf:resource="http://www.example.com/genealogy.owl#i8"/>
+      </owl:Thing>
+    </fhkb:isBrotherOf>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <fhkb:isBrotherOf>
+      <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i8">
+        <fhkb:isBrotherOf rdf:resource="http://www.example.com/genealogy.owl#i7"/>
+        <fhkb:isBrotherOf rdf:resource="http://www.example.com/genealogy.owl#i6"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i10"/>
+        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i11"/>
+        <rdfs:label>&amp;#1048;&amp;#1074;&amp;#1072;&amp;#1085; V &amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1077;&amp;#1077;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;</rdfs:label>
+      </owl:NamedIndividual>
+    </fhkb:isBrotherOf>
+    <rdfs:label>&amp;#1060;&amp;#1077;&amp;#1076;&amp;#1086;&amp;#1088; &amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1077;&amp;#1077;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;</rdfs:label>
+  </owl:Thing>
+  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasFemalePartner">
+    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Woman"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasPartner">
+        <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Marriage"/>
+        <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
+        <owl:inverseOf rdf:resource="http://www.example.com/genealogy.owl#isPartnerIn"/>
+      </owl:ObjectProperty>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Marriage"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isFemalePartnerIn"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasSex">
+    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Sex"/>
+  </owl:ObjectProperty>
+  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i41">
+    <fhkb:hasMalePartner>
+      <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i0">
+        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i2"/>
+        <rdfs:label>&amp;#1052;&amp;#1080;&amp;#1093;&amp;#1072;&amp;#1080;&amp;#1083; &amp;#1060;&amp;#1077;&amp;#1076;&amp;#1086;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+      </owl:Thing>
+    </fhkb:hasMalePartner>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <fhkb:hasFemalePartner>
+      <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i1">
+        <rdfs:label>&amp;#1045;&amp;#1074;&amp;#1076;&amp;#1086;&amp;#1082;&amp;#1080;&amp;#1103; &amp;#1051;&amp;#1091;&amp;#1082;&amp;#1100;&amp;#1103;&amp;#1085;&amp;#1086;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1057;&amp;#1090;&amp;#1088;&amp;#1077;&amp;#1096;&amp;#1085;&amp;#1077;&amp;#1074;&amp;#1072;</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i2"/>
+      </owl:Thing>
+    </fhkb:hasFemalePartner>
+  </owl:Thing>
+  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isFatherOf"/>
+  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i4">
+    <rdfs:label>&amp;#1053;&amp;#1072;&amp;#1090;&amp;#1072;&amp;#1083;&amp;#1100;&amp;#1103; &amp;#1050;&amp;#1080;&amp;#1088;&amp;#1080;&amp;#1083;&amp;#1083;&amp;#1086;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1053;&amp;#1072;&amp;#1088;&amp;#1099;&amp;#1096;&amp;#1082;&amp;#1080;&amp;#1085;&amp;#1072;</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <fhkb:isMotherOf>
+      <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i17">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdfs:label>&amp;#1055;&amp;#1077;&amp;#1090;&amp;#1088; I &amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1077;&amp;#1077;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;</rdfs:label>
+        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i24"/>
+        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i20"/>
+        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i23"/>
+      </owl:Thing>
+    </fhkb:isMotherOf>
+  </owl:Thing>
+  <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i30">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label>&amp;#1052;&amp;#1072;&amp;#1088;&amp;#1080;&amp;#1103; &amp;#1060;&amp;#1077;&amp;#1076;&amp;#1086;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1042;&amp;#1102;&amp;#1088;&amp;#1090;&amp;#1077;&amp;#1084;&amp;#1073;&amp;#1077;&amp;#1088;&amp;#1075;&amp;#1089;&amp;#1082;&amp;#1072;&amp;#1103;</rdfs:label>
     <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i33"/>
     <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i31"/>
-    <rdfs:label>&amp;#1052;&amp;#1072;&amp;#1088;&amp;#1080;&amp;#1103; &amp;#1060;&amp;#1077;&amp;#1076;&amp;#1086;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1042;&amp;#1102;&amp;#1088;&amp;#1090;&amp;#1077;&amp;#1084;&amp;#1073;&amp;#1077;&amp;#1088;&amp;#1075;&amp;#1089;&amp;#1082;&amp;#1072;&amp;#1103;</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i43">
+    <fhkb:hasFemalePartner>
+      <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i9">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i11"/>
+        <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i10"/>
+        <rdfs:label>&amp;#1055;&amp;#1088;&amp;#1072;&amp;#1089;&amp;#1082;&amp;#1086;&amp;#1074;&amp;#1100;&amp;#1103; &amp;#1060;&amp;#1077;&amp;#1076;&amp;#1086;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1057;&amp;#1072;&amp;#1083;&amp;#1090;&amp;#1099;&amp;#1082;&amp;#1086;&amp;#1074;&amp;#1072;</rdfs:label>
+      </owl:NamedIndividual>
+    </fhkb:hasFemalePartner>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <fhkb:hasMalePartner rdf:resource="http://www.example.com/genealogy.owl#i8"/>
   </owl:Thing>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Partnership">
-    <rdfs:subClassOf rdf:resource="http://www.example.com/genealogy.owl#DomainEntity"/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
-        <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#hasPartner"/>
-        <owl:onClass rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
+  <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i2">
+    <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i6"/>
+    <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i17"/>
+    <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i8"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i7"/>
+    <rdfs:label>&amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1077;&amp;#1081; &amp;#1052;&amp;#1080;&amp;#1093;&amp;#1072;&amp;#1081;&amp;#1083;&amp;#1086;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i20">
+    <rdfs:label>&amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1077;&amp;#1081; &amp;#1055;&amp;#1077;&amp;#1090;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <fhkb:isFatherOf>
+      <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i22">
+        <rdfs:label>&amp;#1055;&amp;#1077;&amp;#1090;&amp;#1088; II &amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1077;&amp;#1077;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+      </owl:NamedIndividual>
+    </fhkb:isFatherOf>
+  </owl:Thing>
   <owl:Class rdf:about="http://www.example.com/genealogy.owl#Sex">
+    <rdfs:subClassOf rdf:resource="http://www.example.com/genealogy.owl#DomainEntity"/>
     <owl:equivalentClass>
       <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
@@ -1196,121 +465,258 @@
         </owl:unionOf>
       </owl:Class>
     </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Male">
+    <rdfs:subClassOf rdf:resource="http://www.example.com/genealogy.owl#Sex"/>
+  </owl:Class>
+  <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i32">
+    <rdfs:label>&amp;#1045;&amp;#1083;&amp;#1080;&amp;#1079;&amp;#1072;&amp;#1074;&amp;#1077;&amp;#1090;&amp;#1072; &amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1077;&amp;#1077;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1041;&amp;#1072;&amp;#1076;&amp;#1077;&amp;#1085;-&amp;#1044;&amp;#1091;&amp;#1088;&amp;#1083;&amp;#1072;&amp;#1093;&amp;#1089;&amp;#1082;&amp;#1072;&amp;#1103;</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:NamedIndividual>
+  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Man">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Male"/>
+            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#hasSex"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Marriage">
     <rdfs:subClassOf rdf:resource="http://www.example.com/genealogy.owl#DomainEntity"/>
   </owl:Class>
-  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i6">
-    <fhkb:isBrotherOf>
-      <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i8">
-        <fhkb:isBrotherOf rdf:resource="http://www.example.com/genealogy.owl#i6"/>
-        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i10"/>
-        <fhkb:isBrotherOf rdf:resource="http://www.example.com/genealogy.owl#i7"/>
-        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i11"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:label>&amp;#1048;&amp;#1074;&amp;#1072;&amp;#1085; V &amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1077;&amp;#1077;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;</rdfs:label>
-      </owl:NamedIndividual>
-    </fhkb:isBrotherOf>
-    <rdfs:label>&amp;#1060;&amp;#1077;&amp;#1076;&amp;#1086;&amp;#1088; &amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1077;&amp;#1077;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <fhkb:isBrotherOf>
-      <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i7">
-        <fhkb:isSisterOf rdf:resource="http://www.example.com/genealogy.owl#i8"/>
-        <rdfs:label>&amp;#1057;&amp;#1086;&amp;#1092;&amp;#1100;&amp;#1103; &amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1077;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;&amp;#1072;</rdfs:label>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <fhkb:isSisterOf rdf:resource="http://www.example.com/genealogy.owl#i6"/>
-      </owl:NamedIndividual>
-    </fhkb:isBrotherOf>
-  </owl:Thing>
-  <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i35">
+  <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i44">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <fhkb:isFatherOf>
-      <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i37">
-        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i39"/>
+    <fhkb:hasFemalePartner rdf:resource="http://www.example.com/genealogy.owl#i10"/>
+    <fhkb:hasMalePartner>
+      <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i13">
+        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i14"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:label>&amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1072;&amp;#1085;&amp;#1076;&amp;#1088; III &amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1072;&amp;#1085;&amp;#1076;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;</rdfs:label>
+        <rdfs:label>&amp;#1050;&amp;#1072;&amp;#1088;&amp;#1083; &amp;#1051;&amp;#1077;&amp;#1086;&amp;#1087;&amp;#1086;&amp;#1083;&amp;#1100;&amp;#1076; &amp;#1052;&amp;#1077;&amp;#1082;&amp;#1083;&amp;#1077;&amp;#1085;&amp;#1073;&amp;#1091;&amp;#1088;&amp;#1075;-&amp;#1064;&amp;#1074;&amp;#1077;&amp;#1088;&amp;#1080;&amp;#1085;&amp;#1089;&amp;#1082;&amp;#1080;&amp;#1081;</rdfs:label>
       </owl:NamedIndividual>
-    </fhkb:isFatherOf>
-    <rdfs:label>&amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1072;&amp;#1085;&amp;#1076;&amp;#1088; II &amp;#1053;&amp;#1080;&amp;#1082;&amp;#1086;&amp;#1083;&amp;#1072;&amp;#1077;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;</rdfs:label>
+    </fhkb:hasMalePartner>
   </owl:NamedIndividual>
-  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isGrandfatherOf"/>
-  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i32">
+  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i21">
+    <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i22"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label>&amp;#1045;&amp;#1083;&amp;#1080;&amp;#1079;&amp;#1072;&amp;#1074;&amp;#1077;&amp;#1090;&amp;#1072; &amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1077;&amp;#1077;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1041;&amp;#1072;&amp;#1076;&amp;#1077;&amp;#1085;-&amp;#1044;&amp;#1091;&amp;#1088;&amp;#1083;&amp;#1072;&amp;#1093;&amp;#1089;&amp;#1082;&amp;#1072;&amp;#1103;</rdfs:label>
+    <rdfs:label>&amp;#1064;&amp;#1072;&amp;#1088;&amp;#1083;&amp;#1086;&amp;#1090;&amp;#1090;&amp;#1072; &amp;#1050;&amp;#1088;&amp;#1080;&amp;#1089;&amp;#1090;&amp;#1080;&amp;#1085;&amp;#1072; &amp;#1041;&amp;#1088;&amp;#1072;&amp;#1091;&amp;#1085;&amp;#1096;&amp;#1074;&amp;#1077;&amp;#1081;&amp;#1075;-&amp;#1042;&amp;#1086;&amp;#1083;&amp;#1100;&amp;#1092;&amp;#1077;&amp;#1085;&amp;#1073;&amp;#1102;&amp;#1090;&amp;#1090;&amp;#1077;&amp;#1083;&amp;#1100;&amp;#1089;&amp;#1082;&amp;#1072;&amp;#1103;</rdfs:label>
   </owl:Thing>
-  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i41">
-    <fhkb:hasMalePartner rdf:resource="http://www.example.com/genealogy.owl#i0"/>
-    <fhkb:hasFemalePartner>
-      <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i1">
-        <rdfs:label>&amp;#1045;&amp;#1074;&amp;#1076;&amp;#1086;&amp;#1082;&amp;#1080;&amp;#1103; &amp;#1051;&amp;#1091;&amp;#1082;&amp;#1100;&amp;#1103;&amp;#1085;&amp;#1086;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1057;&amp;#1090;&amp;#1088;&amp;#1077;&amp;#1096;&amp;#1085;&amp;#1077;&amp;#1074;&amp;#1072;</rdfs:label>
-        <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i2"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-      </owl:NamedIndividual>
-    </fhkb:hasFemalePartner>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  </owl:Thing>
+  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isBloodrelationOf">
+    <rdfs:subPropertyOf>
+      <owl:SymmetricProperty rdf:about="http://www.example.com/genealogy.owl#hasRelation">
+        <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+      </owl:SymmetricProperty>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
   <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i34">
     <rdfs:label>&amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1072;&amp;#1085;&amp;#1076;&amp;#1088;&amp;#1072; &amp;#1060;&amp;#1077;&amp;#1076;&amp;#1086;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1055;&amp;#1088;&amp;#1091;&amp;#1089;&amp;#1089;&amp;#1082;&amp;#1072;&amp;#1103;</rdfs:label>
     <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i35"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </owl:Thing>
-  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i53">
-    <fhkb:hasMalePartner rdf:resource="http://www.example.com/genealogy.owl#i33"/>
-    <fhkb:hasFemalePartner rdf:resource="http://www.example.com/genealogy.owl#i34"/>
+  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i36">
+    <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i37"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>&amp;#1052;&amp;#1072;&amp;#1088;&amp;#1080;&amp;#1103; &amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1072;&amp;#1085;&amp;#1076;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1043;&amp;#1077;&amp;#1089;&amp;#1089;&amp;#1077;&amp;#1085;&amp;#1089;&amp;#1082;&amp;#1072;&amp;#1103;</rdfs:label>
+  </owl:Thing>
+  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i38">
+    <fhkb:isMotherOf>
+      <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i39">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label>&amp;#1053;&amp;#1080;&amp;#1082;&amp;#1086;&amp;#1083;&amp;#1072;&amp;#1081; II &amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1072;&amp;#1085;&amp;#1076;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;</rdfs:label>
+      </owl:NamedIndividual>
+    </fhkb:isMotherOf>
+    <rdfs:label>&amp;#1052;&amp;#1072;&amp;#1088;&amp;#1080;&amp;#1103; &amp;#1060;&amp;#1077;&amp;#1076;&amp;#1086;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1044;&amp;#1072;&amp;#1090;&amp;#1089;&amp;#1082;&amp;#1072;&amp;#1103;</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </owl:Thing>
-  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i46">
+  <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i50">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <fhkb:hasFemalePartner rdf:resource="http://www.example.com/genealogy.owl#i23"/>
+    <fhkb:hasMalePartner>
+      <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i25">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i26"/>
+        <rdfs:label>&amp;#1050;&amp;#1072;&amp;#1088;&amp;#1083; &amp;#1060;&amp;#1088;&amp;#1080;&amp;#1076;&amp;#1088;&amp;#1080;&amp;#1093; &amp;#1043;&amp;#1086;&amp;#1083;&amp;#1100;&amp;#1096;&amp;#1090;&amp;#1077;&amp;#1081;&amp;#1085;-&amp;#1043;&amp;#1086;&amp;#1090;&amp;#1090;&amp;#1086;&amp;#1088;&amp;#1087;&amp;#1089;&amp;#1082;&amp;#1080;&amp;#1081;</rdfs:label>
+      </owl:NamedIndividual>
+    </fhkb:hasMalePartner>
+  </owl:NamedIndividual>
+  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i18">
+    <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i20"/>
+    <rdfs:label>&amp;#1045;&amp;#1074;&amp;#1076;&amp;#1086;&amp;#1082;&amp;#1080;&amp;#1103; &amp;#1060;&amp;#1077;&amp;#1076;&amp;#1086;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1051;&amp;#1086;&amp;#1087;&amp;#1091;&amp;#1093;&amp;#1080;&amp;#1085;&amp;#1072;</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <fhkb:hasFemalePartner>
-      <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i4">
-        <rdfs:label>&amp;#1053;&amp;#1072;&amp;#1090;&amp;#1072;&amp;#1083;&amp;#1100;&amp;#1103; &amp;#1050;&amp;#1080;&amp;#1088;&amp;#1080;&amp;#1083;&amp;#1083;&amp;#1086;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1053;&amp;#1072;&amp;#1088;&amp;#1099;&amp;#1096;&amp;#1082;&amp;#1080;&amp;#1085;&amp;#1072;</rdfs:label>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-        <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i17"/>
-      </owl:Thing>
-    </fhkb:hasFemalePartner>
+  </owl:Thing>
+  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isGrandParentOf">
+    <owl:inverseOf rdf:resource="http://www.example.com/genealogy.owl#hasGrandParent"/>
+  </owl:ObjectProperty>
+  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i46">
+    <fhkb:hasFemalePartner rdf:resource="http://www.example.com/genealogy.owl#i4"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <fhkb:hasMalePartner rdf:resource="http://www.example.com/genealogy.owl#i2"/>
   </owl:Thing>
-  <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i43">
-    <fhkb:hasMalePartner rdf:resource="http://www.example.com/genealogy.owl#i8"/>
-    <fhkb:hasFemalePartner rdf:resource="http://www.example.com/genealogy.owl#i9"/>
+  <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i19">
+    <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i23"/>
+    <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i24"/>
+    <rdfs:label>&amp;#1045;&amp;#1082;&amp;#1072;&amp;#1090;&amp;#1077;&amp;#1088;&amp;#1080;&amp;#1085;&amp;#1072; I &amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1077;&amp;#1077;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1052;&amp;#1080;&amp;#1093;&amp;#1072;&amp;#1081;&amp;#1083;&amp;#1086;&amp;#1074;&amp;#1072;</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   </owl:NamedIndividual>
-  <owl:TransitiveProperty rdf:about="http://www.example.com/genealogy.owl#isRelationOf">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i12">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>&amp;#1060;&amp;#1088;&amp;#1080;&amp;#1076;&amp;#1088;&amp;#1080;&amp;#1093; &amp;#1042;&amp;#1080;&amp;#1083;&amp;#1100;&amp;#1075;&amp;#1077;&amp;#1083;&amp;#1100;&amp;#1084; &amp;#1050;&amp;#1091;&amp;#1088;&amp;#1083;&amp;#1072;&amp;#1085;&amp;#1076;&amp;#1089;&amp;#1082;&amp;#1080;&amp;#1081;</rdfs:label>
+  </owl:Thing>
+  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isGreatGrandParentOf">
+    <owl:inverseOf rdf:resource="http://www.example.com/genealogy.owl#hasGreatGrandParent"/>
+  </owl:ObjectProperty>
+  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i48">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <fhkb:hasFemalePartner rdf:resource="http://www.example.com/genealogy.owl#i21"/>
+    <fhkb:hasMalePartner rdf:resource="http://www.example.com/genealogy.owl#i20"/>
+  </owl:Thing>
+  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i27">
+    <fhkb:isMotherOf>
+      <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i28">
+        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i31"/>
+        <rdfs:label>&amp;#1055;&amp;#1072;&amp;#1074;&amp;#1077;&amp;#1083; I &amp;#1055;&amp;#1077;&amp;#1090;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;</rdfs:label>
+        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i33"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+      </owl:NamedIndividual>
+    </fhkb:isMotherOf>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>&amp;#1045;&amp;#1082;&amp;#1072;&amp;#1090;&amp;#1077;&amp;#1088;&amp;#1080;&amp;#1085;&amp;#1072; II &amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1077;&amp;#1077;&amp;#1074;&amp;#1085;&amp;#1072;</rdfs:label>
+  </owl:Thing>
+  <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i3">
+    <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i7"/>
+    <rdfs:label>&amp;#1052;&amp;#1072;&amp;#1088;&amp;#1080;&amp;#1103; &amp;#1048;&amp;#1083;&amp;#1100;&amp;#1080;&amp;#1085;&amp;#1080;&amp;#1095;&amp;#1085;&amp;#1072; &amp;#1052;&amp;#1080;&amp;#1083;&amp;#1086;&amp;#1089;&amp;#1083;&amp;#1072;&amp;#1074;&amp;#1089;&amp;#1082;&amp;#1072;&amp;#1103;</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i8"/>
+    <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i6"/>
+  </owl:NamedIndividual>
+  <owl:FunctionalProperty rdf:about="http://www.example.com/genealogy.owl#hasMother">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </owl:TransitiveProperty>
-  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasGrandmother">
-    <owl:propertyChainAxiom rdf:parseType="Collection">
-      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasParent"/>
-      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasMother"/>
-    </owl:propertyChainAxiom>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isMotherOf"/>
+    </owl:inverseOf>
     <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
     <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Woman"/>
     <rdfs:subPropertyOf>
-      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasGrandParent">
+      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasParent">
+        <owl:inverseOf rdf:resource="http://www.example.com/genealogy.owl#isParentOf"/>
         <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#hasAncestor"/>
         <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
         <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-        <owl:inverseOf rdf:resource="http://www.example.com/genealogy.owl#isGrandParentOf"/>
+        <owl:equivalentProperty rdf:resource="http://www.example.com/genealogy.owl#isChildOf"/>
       </owl:ObjectProperty>
     </rdfs:subPropertyOf>
-    <owl:inverseOf>
-      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isGrandmotherOf"/>
-    </owl:inverseOf>
-  </owl:ObjectProperty>
-  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i44">
-    <fhkb:hasMalePartner>
-      <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i13">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i14"/>
-        <rdfs:label>&amp;#1050;&amp;#1072;&amp;#1088;&amp;#1083; &amp;#1051;&amp;#1077;&amp;#1086;&amp;#1087;&amp;#1086;&amp;#1083;&amp;#1100;&amp;#1076; &amp;#1052;&amp;#1077;&amp;#1082;&amp;#1083;&amp;#1077;&amp;#1085;&amp;#1073;&amp;#1091;&amp;#1088;&amp;#1075;-&amp;#1064;&amp;#1074;&amp;#1077;&amp;#1088;&amp;#1080;&amp;#1085;&amp;#1089;&amp;#1082;&amp;#1080;&amp;#1081;</rdfs:label>
-      </owl:NamedIndividual>
-    </fhkb:hasMalePartner>
-    <fhkb:hasFemalePartner rdf:resource="http://www.example.com/genealogy.owl#i10"/>
+  </owl:FunctionalProperty>
+  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i42">
+    <fhkb:hasMalePartner rdf:resource="http://www.example.com/genealogy.owl#i2"/>
+    <fhkb:hasFemalePartner rdf:resource="http://www.example.com/genealogy.owl#i3"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </owl:Thing>
+  <owl:FunctionalProperty rdf:about="http://www.example.com/genealogy.owl#hasFather">
+    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Man"/>
+    <owl:inverseOf rdf:resource="http://www.example.com/genealogy.owl#isFatherOf"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#hasParent"/>
+  </owl:FunctionalProperty>
+  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isBrotherOf">
+    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isSiblingOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#isBloodrelationOf"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasParent"/>
+          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#isParentOf"/>
+        </owl:propertyChainAxiom>
+      </owl:ObjectProperty>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Man"/>
+  </owl:ObjectProperty>
+  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Woman">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#hasSex"/>
+            <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Female"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i52">
+    <fhkb:hasFemalePartner rdf:resource="http://www.example.com/genealogy.owl#i30"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <fhkb:hasMalePartner rdf:resource="http://www.example.com/genealogy.owl#i28"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i29">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label>&amp;#1053;&amp;#1072;&amp;#1090;&amp;#1072;&amp;#1083;&amp;#1100;&amp;#1103; &amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1077;&amp;#1077;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1043;&amp;#1077;&amp;#1089;&amp;#1089;&amp;#1077;&amp;#1085;-&amp;#1044;&amp;#1072;&amp;#1088;&amp;#1084;&amp;#1096;&amp;#1090;&amp;#1072;&amp;#1076;&amp;#1089;&amp;#1082;&amp;#1072;&amp;#1103;</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasMalePartner">
+    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Man"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#hasPartner"/>
+    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Marriage"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isMalePartnerIn"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isPartnerIn"/>
+  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i45">
+    <fhkb:hasMalePartner rdf:resource="http://www.example.com/genealogy.owl#i15"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <fhkb:hasFemalePartner rdf:resource="http://www.example.com/genealogy.owl#i14"/>
+  </owl:Thing>
+  <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i54">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <fhkb:hasFemalePartner rdf:resource="http://www.example.com/genealogy.owl#i36"/>
+    <fhkb:hasMalePartner rdf:resource="http://www.example.com/genealogy.owl#i35"/>
+  </owl:NamedIndividual>
+  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i49">
+    <fhkb:hasMalePartner rdf:resource="http://www.example.com/genealogy.owl#i17"/>
+    <fhkb:hasFemalePartner rdf:resource="http://www.example.com/genealogy.owl#i19"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </owl:Thing>
+  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i53">
+    <fhkb:hasMalePartner rdf:resource="http://www.example.com/genealogy.owl#i33"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <fhkb:hasFemalePartner rdf:resource="http://www.example.com/genealogy.owl#i34"/>
+  </owl:Thing>
+  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i55">
+    <fhkb:hasMalePartner rdf:resource="http://www.example.com/genealogy.owl#i37"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <fhkb:hasFemalePartner rdf:resource="http://www.example.com/genealogy.owl#i38"/>
+  </owl:Thing>
   <owl:Class rdf:about="http://www.example.com/genealogy.owl#Person">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Man"/>
+        <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#hasFather"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/genealogy.owl#DomainEntity"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#hasSex"/>
+        <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Sex"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="http://www.example.com/genealogy.owl#Sex"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:maxQualifiedCardinality>
+        <owl:onClass rdf:resource="http://www.example.com/genealogy.owl#Person"/>
+        <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#hasParent"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
     <owl:equivalentClass>
       <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
@@ -1325,242 +731,40 @@
         <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Woman"/>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Man"/>
-        <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#hasFather"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#hasParent"/>
-        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:maxQualifiedCardinality>
-        <owl:onClass rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <owl:disjointWith rdf:resource="http://www.example.com/genealogy.owl#Sex"/>
-    <rdfs:subClassOf rdf:resource="http://www.example.com/genealogy.owl#DomainEntity"/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#hasSex"/>
-        <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Sex"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
   </owl:Class>
-  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i45">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <fhkb:hasMalePartner rdf:resource="http://www.example.com/genealogy.owl#i15"/>
-    <fhkb:hasFemalePartner>
-      <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i14">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i16"/>
-        <rdfs:label>&amp;#1040;&amp;#1085;&amp;#1085;&amp;#1072; &amp;#1051;&amp;#1077;&amp;#1086;&amp;#1087;&amp;#1086;&amp;#1083;&amp;#1100;&amp;#1076;&amp;#1086;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1052;&amp;#1077;&amp;#1082;&amp;#1083;&amp;#1077;&amp;#1085;&amp;#1073;&amp;#1091;&amp;#1088;&amp;#1075;-&amp;#1064;&amp;#1074;&amp;#1077;&amp;#1088;&amp;#1080;&amp;#1085;&amp;#1089;&amp;#1082;&amp;#1072;&amp;#1103;</rdfs:label>
-      </owl:NamedIndividual>
-    </fhkb:hasFemalePartner>
-  </owl:Thing>
-  <owl:FunctionalProperty rdf:about="http://www.example.com/genealogy.owl#hasMother">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#hasParent"/>
-    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Woman"/>
-    <owl:inverseOf rdf:resource="http://www.example.com/genealogy.owl#isMotherOf"/>
-  </owl:FunctionalProperty>
-  <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i55">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <fhkb:hasFemalePartner>
-      <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i38">
-        <rdfs:label>&amp;#1052;&amp;#1072;&amp;#1088;&amp;#1080;&amp;#1103; &amp;#1060;&amp;#1077;&amp;#1076;&amp;#1086;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1044;&amp;#1072;&amp;#1090;&amp;#1089;&amp;#1082;&amp;#1072;&amp;#1103;</rdfs:label>
-        <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i39"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-      </owl:NamedIndividual>
-    </fhkb:hasFemalePartner>
-    <fhkb:hasMalePartner rdf:resource="http://www.example.com/genealogy.owl#i37"/>
-  </owl:NamedIndividual>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Male">
+  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isSisterOf">
+    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Person"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#isSiblingOf"/>
+    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Woman"/>
+  </owl:ObjectProperty>
+  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Female">
+    <owl:disjointWith rdf:resource="http://www.example.com/genealogy.owl#Male"/>
     <rdfs:subClassOf rdf:resource="http://www.example.com/genealogy.owl#Sex"/>
   </owl:Class>
-  <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i48">
-    <fhkb:hasFemalePartner>
-      <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i21">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i22"/>
-        <rdfs:label>&amp;#1064;&amp;#1072;&amp;#1088;&amp;#1083;&amp;#1086;&amp;#1090;&amp;#1090;&amp;#1072; &amp;#1050;&amp;#1088;&amp;#1080;&amp;#1089;&amp;#1090;&amp;#1080;&amp;#1085;&amp;#1072; &amp;#1041;&amp;#1088;&amp;#1072;&amp;#1091;&amp;#1085;&amp;#1096;&amp;#1074;&amp;#1077;&amp;#1081;&amp;#1075;-&amp;#1042;&amp;#1086;&amp;#1083;&amp;#1100;&amp;#1092;&amp;#1077;&amp;#1085;&amp;#1073;&amp;#1102;&amp;#1090;&amp;#1090;&amp;#1077;&amp;#1083;&amp;#1100;&amp;#1089;&amp;#1082;&amp;#1072;&amp;#1103;</rdfs:label>
-      </owl:NamedIndividual>
-    </fhkb:hasFemalePartner>
-    <fhkb:hasMalePartner>
-      <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i20">
-        <rdfs:label>&amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1077;&amp;#1081; &amp;#1055;&amp;#1077;&amp;#1090;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;</rdfs:label>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i22"/>
-      </owl:Thing>
-    </fhkb:hasMalePartner>
+  <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i5">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label>&amp;#1052;&amp;#1072;&amp;#1088;&amp;#1092;&amp;#1072; &amp;#1052;&amp;#1072;&amp;#1090;&amp;#1074;&amp;#1077;&amp;#1077;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1040;&amp;#1087;&amp;#1088;&amp;#1072;&amp;#1082;&amp;#1089;&amp;#1080;&amp;#1085;&amp;#1072;</rdfs:label>
   </owl:NamedIndividual>
-  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasGrandfather">
-    <owl:propertyChainAxiom rdf:parseType="Collection">
-      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasParent"/>
-      <rdf:Description rdf:about="http://www.example.com/genealogy.owl#hasFather"/>
-    </owl:propertyChainAxiom>
-    <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#hasGrandParent"/>
-    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Man"/>
-    <owl:inverseOf rdf:resource="http://www.example.com/genealogy.owl#isGrandfatherOf"/>
-    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-  </owl:ObjectProperty>
   <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i47">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <fhkb:hasMalePartner>
-      <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i17">
-        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i24"/>
-        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i23"/>
-        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i20"/>
-        <rdfs:label>&amp;#1055;&amp;#1077;&amp;#1090;&amp;#1088; I &amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1077;&amp;#1077;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;</rdfs:label>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-      </owl:Thing>
-    </fhkb:hasMalePartner>
-    <fhkb:hasFemalePartner>
-      <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i18">
-        <rdfs:label>&amp;#1045;&amp;#1074;&amp;#1076;&amp;#1086;&amp;#1082;&amp;#1080;&amp;#1103; &amp;#1060;&amp;#1077;&amp;#1076;&amp;#1086;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1051;&amp;#1086;&amp;#1087;&amp;#1091;&amp;#1093;&amp;#1080;&amp;#1085;&amp;#1072;</rdfs:label>
-        <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i20"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-      </owl:Thing>
-    </fhkb:hasFemalePartner>
-  </owl:NamedIndividual>
-  <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i23">
-    <fhkb:isMotherOf>
-      <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i26">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:label>&amp;#1055;&amp;#1077;&amp;#1090;&amp;#1088; III &amp;#1060;&amp;#1077;&amp;#1076;&amp;#1086;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;</rdfs:label>
-        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i28"/>
-      </owl:NamedIndividual>
-    </fhkb:isMotherOf>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <rdfs:label>&amp;#1040;&amp;#1085;&amp;#1085;&amp;#1072; &amp;#1055;&amp;#1077;&amp;#1090;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;&amp;#1072;</rdfs:label>
-    <fhkb:isSisterOf>
-      <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i24">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <fhkb:isSisterOf rdf:resource="http://www.example.com/genealogy.owl#i23"/>
-        <rdfs:label>&amp;#1045;&amp;#1083;&amp;#1080;&amp;#1079;&amp;#1072;&amp;#1074;&amp;#1077;&amp;#1090;&amp;#1072; &amp;#1055;&amp;#1077;&amp;#1090;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;&amp;#1072;</rdfs:label>
-      </owl:NamedIndividual>
-    </fhkb:isSisterOf>
-  </owl:NamedIndividual>
-  <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i52">
-    <fhkb:hasFemalePartner rdf:resource="http://www.example.com/genealogy.owl#i30"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <fhkb:hasMalePartner>
-      <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i28">
-        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i31"/>
-        <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i33"/>
-        <rdfs:label>&amp;#1055;&amp;#1072;&amp;#1074;&amp;#1077;&amp;#1083; I &amp;#1055;&amp;#1077;&amp;#1090;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1080;&amp;#1095; &amp;#1056;&amp;#1086;&amp;#1084;&amp;#1072;&amp;#1085;&amp;#1086;&amp;#1074;</rdfs:label>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-      </owl:NamedIndividual>
-    </fhkb:hasMalePartner>
-  </owl:NamedIndividual>
-  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i54">
-    <fhkb:hasFemalePartner>
-      <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i36">
-        <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i37"/>
-        <rdfs:label>&amp;#1052;&amp;#1072;&amp;#1088;&amp;#1080;&amp;#1103; &amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1072;&amp;#1085;&amp;#1076;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1043;&amp;#1077;&amp;#1089;&amp;#1089;&amp;#1077;&amp;#1085;&amp;#1089;&amp;#1082;&amp;#1072;&amp;#1103;</rdfs:label>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-      </owl:NamedIndividual>
-    </fhkb:hasFemalePartner>
-    <fhkb:hasMalePartner rdf:resource="http://www.example.com/genealogy.owl#i35"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  </owl:Thing>
-  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i40">
-    <rdfs:label>&amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1072;&amp;#1085;&amp;#1076;&amp;#1088;&amp;#1072; &amp;#1060;&amp;#1077;&amp;#1076;&amp;#1086;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1043;&amp;#1077;&amp;#1089;&amp;#1089;&amp;#1077;&amp;#1085;&amp;#1089;&amp;#1082;&amp;#1072;&amp;#1103;</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  </owl:Thing>
-  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i49">
-    <fhkb:hasFemalePartner>
-      <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i19">
-        <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i23"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:label>&amp;#1045;&amp;#1082;&amp;#1072;&amp;#1090;&amp;#1077;&amp;#1088;&amp;#1080;&amp;#1085;&amp;#1072; I &amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1077;&amp;#1077;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1052;&amp;#1080;&amp;#1093;&amp;#1072;&amp;#1081;&amp;#1083;&amp;#1086;&amp;#1074;&amp;#1072;</rdfs:label>
-        <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i24"/>
-      </owl:NamedIndividual>
-    </fhkb:hasFemalePartner>
+    <fhkb:hasFemalePartner rdf:resource="http://www.example.com/genealogy.owl#i18"/>
     <fhkb:hasMalePartner rdf:resource="http://www.example.com/genealogy.owl#i17"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  </owl:Thing>
-  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasPartner"/>
-  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasBrother">
-    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Man"/>
-  </owl:ObjectProperty>
-  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i25">
-    <fhkb:isFatherOf rdf:resource="http://www.example.com/genealogy.owl#i26"/>
-    <rdfs:label>&amp;#1050;&amp;#1072;&amp;#1088;&amp;#1083; &amp;#1060;&amp;#1088;&amp;#1080;&amp;#1076;&amp;#1088;&amp;#1080;&amp;#1093; &amp;#1043;&amp;#1086;&amp;#1083;&amp;#1100;&amp;#1096;&amp;#1090;&amp;#1077;&amp;#1081;&amp;#1085;-&amp;#1043;&amp;#1086;&amp;#1090;&amp;#1090;&amp;#1086;&amp;#1088;&amp;#1087;&amp;#1089;&amp;#1082;&amp;#1080;&amp;#1081;</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  </owl:Thing>
-  <owl:FunctionalProperty rdf:about="http://www.example.com/genealogy.owl#hasFather">
-    <owl:inverseOf rdf:resource="http://www.example.com/genealogy.owl#isFatherOf"/>
-    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Man"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.example.com/genealogy.owl#hasParent"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-  </owl:FunctionalProperty>
-  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isGreatGrandParentOf"/>
-  <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i27">
-    <fhkb:isMotherOf rdf:resource="http://www.example.com/genealogy.owl#i28"/>
-    <rdfs:label>&amp;#1045;&amp;#1082;&amp;#1072;&amp;#1090;&amp;#1077;&amp;#1088;&amp;#1080;&amp;#1085;&amp;#1072; II &amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1077;&amp;#1077;&amp;#1074;&amp;#1085;&amp;#1072;</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   </owl:NamedIndividual>
-  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasSex">
-    <rdfs:domain rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdfs:range rdf:resource="http://www.example.com/genealogy.owl#Sex"/>
-  </owl:ObjectProperty>
   <owl:NamedIndividual rdf:about="http://www.example.com/genealogy.owl#i51">
     <fhkb:hasMalePartner rdf:resource="http://www.example.com/genealogy.owl#i26"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <fhkb:hasFemalePartner rdf:resource="http://www.example.com/genealogy.owl#i27"/>
   </owl:NamedIndividual>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Woman"/>
-  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i12">
-    <rdfs:label>&amp;#1060;&amp;#1088;&amp;#1080;&amp;#1076;&amp;#1088;&amp;#1080;&amp;#1093; &amp;#1042;&amp;#1080;&amp;#1083;&amp;#1100;&amp;#1075;&amp;#1077;&amp;#1083;&amp;#1100;&amp;#1084; &amp;#1050;&amp;#1091;&amp;#1088;&amp;#1083;&amp;#1072;&amp;#1085;&amp;#1076;&amp;#1089;&amp;#1082;&amp;#1080;&amp;#1081;</rdfs:label>
+  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasChild"/>
+  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isParentOf"/>
+  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#hasSpouse">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isSpouseOf"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i40">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>&amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1072;&amp;#1085;&amp;#1076;&amp;#1088;&amp;#1072; &amp;#1060;&amp;#1077;&amp;#1076;&amp;#1086;&amp;#1088;&amp;#1086;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1043;&amp;#1077;&amp;#1089;&amp;#1089;&amp;#1077;&amp;#1085;&amp;#1089;&amp;#1082;&amp;#1072;&amp;#1103;</rdfs:label>
   </owl:Thing>
-  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i50">
-    <fhkb:hasFemalePartner rdf:resource="http://www.example.com/genealogy.owl#i23"/>
-    <fhkb:hasMalePartner rdf:resource="http://www.example.com/genealogy.owl#i25"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  </owl:Thing>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Marriage">
-    <rdfs:subClassOf>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Partnership"/>
-          <owl:Restriction>
-            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#hasFemalePartner"/>
-            <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-            <owl:onClass rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-          </owl:Restriction>
-          <owl:Restriction>
-            <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#hasMalePartner"/>
-            <owl:onClass rdf:resource="http://www.example.com/genealogy.owl#Person"/>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.example.com/genealogy.owl#Man">
-    <owl:equivalentClass>
-      <owl:Class>
-        <owl:intersectionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.example.com/genealogy.owl#Person"/>
-          <owl:Restriction>
-            <owl:onProperty rdf:resource="http://www.example.com/genealogy.owl#hasSex"/>
-            <owl:someValuesFrom rdf:resource="http://www.example.com/genealogy.owl#Male"/>
-          </owl:Restriction>
-        </owl:intersectionOf>
-      </owl:Class>
-    </owl:equivalentClass>
-  </owl:Class>
-  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isGrandParentOf"/>
-  <owl:Thing rdf:about="http://www.example.com/genealogy.owl#i29">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label>&amp;#1053;&amp;#1072;&amp;#1090;&amp;#1072;&amp;#1083;&amp;#1100;&amp;#1103; &amp;#1040;&amp;#1083;&amp;#1077;&amp;#1082;&amp;#1089;&amp;#1077;&amp;#1077;&amp;#1074;&amp;#1085;&amp;#1072; &amp;#1043;&amp;#1077;&amp;#1089;&amp;#1089;&amp;#1077;&amp;#1085;-&amp;#1044;&amp;#1072;&amp;#1088;&amp;#1084;&amp;#1096;&amp;#1090;&amp;#1072;&amp;#1076;&amp;#1089;&amp;#1082;&amp;#1072;&amp;#1103;</rdfs:label>
-  </owl:Thing>
-  <owl:ObjectProperty rdf:about="http://www.example.com/genealogy.owl#isChildOf"/>
+  <owl:Class rdf:about="http://www.example.com/genealogy.owl#DomainEntity"/>
 </rdf:RDF>
