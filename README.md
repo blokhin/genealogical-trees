@@ -22,6 +22,11 @@ Resulting file ```entailed_graph.json``` is to be uploaded and visualized in the
 
 Before processing, the required Python libraries listed in ```requirements.txt``` should be installed (virtualenv is highly recommended).
 
+Blog tutorial
+------
+
+https://blog.tilde.pro/semantic-web-technologies-on-an-example-of-family-trees-7518f3f835a9
+
 Remark on FHKB
 ------
 
