@@ -1,5 +1,4 @@
--e git://github.com/RDFLib/rdflib.git#egg=rdflib
+rdflib
+transliterate
 -e git://github.com/RDFLib/OWL-RL.git#egg=RDFClosure
-isodate
-pyparsing
 -e git://github.com/madprime/python-gedcom.git#egg=gedcom

@@ -1,678 +1,103 @@
 [
 {
-"source": "i33", 
-"type": "isGrandParentOf", 
-"target": "i37"
-}, 
-{
-"source": "i33", 
-"type": "hasGreatGrandParent", 
-"target": "i23"
-}, 
-{
-"source": "i33", 
-"type": "isThirdCousinOf", 
-"target": "i33"
-}, 
-{
-"source": "i33", 
-"type": "isThirdCousinOf", 
-"target": "i31"
-}, 
-{
-"source": "i33", 
-"type": "isSecondCousinOf", 
-"target": "i33"
-}, 
-{
-"source": "i33", 
-"type": "hasGrandParent", 
-"target": "i27"
-}, 
-{
-"source": "i33", 
-"type": "hasGreatGrandParent", 
-"target": "i25"
-}, 
-{
-"source": "i33", 
-"type": "hasGrandParent", 
-"target": "i26"
-}, 
-{
-"source": "i33", 
-"type": "isSecondCousinOf", 
-"target": "i31"
-}, 
-{
-"source": "i33", 
-"type": "isFirstCousinOf", 
-"target": "i33"
-}, 
-{
-"source": "i33", 
-"type": "isFirstCousinOf", 
-"target": "i31"
-}, 
-{
-"source": "i33", 
-"type": "isFatherOf", 
-"target": "i35"
-}, 
-{
-"source": "i33", 
-"type": "isGreatGrandParentOf", 
-"target": "i39"
-}, 
-{
-"source": "i33", 
-"type": "label", 
-"target": "&#1053;&#1080;&#1082;&#1086;&#1083;&#1072;&#1081; I &#1055;&#1072;&#1074;&#1083;&#1086;&#1074;&#1080;&#1095; &#1056;&#1086;&#1084;&#1072;&#1085;&#1086;&#1074;"
-}, 
-{
-"source": "i35", 
-"type": "isFatherOf", 
-"target": "i37"
-}, 
-{
-"source": "i35", 
-"type": "isGrandParentOf", 
-"target": "i39"
-}, 
-{
-"source": "i35", 
-"type": "hasGreatGrandParent", 
-"target": "i27"
-}, 
-{
-"source": "i35", 
-"type": "isFirstCousinOf", 
-"target": "i35"
-}, 
-{
-"source": "i35", 
-"type": "hasUncle", 
-"target": "i31"
-}, 
-{
-"source": "i35", 
-"type": "hasGrandParent", 
-"target": "i30"
-}, 
-{
-"source": "i35", 
-"type": "hasGrandParent", 
-"target": "i28"
-}, 
-{
-"source": "i35", 
-"type": "hasGreatGrandParent", 
-"target": "i26"
-}, 
-{
-"source": "i35", 
-"type": "isThirdCousinOf", 
-"target": "i35"
-}, 
-{
-"source": "i35", 
-"type": "isSecondCousinOf", 
-"target": "i35"
-}, 
-{
-"source": "i35", 
-"type": "label", 
-"target": "&#1040;&#1083;&#1077;&#1082;&#1089;&#1072;&#1085;&#1076;&#1088; II &#1053;&#1080;&#1082;&#1086;&#1083;&#1072;&#1077;&#1074;&#1080;&#1095; &#1056;&#1086;&#1084;&#1072;&#1085;&#1086;&#1074;"
-}, 
-{
-"source": "i17", 
-"type": "isFirstCousinOf", 
-"target": "i7"
-}, 
-{
-"source": "i17", 
-"type": "isGrandParentOf", 
-"target": "i26"
-}, 
-{
-"source": "i17", 
-"type": "isFirstCousinOf", 
-"target": "i8"
-}, 
-{
-"source": "i17", 
-"type": "isFatherOf", 
-"target": "i20"
-}, 
-{
-"source": "i17", 
-"type": "hasGrandParent", 
-"target": "i0"
-}, 
-{
-"source": "i17", 
-"type": "isGrandParentOf", 
-"target": "i22"
-}, 
-{
-"source": "i17", 
-"type": "isFatherOf", 
-"target": "i23"
-}, 
-{
-"source": "i17", 
-"type": "isFirstCousinOf", 
-"target": "i6"
-}, 
-{
-"source": "i17", 
-"type": "hasGrandParent", 
-"target": "i1"
-}, 
-{
-"source": "i17", 
-"type": "isGreatGrandParentOf", 
-"target": "i28"
-}, 
-{
-"source": "i17", 
-"type": "isFirstCousinOf", 
-"target": "i17"
-}, 
-{
-"source": "i17", 
-"type": "isFatherOf", 
-"target": "i24"
-}, 
-{
-"source": "i17", 
-"type": "label", 
-"target": "&#1055;&#1077;&#1090;&#1088; I &#1040;&#1083;&#1077;&#1082;&#1089;&#1077;&#1077;&#1074;&#1080;&#1095; &#1056;&#1086;&#1084;&#1072;&#1085;&#1086;&#1074;"
-}, 
-{
-"source": "i9", 
-"type": "isGrandParentOf", 
-"target": "i14"
-}, 
-{
-"source": "i9", 
-"type": "isMotherOf", 
-"target": "i11"
-}, 
-{
-"source": "i9", 
-"type": "isMotherOf", 
-"target": "i10"
-}, 
-{
-"source": "i9", 
-"type": "isGreatGrandParentOf", 
-"target": "i16"
-}, 
-{
-"source": "i9", 
+"source": "i14", 
 "type": "isWifeOf", 
-"target": "i8"
+"target": "i15"
 }, 
 {
-"source": "i9", 
-"type": "label", 
-"target": "&#1055;&#1088;&#1072;&#1089;&#1082;&#1086;&#1074;&#1100;&#1103; &#1060;&#1077;&#1076;&#1086;&#1088;&#1086;&#1074;&#1085;&#1072; &#1057;&#1072;&#1083;&#1090;&#1099;&#1082;&#1086;&#1074;&#1072;"
-}, 
-{
-"source": "i23", 
-"type": "isMotherOf", 
+"source": "i14", 
+"type": "isSecondCousinOf", 
 "target": "i26"
 }, 
 {
-"source": "i23", 
-"type": "isGrandParentOf", 
-"target": "i28"
-}, 
-{
-"source": "i23", 
-"type": "hasGreatGrandParent", 
-"target": "i0"
-}, 
-{
-"source": "i23", 
-"type": "isFirstCousinOf", 
-"target": "i10"
-}, 
-{
-"source": "i23", 
-"type": "isFirstCousinOf", 
-"target": "i11"
-}, 
-{
-"source": "i23", 
-"type": "isSecondCousinOf", 
-"target": "i24"
-}, 
-{
-"source": "i23", 
-"type": "isGreatGrandParentOf", 
-"target": "i31"
-}, 
-{
-"source": "i23", 
-"type": "isWifeOf", 
-"target": "i25"
-}, 
-{
-"source": "i23", 
-"type": "isFirstCousinOf", 
-"target": "i20"
-}, 
-{
-"source": "i23", 
-"type": "hasGreatGrandParent", 
-"target": "i1"
-}, 
-{
-"source": "i23", 
-"type": "isGreatGrandParentOf", 
-"target": "i33"
-}, 
-{
-"source": "i23", 
-"type": "hasGrandParent", 
-"target": "i4"
-}, 
-{
-"source": "i23", 
-"type": "isFirstCousinOf", 
-"target": "i23"
-}, 
-{
-"source": "i23", 
-"type": "isSecondCousinOf", 
-"target": "i11"
-}, 
-{
-"source": "i23", 
-"type": "isSecondCousinOf", 
-"target": "i23"
-}, 
-{
-"source": "i23", 
-"type": "isFirstCousinOf", 
-"target": "i24"
-}, 
-{
-"source": "i23", 
-"type": "isSecondCousinOf", 
-"target": "i10"
-}, 
-{
-"source": "i23", 
-"type": "isSecondCousinOf", 
-"target": "i20"
-}, 
-{
-"source": "i23", 
-"type": "hasGrandParent", 
-"target": "i2"
-}, 
-{
-"source": "i23", 
-"type": "label", 
-"target": "&#1040;&#1085;&#1085;&#1072; &#1055;&#1077;&#1090;&#1088;&#1086;&#1074;&#1085;&#1072; &#1056;&#1086;&#1084;&#1072;&#1085;&#1086;&#1074;&#1072;"
-}, 
-{
-"source": "i19", 
-"type": "isGrandParentOf", 
-"target": "i26"
-}, 
-{
-"source": "i19", 
-"type": "isMotherOf", 
-"target": "i24"
-}, 
-{
-"source": "i19", 
-"type": "isMotherOf", 
-"target": "i23"
-}, 
-{
-"source": "i19", 
-"type": "isGreatGrandParentOf", 
-"target": "i28"
-}, 
-{
-"source": "i19", 
-"type": "isWifeOf", 
-"target": "i17"
-}, 
-{
-"source": "i19", 
-"type": "label", 
-"target": "&#1045;&#1082;&#1072;&#1090;&#1077;&#1088;&#1080;&#1085;&#1072; I &#1040;&#1083;&#1077;&#1082;&#1089;&#1077;&#1077;&#1074;&#1085;&#1072; &#1052;&#1080;&#1093;&#1072;&#1081;&#1083;&#1086;&#1074;&#1072;"
-}, 
-{
-"source": "i0", 
-"type": "isGreatGrandParentOf", 
-"target": "i10"
-}, 
-{
-"source": "i0", 
-"type": "isGrandParentOf", 
-"target": "i8"
-}, 
-{
-"source": "i0", 
-"type": "isGreatGrandParentOf", 
-"target": "i20"
-}, 
-{
-"source": "i0", 
-"type": "isGreatGrandParentOf", 
-"target": "i11"
-}, 
-{
-"source": "i0", 
-"type": "isFatherOf", 
-"target": "i2"
-}, 
-{
-"source": "i0", 
-"type": "isGreatGrandParentOf", 
-"target": "i24"
-}, 
-{
-"source": "i0", 
-"type": "isGrandParentOf", 
-"target": "i6"
-}, 
-{
-"source": "i0", 
-"type": "isGrandParentOf", 
-"target": "i17"
-}, 
-{
-"source": "i0", 
-"type": "isGrandParentOf", 
-"target": "i7"
-}, 
-{
-"source": "i0", 
-"type": "isGreatGrandParentOf", 
-"target": "i23"
-}, 
-{
-"source": "i0", 
-"type": "label", 
-"target": "&#1052;&#1080;&#1093;&#1072;&#1080;&#1083; &#1060;&#1077;&#1076;&#1086;&#1088;&#1086;&#1074;&#1080;&#1095; &#1056;&#1086;&#1084;&#1072;&#1085;&#1086;&#1074;"
-}, 
-{
-"source": "i26", 
-"type": "hasGrandParent", 
-"target": "i17"
-}, 
-{
-"source": "i26", 
-"type": "isFirstCousinOf", 
-"target": "i22"
-}, 
-{
-"source": "i26", 
+"source": "i14", 
 "type": "isSecondCousinOf", 
 "target": "i22"
 }, 
 {
-"source": "i26", 
-"type": "hasGreatGrandParent", 
-"target": "i2"
-}, 
-{
-"source": "i26", 
-"type": "isGreatGrandParentOf", 
-"target": "i35"
-}, 
-{
-"source": "i26", 
-"type": "hasGrandParent", 
-"target": "i19"
-}, 
-{
-"source": "i26", 
-"type": "isGrandParentOf", 
-"target": "i33"
-}, 
-{
-"source": "i26", 
-"type": "isThirdCousinOf", 
-"target": "i26"
-}, 
-{
-"source": "i26", 
+"source": "i14", 
 "type": "isThirdCousinOf", 
 "target": "i14"
 }, 
 {
-"source": "i26", 
+"source": "i14", 
+"type": "isFirstCousinOf", 
+"target": "i14"
+}, 
+{
+"source": "i14", 
 "type": "hasGreatGrandParent", 
-"target": "i4"
+"target": "i3"
 }, 
 {
-"source": "i26", 
-"type": "isFatherOf", 
-"target": "i28"
-}, 
-{
-"source": "i26", 
-"type": "isThirdCousinOf", 
-"target": "i22"
-}, 
-{
-"source": "i26", 
-"type": "hasAunt", 
-"target": "i24"
-}, 
-{
-"source": "i26", 
-"type": "isGrandParentOf", 
-"target": "i31"
-}, 
-{
-"source": "i26", 
-"type": "isSecondCousinOf", 
-"target": "i14"
-}, 
-{
-"source": "i26", 
-"type": "isFirstCousinOf", 
-"target": "i26"
-}, 
-{
-"source": "i26", 
-"type": "isSecondCousinOf", 
-"target": "i26"
-}, 
-{
-"source": "i26", 
-"type": "label", 
-"target": "&#1055;&#1077;&#1090;&#1088; III &#1060;&#1077;&#1076;&#1086;&#1088;&#1086;&#1074;&#1080;&#1095; &#1056;&#1086;&#1084;&#1072;&#1085;&#1086;&#1074;"
-}, 
-{
-"source": "i6", 
-"type": "isFirstCousinOf", 
-"target": "i17"
-}, 
-{
-"source": "i6", 
-"type": "hasGrandParent", 
-"target": "i0"
-}, 
-{
-"source": "i6", 
-"type": "isGreatUncleOf", 
-"target": "i14"
-}, 
-{
-"source": "i6", 
-"type": "isUncleOf", 
-"target": "i11"
-}, 
-{
-"source": "i6", 
-"type": "hasGrandParent", 
-"target": "i1"
-}, 
-{
-"source": "i6", 
-"type": "isFirstCousinOf", 
-"target": "i7"
-}, 
-{
-"source": "i6", 
-"type": "isUncleOf", 
-"target": "i10"
-}, 
-{
-"source": "i6", 
-"type": "isFirstCousinOf", 
-"target": "i6"
-}, 
-{
-"source": "i6", 
-"type": "isFirstCousinOf", 
-"target": "i8"
-}, 
-{
-"source": "i6", 
-"type": "label", 
-"target": "&#1060;&#1077;&#1076;&#1086;&#1088; &#1040;&#1083;&#1077;&#1082;&#1089;&#1077;&#1077;&#1074;&#1080;&#1095; &#1056;&#1086;&#1084;&#1072;&#1085;&#1086;&#1074;"
-}, 
-{
-"source": "i3", 
-"type": "isGreatGrandParentOf", 
-"target": "i14"
-}, 
-{
-"source": "i3", 
-"type": "isGrandParentOf", 
-"target": "i10"
-}, 
-{
-"source": "i3", 
-"type": "isMotherOf", 
-"target": "i8"
-}, 
-{
-"source": "i3", 
-"type": "isMotherOf", 
-"target": "i7"
-}, 
-{
-"source": "i3", 
-"type": "isGrandParentOf", 
-"target": "i11"
-}, 
-{
-"source": "i3", 
-"type": "isMotherOf", 
-"target": "i6"
-}, 
-{
-"source": "i3", 
-"type": "isWifeOf", 
-"target": "i2"
-}, 
-{
-"source": "i3", 
-"type": "label", 
-"target": "&#1052;&#1072;&#1088;&#1080;&#1103; &#1048;&#1083;&#1100;&#1080;&#1085;&#1080;&#1095;&#1085;&#1072; &#1052;&#1080;&#1083;&#1086;&#1089;&#1083;&#1072;&#1074;&#1089;&#1082;&#1072;&#1103;"
-}, 
-{
-"source": "i37", 
-"type": "hasGrandParent", 
-"target": "i34"
-}, 
-{
-"source": "i37", 
-"type": "hasGreatGrandParent", 
-"target": "i30"
-}, 
-{
-"source": "i37", 
-"type": "isFirstCousinOf", 
-"target": "i37"
-}, 
-{
-"source": "i37", 
-"type": "isFatherOf", 
-"target": "i39"
-}, 
-{
-"source": "i37", 
+"source": "i14", 
 "type": "hasGreatUncle", 
-"target": "i31"
+"target": "i6"
 }, 
 {
-"source": "i37", 
-"type": "isThirdCousinOf", 
-"target": "i37"
+"source": "i14", 
+"type": "hasGreatAunt", 
+"target": "i7"
 }, 
 {
-"source": "i37", 
-"type": "hasGrandParent", 
-"target": "i33"
-}, 
-{
-"source": "i37", 
-"type": "hasGreatGrandParent", 
-"target": "i28"
-}, 
-{
-"source": "i37", 
+"source": "i14", 
 "type": "isSecondCousinOf", 
-"target": "i37"
+"target": "i14"
 }, 
 {
-"source": "i37", 
-"type": "label", 
-"target": "&#1040;&#1083;&#1077;&#1082;&#1089;&#1072;&#1085;&#1076;&#1088; III &#1040;&#1083;&#1077;&#1082;&#1089;&#1072;&#1085;&#1076;&#1088;&#1086;&#1074;&#1080;&#1095; &#1056;&#1086;&#1084;&#1072;&#1085;&#1086;&#1074;"
+"source": "i14", 
+"type": "isThirdCousinOf", 
+"target": "i26"
 }, 
 {
-"source": "i15", 
-"type": "isFatherOf", 
+"source": "i14", 
+"type": "isMotherOf", 
 "target": "i16"
 }, 
 {
-"source": "i15", 
-"type": "label", 
-"target": "&#1040;&#1085;&#1090;&#1086;&#1085; &#1059;&#1083;&#1100;&#1088;&#1080;&#1093; &#1041;&#1088;&#1072;&#1091;&#1085;&#1096;&#1074;&#1077;&#1081;&#1075;-&#1042;&#1086;&#1083;&#1100;&#1092;&#1077;&#1085;&#1073;&#1102;&#1090;&#1090;&#1077;&#1083;&#1100;&#1089;&#1082;&#1080;&#1081;"
+"source": "i14", 
+"type": "isThirdCousinOf", 
+"target": "i22"
 }, 
 {
-"source": "i8", 
-"type": "isFirstCousinOf", 
-"target": "i8"
-}, 
-{
-"source": "i8", 
-"type": "isGreatGrandParentOf", 
-"target": "i16"
-}, 
-{
-"source": "i8", 
-"type": "isFirstCousinOf", 
-"target": "i17"
-}, 
-{
-"source": "i8", 
-"type": "isFatherOf", 
+"source": "i14", 
+"type": "hasAunt", 
 "target": "i11"
 }, 
 {
+"source": "i14", 
+"type": "hasGrandParent", 
+"target": "i8"
+}, 
+{
+"source": "i14", 
+"type": "hasGreatGrandParent", 
+"target": "i2"
+}, 
+{
+"source": "i14", 
+"type": "hasGrandParent", 
+"target": "i9"
+}, 
+{
+"source": "i14", 
+"type": "label", 
+"target": "Anna Leopoldovna Meklenburg-Shverinskaja"
+}, 
+{
 "source": "i8", 
-"type": "isFirstCousinOf", 
-"target": "i7"
+"type": "hasGrandParent", 
+"target": "i1"
 }, 
 {
 "source": "i8", 
 "type": "isFatherOf", 
 "target": "i10"
+}, 
+{
+"source": "i8", 
+"type": "isFirstCousinOf", 
+"target": "i17"
 }, 
 {
 "source": "i8", 
@@ -681,138 +106,78 @@
 }, 
 {
 "source": "i8", 
-"type": "hasGrandParent", 
-"target": "i0"
-}, 
-{
-"source": "i8", 
 "type": "isGrandParentOf", 
 "target": "i14"
 }, 
 {
 "source": "i8", 
+"type": "isGreatGrandParentOf", 
+"target": "i16"
+}, 
+{
+"source": "i8", 
+"type": "isFatherOf", 
+"target": "i11"
+}, 
+{
+"source": "i8", 
+"type": "isFirstCousinOf", 
+"target": "i8"
+}, 
+{
+"source": "i8", 
 "type": "hasGrandParent", 
-"target": "i1"
+"target": "i0"
+}, 
+{
+"source": "i8", 
+"type": "isFirstCousinOf", 
+"target": "i7"
 }, 
 {
 "source": "i8", 
 "type": "label", 
-"target": "&#1048;&#1074;&#1072;&#1085; V &#1040;&#1083;&#1077;&#1082;&#1089;&#1077;&#1077;&#1074;&#1080;&#1095; &#1056;&#1086;&#1084;&#1072;&#1085;&#1086;&#1074;"
+"target": "Ivan V Alekseevich Romanov"
 }, 
 {
-"source": "i18", 
-"type": "isWifeOf", 
-"target": "i17"
+"source": "i25", 
+"type": "isGreatGrandParentOf", 
+"target": "i33"
 }, 
 {
-"source": "i18", 
-"type": "isGrandParentOf", 
-"target": "i22"
-}, 
-{
-"source": "i18", 
-"type": "isMotherOf", 
-"target": "i20"
-}, 
-{
-"source": "i18", 
-"type": "label", 
-"target": "&#1045;&#1074;&#1076;&#1086;&#1082;&#1080;&#1103; &#1060;&#1077;&#1076;&#1086;&#1088;&#1086;&#1074;&#1085;&#1072; &#1051;&#1086;&#1087;&#1091;&#1093;&#1080;&#1085;&#1072;"
-}, 
-{
-"source": "i20", 
-"type": "isFirstCousinOf", 
-"target": "i24"
-}, 
-{
-"source": "i20", 
-"type": "hasGreatGrandParent", 
-"target": "i0"
-}, 
-{
-"source": "i20", 
-"type": "hasGrandParent", 
-"target": "i4"
-}, 
-{
-"source": "i20", 
-"type": "isSecondCousinOf", 
-"target": "i24"
-}, 
-{
-"source": "i20", 
-"type": "isFirstCousinOf", 
-"target": "i23"
-}, 
-{
-"source": "i20", 
+"source": "i25", 
 "type": "isFatherOf", 
-"target": "i22"
+"target": "i26"
 }, 
 {
-"source": "i20", 
-"type": "isFirstCousinOf", 
-"target": "i20"
+"source": "i25", 
+"type": "isGreatGrandParentOf", 
+"target": "i31"
 }, 
 {
-"source": "i20", 
+"source": "i25", 
+"type": "isGrandParentOf", 
+"target": "i28"
+}, 
+{
+"source": "i25", 
+"type": "label", 
+"target": "Karl Fridrih Golshtejn-Gottorpskij"
+}, 
+{
+"source": "i28", 
 "type": "hasGrandParent", 
-"target": "i2"
-}, 
-{
-"source": "i20", 
-"type": "hasGreatGrandParent", 
-"target": "i1"
-}, 
-{
-"source": "i20", 
-"type": "isSecondCousinOf", 
-"target": "i11"
-}, 
-{
-"source": "i20", 
-"type": "isSecondCousinOf", 
-"target": "i10"
-}, 
-{
-"source": "i20", 
-"type": "isFirstCousinOf", 
-"target": "i10"
-}, 
-{
-"source": "i20", 
-"type": "isSecondCousinOf", 
 "target": "i23"
 }, 
 {
-"source": "i20", 
+"source": "i28", 
+"type": "isFatherOf", 
+"target": "i31"
+}, 
+{
+"source": "i28", 
 "type": "isFirstCousinOf", 
-"target": "i11"
-}, 
-{
-"source": "i20", 
-"type": "isSecondCousinOf", 
-"target": "i20"
-}, 
-{
-"source": "i20", 
-"type": "label", 
-"target": "&#1040;&#1083;&#1077;&#1082;&#1089;&#1077;&#1081; &#1055;&#1077;&#1090;&#1088;&#1086;&#1074;&#1080;&#1095; &#1056;&#1086;&#1084;&#1072;&#1085;&#1086;&#1074;"
-}, 
-{
-"source": "i21", 
-"type": "isWifeOf", 
-"target": "i20"
-}, 
-{
-"source": "i21", 
-"type": "isMotherOf", 
-"target": "i22"
-}, 
-{
-"source": "i21", 
-"type": "label", 
-"target": "&#1064;&#1072;&#1088;&#1083;&#1086;&#1090;&#1090;&#1072; &#1050;&#1088;&#1080;&#1089;&#1090;&#1080;&#1085;&#1072; &#1041;&#1088;&#1072;&#1091;&#1085;&#1096;&#1074;&#1077;&#1081;&#1075;-&#1042;&#1086;&#1083;&#1100;&#1092;&#1077;&#1085;&#1073;&#1102;&#1090;&#1090;&#1077;&#1083;&#1100;&#1089;&#1082;&#1072;&#1103;"
+"target": "i28"
 }, 
 {
 "source": "i28", 
@@ -821,13 +186,8 @@
 }, 
 {
 "source": "i28", 
-"type": "isSecondCousinOf", 
-"target": "i28"
-}, 
-{
-"source": "i28", 
-"type": "hasGrandParent", 
-"target": "i23"
+"type": "isGreatGrandParentOf", 
+"target": "i37"
 }, 
 {
 "source": "i28", 
@@ -836,23 +196,13 @@
 }, 
 {
 "source": "i28", 
-"type": "hasGrandParent", 
-"target": "i25"
-}, 
-{
-"source": "i28", 
-"type": "isFatherOf", 
-"target": "i31"
-}, 
-{
-"source": "i28", 
-"type": "hasGreatGrandParent", 
-"target": "i19"
-}, 
-{
-"source": "i28", 
 "type": "isFatherOf", 
 "target": "i33"
+}, 
+{
+"source": "i28", 
+"type": "hasGrandParent", 
+"target": "i25"
 }, 
 {
 "source": "i28", 
@@ -866,7 +216,12 @@
 }, 
 {
 "source": "i28", 
-"type": "isFirstCousinOf", 
+"type": "hasGreatGrandParent", 
+"target": "i19"
+}, 
+{
+"source": "i28", 
+"type": "isSecondCousinOf", 
 "target": "i28"
 }, 
 {
@@ -876,227 +231,627 @@
 }, 
 {
 "source": "i28", 
-"type": "isGreatGrandParentOf", 
-"target": "i37"
-}, 
-{
-"source": "i28", 
 "type": "label", 
-"target": "&#1055;&#1072;&#1074;&#1077;&#1083; I &#1055;&#1077;&#1090;&#1088;&#1086;&#1074;&#1080;&#1095; &#1056;&#1086;&#1084;&#1072;&#1085;&#1086;&#1074;"
+"target": "Pavel I Petrovich Romanov"
 }, 
 {
-"source": "i1", 
-"type": "isGreatGrandParentOf", 
-"target": "i24"
-}, 
-{
-"source": "i1", 
-"type": "isGreatGrandParentOf", 
-"target": "i10"
-}, 
-{
-"source": "i1", 
-"type": "isGreatGrandParentOf", 
-"target": "i23"
-}, 
-{
-"source": "i1", 
-"type": "isGreatGrandParentOf", 
-"target": "i20"
-}, 
-{
-"source": "i1", 
-"type": "isGreatGrandParentOf", 
-"target": "i11"
-}, 
-{
-"source": "i1", 
-"type": "isGrandParentOf", 
-"target": "i8"
-}, 
-{
-"source": "i1", 
-"type": "isGrandParentOf", 
-"target": "i17"
-}, 
-{
-"source": "i1", 
-"type": "isGrandParentOf", 
-"target": "i6"
-}, 
-{
-"source": "i1", 
-"type": "isMotherOf", 
-"target": "i2"
-}, 
-{
-"source": "i1", 
-"type": "isGrandParentOf", 
-"target": "i7"
-}, 
-{
-"source": "i1", 
-"type": "isWifeOf", 
-"target": "i0"
-}, 
-{
-"source": "i1", 
-"type": "label", 
-"target": "&#1045;&#1074;&#1076;&#1086;&#1082;&#1080;&#1103; &#1051;&#1091;&#1082;&#1100;&#1103;&#1085;&#1086;&#1074;&#1085;&#1072; &#1057;&#1090;&#1088;&#1077;&#1096;&#1085;&#1077;&#1074;&#1072;"
-}, 
-{
-"source": "i2", 
-"type": "isGrandParentOf", 
-"target": "i23"
-}, 
-{
-"source": "i2", 
-"type": "isGrandParentOf", 
-"target": "i24"
-}, 
-{
-"source": "i2", 
-"type": "isFatherOf", 
-"target": "i8"
-}, 
-{
-"source": "i2", 
-"type": "isFatherOf", 
-"target": "i6"
-}, 
-{
-"source": "i2", 
-"type": "isGrandParentOf", 
-"target": "i10"
-}, 
-{
-"source": "i2", 
-"type": "isGrandParentOf", 
-"target": "i11"
-}, 
-{
-"source": "i2", 
-"type": "isFatherOf", 
-"target": "i7"
-}, 
-{
-"source": "i2", 
-"type": "isGreatGrandParentOf", 
-"target": "i14"
-}, 
-{
-"source": "i2", 
-"type": "isGrandParentOf", 
-"target": "i20"
-}, 
-{
-"source": "i2", 
-"type": "isGreatGrandParentOf", 
-"target": "i22"
-}, 
-{
-"source": "i2", 
-"type": "isFatherOf", 
-"target": "i17"
-}, 
-{
-"source": "i2", 
-"type": "isGreatGrandParentOf", 
-"target": "i26"
-}, 
-{
-"source": "i2", 
-"type": "label", 
-"target": "&#1040;&#1083;&#1077;&#1082;&#1089;&#1077;&#1081; &#1052;&#1080;&#1093;&#1072;&#1081;&#1083;&#1086;&#1074;&#1080;&#1095; &#1056;&#1086;&#1084;&#1072;&#1085;&#1086;&#1074;"
-}, 
-{
-"source": "i24", 
+"source": "i23", 
 "type": "isSecondCousinOf", 
-"target": "i11"
+"target": "i23"
 }, 
 {
-"source": "i24", 
-"type": "hasGreatGrandParent", 
-"target": "i0"
+"source": "i23", 
+"type": "isSecondCousinOf", 
+"target": "i20"
 }, 
 {
-"source": "i24", 
+"source": "i23", 
 "type": "hasGreatGrandParent", 
 "target": "i1"
 }, 
 {
-"source": "i24", 
-"type": "isFirstCousinOf", 
-"target": "i10"
-}, 
-{
-"source": "i24", 
-"type": "isFirstCousinOf", 
-"target": "i23"
-}, 
-{
-"source": "i24", 
-"type": "isFirstCousinOf", 
-"target": "i24"
-}, 
-{
-"source": "i24", 
+"source": "i23", 
 "type": "isSecondCousinOf", 
-"target": "i23"
+"target": "i11"
 }, 
 {
-"source": "i24", 
-"type": "isSecondCousinOf", 
-"target": "i24"
-}, 
-{
-"source": "i24", 
-"type": "isFirstCousinOf", 
-"target": "i20"
-}, 
-{
-"source": "i24", 
+"source": "i23", 
 "type": "hasGrandParent", 
 "target": "i4"
 }, 
 {
-"source": "i24", 
+"source": "i23", 
+"type": "isFirstCousinOf", 
+"target": "i23"
+}, 
+{
+"source": "i23", 
+"type": "isFirstCousinOf", 
+"target": "i20"
+}, 
+{
+"source": "i23", 
 "type": "isFirstCousinOf", 
 "target": "i11"
 }, 
 {
-"source": "i24", 
+"source": "i23", 
+"type": "hasGreatGrandParent", 
+"target": "i0"
+}, 
+{
+"source": "i23", 
+"type": "isSecondCousinOf", 
+"target": "i24"
+}, 
+{
+"source": "i23", 
+"type": "isFirstCousinOf", 
+"target": "i24"
+}, 
+{
+"source": "i23", 
 "type": "isSecondCousinOf", 
 "target": "i10"
 }, 
 {
-"source": "i24", 
-"type": "isAuntOf", 
-"target": "i26"
+"source": "i23", 
+"type": "isWifeOf", 
+"target": "i25"
 }, 
 {
-"source": "i24", 
-"type": "isGreatAuntOf", 
-"target": "i28"
+"source": "i23", 
+"type": "isFirstCousinOf", 
+"target": "i10"
 }, 
 {
-"source": "i24", 
+"source": "i23", 
 "type": "hasGrandParent", 
 "target": "i2"
 }, 
 {
-"source": "i24", 
+"source": "i23", 
+"type": "isGreatGrandParentOf", 
+"target": "i31"
+}, 
+{
+"source": "i23", 
+"type": "isMotherOf", 
+"target": "i26"
+}, 
+{
+"source": "i23", 
+"type": "isGreatGrandParentOf", 
+"target": "i33"
+}, 
+{
+"source": "i23", 
+"type": "isGrandParentOf", 
+"target": "i28"
+}, 
+{
+"source": "i23", 
+"type": "label", 
+"target": "Anna Petrovna Romanova"
+}, 
+{
+"source": "i10", 
+"type": "isFirstCousinOf", 
+"target": "i24"
+}, 
+{
+"source": "i10", 
+"type": "hasAunt", 
+"target": "i7"
+}, 
+{
+"source": "i10", 
+"type": "hasUncle", 
+"target": "i6"
+}, 
+{
+"source": "i10", 
 "type": "isSecondCousinOf", 
 "target": "i20"
 }, 
 {
-"source": "i24", 
+"source": "i10", 
+"type": "isSecondCousinOf", 
+"target": "i11"
+}, 
+{
+"source": "i10", 
+"type": "isFirstCousinOf", 
+"target": "i20"
+}, 
+{
+"source": "i10", 
+"type": "isGrandParentOf", 
+"target": "i16"
+}, 
+{
+"source": "i10", 
+"type": "hasGrandParent", 
+"target": "i2"
+}, 
+{
+"source": "i10", 
+"type": "isWifeOf", 
+"target": "i13"
+}, 
+{
+"source": "i10", 
+"type": "isSecondCousinOf", 
+"target": "i24"
+}, 
+{
+"source": "i10", 
+"type": "isMotherOf", 
+"target": "i14"
+}, 
+{
+"source": "i10", 
+"type": "isFirstCousinOf", 
+"target": "i23"
+}, 
+{
+"source": "i10", 
+"type": "isFirstCousinOf", 
+"target": "i11"
+}, 
+{
+"source": "i10", 
+"type": "isSecondCousinOf", 
+"target": "i23"
+}, 
+{
+"source": "i10", 
+"type": "isFirstCousinOf", 
+"target": "i10"
+}, 
+{
+"source": "i10", 
+"type": "hasGrandParent", 
+"target": "i3"
+}, 
+{
+"source": "i10", 
+"type": "isSecondCousinOf", 
+"target": "i10"
+}, 
+{
+"source": "i10", 
+"type": "hasGreatGrandParent", 
+"target": "i1"
+}, 
+{
+"source": "i10", 
+"type": "hasGreatGrandParent", 
+"target": "i0"
+}, 
+{
+"source": "i10", 
 "type": "label", 
-"target": "&#1045;&#1083;&#1080;&#1079;&#1072;&#1074;&#1077;&#1090;&#1072; &#1055;&#1077;&#1090;&#1088;&#1086;&#1074;&#1085;&#1072; &#1056;&#1086;&#1084;&#1072;&#1085;&#1086;&#1074;&#1072;"
+"target": "Ekaterina Ivanovna Romanova"
+}, 
+{
+"source": "i30", 
+"type": "isWifeOf", 
+"target": "i28"
+}, 
+{
+"source": "i30", 
+"type": "isGreatGrandParentOf", 
+"target": "i37"
+}, 
+{
+"source": "i30", 
+"type": "isMotherOf", 
+"target": "i31"
+}, 
+{
+"source": "i30", 
+"type": "isMotherOf", 
+"target": "i33"
+}, 
+{
+"source": "i30", 
+"type": "isGrandParentOf", 
+"target": "i35"
+}, 
+{
+"source": "i30", 
+"type": "label", 
+"target": "Marija Fedorovna Vjurtembergskaja"
+}, 
+{
+"source": "i3", 
+"type": "isMotherOf", 
+"target": "i7"
+}, 
+{
+"source": "i3", 
+"type": "isMotherOf", 
+"target": "i6"
+}, 
+{
+"source": "i3", 
+"type": "isWifeOf", 
+"target": "i2"
+}, 
+{
+"source": "i3", 
+"type": "isGreatGrandParentOf", 
+"target": "i14"
+}, 
+{
+"source": "i3", 
+"type": "isMotherOf", 
+"target": "i8"
+}, 
+{
+"source": "i3", 
+"type": "isGrandParentOf", 
+"target": "i11"
+}, 
+{
+"source": "i3", 
+"type": "isGrandParentOf", 
+"target": "i10"
+}, 
+{
+"source": "i3", 
+"type": "label", 
+"target": "Marija Ilinichna Miloslavskaja"
+}, 
+{
+"source": "i33", 
+"type": "isThirdCousinOf", 
+"target": "i31"
+}, 
+{
+"source": "i33", 
+"type": "isGreatGrandParentOf", 
+"target": "i39"
+}, 
+{
+"source": "i33", 
+"type": "hasGrandParent", 
+"target": "i27"
+}, 
+{
+"source": "i33", 
+"type": "isFatherOf", 
+"target": "i35"
+}, 
+{
+"source": "i33", 
+"type": "hasGrandParent", 
+"target": "i26"
+}, 
+{
+"source": "i33", 
+"type": "isFirstCousinOf", 
+"target": "i31"
+}, 
+{
+"source": "i33", 
+"type": "isGrandParentOf", 
+"target": "i37"
+}, 
+{
+"source": "i33", 
+"type": "isFirstCousinOf", 
+"target": "i33"
+}, 
+{
+"source": "i33", 
+"type": "isThirdCousinOf", 
+"target": "i33"
+}, 
+{
+"source": "i33", 
+"type": "isSecondCousinOf", 
+"target": "i31"
+}, 
+{
+"source": "i33", 
+"type": "hasGreatGrandParent", 
+"target": "i23"
+}, 
+{
+"source": "i33", 
+"type": "hasGreatGrandParent", 
+"target": "i25"
+}, 
+{
+"source": "i33", 
+"type": "isSecondCousinOf", 
+"target": "i33"
+}, 
+{
+"source": "i33", 
+"type": "label", 
+"target": "Nikolaj I Pavlovich Romanov"
+}, 
+{
+"source": "i18", 
+"type": "isWifeOf", 
+"target": "i17"
+}, 
+{
+"source": "i18", 
+"type": "isGrandParentOf", 
+"target": "i22"
+}, 
+{
+"source": "i18", 
+"type": "isMotherOf", 
+"target": "i20"
+}, 
+{
+"source": "i18", 
+"type": "label", 
+"target": "Evdokija Fedorovna Lopuhina"
+}, 
+{
+"source": "i27", 
+"type": "isGreatGrandParentOf", 
+"target": "i35"
+}, 
+{
+"source": "i27", 
+"type": "isGrandParentOf", 
+"target": "i31"
+}, 
+{
+"source": "i27", 
+"type": "isMotherOf", 
+"target": "i28"
+}, 
+{
+"source": "i27", 
+"type": "isGrandParentOf", 
+"target": "i33"
+}, 
+{
+"source": "i27", 
+"type": "isWifeOf", 
+"target": "i26"
+}, 
+{
+"source": "i27", 
+"type": "label", 
+"target": "Ekaterina II Alekseevna"
+}, 
+{
+"source": "i20", 
+"type": "isFirstCousinOf", 
+"target": "i10"
+}, 
+{
+"source": "i20", 
+"type": "isSecondCousinOf", 
+"target": "i11"
+}, 
+{
+"source": "i20", 
+"type": "isSecondCousinOf", 
+"target": "i10"
+}, 
+{
+"source": "i20", 
+"type": "hasGreatGrandParent", 
+"target": "i0"
+}, 
+{
+"source": "i20", 
+"type": "isSecondCousinOf", 
+"target": "i20"
+}, 
+{
+"source": "i20", 
+"type": "hasGrandParent", 
+"target": "i4"
+}, 
+{
+"source": "i20", 
+"type": "isFatherOf", 
+"target": "i22"
+}, 
+{
+"source": "i20", 
+"type": "isFirstCousinOf", 
+"target": "i20"
+}, 
+{
+"source": "i20", 
+"type": "hasGrandParent", 
+"target": "i2"
+}, 
+{
+"source": "i20", 
+"type": "hasGreatGrandParent", 
+"target": "i1"
+}, 
+{
+"source": "i20", 
+"type": "isFirstCousinOf", 
+"target": "i11"
+}, 
+{
+"source": "i20", 
+"type": "isFirstCousinOf", 
+"target": "i23"
+}, 
+{
+"source": "i20", 
+"type": "isSecondCousinOf", 
+"target": "i23"
+}, 
+{
+"source": "i20", 
+"type": "isFirstCousinOf", 
+"target": "i24"
+}, 
+{
+"source": "i20", 
+"type": "isSecondCousinOf", 
+"target": "i24"
+}, 
+{
+"source": "i20", 
+"type": "label", 
+"target": "Aleksej Petrovich Romanov"
+}, 
+{
+"source": "i0", 
+"type": "isGreatGrandParentOf", 
+"target": "i10"
+}, 
+{
+"source": "i0", 
+"type": "isGrandParentOf", 
+"target": "i17"
+}, 
+{
+"source": "i0", 
+"type": "isGreatGrandParentOf", 
+"target": "i20"
+}, 
+{
+"source": "i0", 
+"type": "isGreatGrandParentOf", 
+"target": "i24"
+}, 
+{
+"source": "i0", 
+"type": "isGreatGrandParentOf", 
+"target": "i23"
+}, 
+{
+"source": "i0", 
+"type": "isGrandParentOf", 
+"target": "i8"
+}, 
+{
+"source": "i0", 
+"type": "isGrandParentOf", 
+"target": "i7"
+}, 
+{
+"source": "i0", 
+"type": "isFatherOf", 
+"target": "i2"
+}, 
+{
+"source": "i0", 
+"type": "isGrandParentOf", 
+"target": "i6"
+}, 
+{
+"source": "i0", 
+"type": "isGreatGrandParentOf", 
+"target": "i11"
+}, 
+{
+"source": "i0", 
+"type": "label", 
+"target": "Mihail Fedorovich Romanov"
+}, 
+{
+"source": "i17", 
+"type": "isFatherOf", 
+"target": "i20"
+}, 
+{
+"source": "i17", 
+"type": "isFirstCousinOf", 
+"target": "i17"
+}, 
+{
+"source": "i17", 
+"type": "isGrandParentOf", 
+"target": "i22"
+}, 
+{
+"source": "i17", 
+"type": "isFirstCousinOf", 
+"target": "i6"
+}, 
+{
+"source": "i17", 
+"type": "isGrandParentOf", 
+"target": "i26"
+}, 
+{
+"source": "i17", 
+"type": "hasGrandParent", 
+"target": "i0"
+}, 
+{
+"source": "i17", 
+"type": "isFatherOf", 
+"target": "i23"
+}, 
+{
+"source": "i17", 
+"type": "isFatherOf", 
+"target": "i24"
+}, 
+{
+"source": "i17", 
+"type": "isFirstCousinOf", 
+"target": "i7"
+}, 
+{
+"source": "i17", 
+"type": "hasGrandParent", 
+"target": "i1"
+}, 
+{
+"source": "i17", 
+"type": "isGreatGrandParentOf", 
+"target": "i28"
+}, 
+{
+"source": "i17", 
+"type": "isFirstCousinOf", 
+"target": "i8"
+}, 
+{
+"source": "i17", 
+"type": "label", 
+"target": "Petr I Alekseevich Romanov"
+}, 
+{
+"source": "i38", 
+"type": "isWifeOf", 
+"target": "i37"
+}, 
+{
+"source": "i38", 
+"type": "isMotherOf", 
+"target": "i39"
+}, 
+{
+"source": "i38", 
+"type": "label", 
+"target": "Marija Fedorovna Datskaja"
 }, 
 {
 "source": "i39", 
-"type": "isThirdCousinOf", 
+"type": "isFirstCousinOf", 
+"target": "i39"
+}, 
+{
+"source": "i39", 
+"type": "hasGrandParent", 
+"target": "i35"
+}, 
+{
+"source": "i39", 
+"type": "isSecondCousinOf", 
 "target": "i39"
 }, 
 {
@@ -1106,22 +861,12 @@
 }, 
 {
 "source": "i39", 
-"type": "hasGrandParent", 
-"target": "i35"
-}, 
-{
-"source": "i39", 
 "type": "hasGreatGrandParent", 
 "target": "i33"
 }, 
 {
 "source": "i39", 
-"type": "isSecondCousinOf", 
-"target": "i39"
-}, 
-{
-"source": "i39", 
-"type": "isFirstCousinOf", 
+"type": "isThirdCousinOf", 
 "target": "i39"
 }, 
 {
@@ -1132,22 +877,787 @@
 {
 "source": "i39", 
 "type": "label", 
-"target": "&#1053;&#1080;&#1082;&#1086;&#1083;&#1072;&#1081; II &#1040;&#1083;&#1077;&#1082;&#1089;&#1072;&#1085;&#1076;&#1088;&#1086;&#1074;&#1080;&#1095; &#1056;&#1086;&#1084;&#1072;&#1085;&#1086;&#1074;"
+"target": "Nikolaj II Aleksandrovich Romanov"
 }, 
 {
-"source": "i38", 
+"source": "i24", 
+"type": "hasGreatGrandParent", 
+"target": "i0"
+}, 
+{
+"source": "i24", 
+"type": "isAuntOf", 
+"target": "i26"
+}, 
+{
+"source": "i24", 
+"type": "hasGrandParent", 
+"target": "i2"
+}, 
+{
+"source": "i24", 
+"type": "hasGrandParent", 
+"target": "i4"
+}, 
+{
+"source": "i24", 
+"type": "isSecondCousinOf", 
+"target": "i24"
+}, 
+{
+"source": "i24", 
+"type": "isSecondCousinOf", 
+"target": "i23"
+}, 
+{
+"source": "i24", 
+"type": "isFirstCousinOf", 
+"target": "i20"
+}, 
+{
+"source": "i24", 
+"type": "isFirstCousinOf", 
+"target": "i24"
+}, 
+{
+"source": "i24", 
+"type": "isSecondCousinOf", 
+"target": "i11"
+}, 
+{
+"source": "i24", 
+"type": "isFirstCousinOf", 
+"target": "i23"
+}, 
+{
+"source": "i24", 
+"type": "isSecondCousinOf", 
+"target": "i10"
+}, 
+{
+"source": "i24", 
+"type": "isFirstCousinOf", 
+"target": "i11"
+}, 
+{
+"source": "i24", 
+"type": "isFirstCousinOf", 
+"target": "i10"
+}, 
+{
+"source": "i24", 
+"type": "isGreatAuntOf", 
+"target": "i28"
+}, 
+{
+"source": "i24", 
+"type": "isSecondCousinOf", 
+"target": "i20"
+}, 
+{
+"source": "i24", 
+"type": "hasGreatGrandParent", 
+"target": "i1"
+}, 
+{
+"source": "i24", 
+"type": "label", 
+"target": "Elizaveta Petrovna Romanova"
+}, 
+{
+"source": "i1", 
+"type": "isGreatGrandParentOf", 
+"target": "i11"
+}, 
+{
+"source": "i1", 
+"type": "isGreatGrandParentOf", 
+"target": "i20"
+}, 
+{
+"source": "i1", 
+"type": "isMotherOf", 
+"target": "i2"
+}, 
+{
+"source": "i1", 
+"type": "isGrandParentOf", 
+"target": "i8"
+}, 
+{
+"source": "i1", 
+"type": "isGreatGrandParentOf", 
+"target": "i23"
+}, 
+{
+"source": "i1", 
+"type": "isGreatGrandParentOf", 
+"target": "i10"
+}, 
+{
+"source": "i1", 
+"type": "isGrandParentOf", 
+"target": "i7"
+}, 
+{
+"source": "i1", 
+"type": "isGrandParentOf", 
+"target": "i6"
+}, 
+{
+"source": "i1", 
 "type": "isWifeOf", 
+"target": "i0"
+}, 
+{
+"source": "i1", 
+"type": "isGrandParentOf", 
+"target": "i17"
+}, 
+{
+"source": "i1", 
+"type": "isGreatGrandParentOf", 
+"target": "i24"
+}, 
+{
+"source": "i1", 
+"type": "label", 
+"target": "Evdokija Lukjanovna Streshneva"
+}, 
+{
+"source": "i22", 
+"type": "hasGrandParent", 
+"target": "i18"
+}, 
+{
+"source": "i22", 
+"type": "hasGreatGrandParent", 
+"target": "i4"
+}, 
+{
+"source": "i22", 
+"type": "isFirstCousinOf", 
+"target": "i26"
+}, 
+{
+"source": "i22", 
+"type": "hasGrandParent", 
+"target": "i17"
+}, 
+{
+"source": "i22", 
+"type": "isSecondCousinOf", 
+"target": "i26"
+}, 
+{
+"source": "i22", 
+"type": "isFirstCousinOf", 
+"target": "i22"
+}, 
+{
+"source": "i22", 
+"type": "isSecondCousinOf", 
+"target": "i14"
+}, 
+{
+"source": "i22", 
+"type": "isThirdCousinOf", 
+"target": "i22"
+}, 
+{
+"source": "i22", 
+"type": "hasGreatGrandParent", 
+"target": "i2"
+}, 
+{
+"source": "i22", 
+"type": "isThirdCousinOf", 
+"target": "i14"
+}, 
+{
+"source": "i22", 
+"type": "isSecondCousinOf", 
+"target": "i22"
+}, 
+{
+"source": "i22", 
+"type": "isThirdCousinOf", 
+"target": "i26"
+}, 
+{
+"source": "i22", 
+"type": "label", 
+"target": "Petr II Alekseevich Romanov"
+}, 
+{
+"source": "i26", 
+"type": "isFatherOf", 
+"target": "i28"
+}, 
+{
+"source": "i26", 
+"type": "isGrandParentOf", 
+"target": "i33"
+}, 
+{
+"source": "i26", 
+"type": "hasGrandParent", 
+"target": "i17"
+}, 
+{
+"source": "i26", 
+"type": "isGrandParentOf", 
+"target": "i31"
+}, 
+{
+"source": "i26", 
+"type": "isSecondCousinOf", 
+"target": "i22"
+}, 
+{
+"source": "i26", 
+"type": "isSecondCousinOf", 
+"target": "i26"
+}, 
+{
+"source": "i26", 
+"type": "hasAunt", 
+"target": "i24"
+}, 
+{
+"source": "i26", 
+"type": "isSecondCousinOf", 
+"target": "i14"
+}, 
+{
+"source": "i26", 
+"type": "isThirdCousinOf", 
+"target": "i26"
+}, 
+{
+"source": "i26", 
+"type": "isThirdCousinOf", 
+"target": "i14"
+}, 
+{
+"source": "i26", 
+"type": "hasGreatGrandParent", 
+"target": "i4"
+}, 
+{
+"source": "i26", 
+"type": "isFirstCousinOf", 
+"target": "i26"
+}, 
+{
+"source": "i26", 
+"type": "isGreatGrandParentOf", 
+"target": "i35"
+}, 
+{
+"source": "i26", 
+"type": "isFirstCousinOf", 
+"target": "i22"
+}, 
+{
+"source": "i26", 
+"type": "hasGrandParent", 
+"target": "i19"
+}, 
+{
+"source": "i26", 
+"type": "isThirdCousinOf", 
+"target": "i22"
+}, 
+{
+"source": "i26", 
+"type": "hasGreatGrandParent", 
+"target": "i2"
+}, 
+{
+"source": "i26", 
+"type": "label", 
+"target": "Petr III Fedorovich Romanov"
+}, 
+{
+"source": "i37", 
+"type": "hasGreatUncle", 
+"target": "i31"
+}, 
+{
+"source": "i37", 
+"type": "hasGreatGrandParent", 
+"target": "i28"
+}, 
+{
+"source": "i37", 
+"type": "hasGrandParent", 
+"target": "i33"
+}, 
+{
+"source": "i37", 
+"type": "isSecondCousinOf", 
 "target": "i37"
 }, 
 {
-"source": "i38", 
-"type": "isMotherOf", 
+"source": "i37", 
+"type": "isThirdCousinOf", 
+"target": "i37"
+}, 
+{
+"source": "i37", 
+"type": "hasGreatGrandParent", 
+"target": "i30"
+}, 
+{
+"source": "i37", 
+"type": "hasGrandParent", 
+"target": "i34"
+}, 
+{
+"source": "i37", 
+"type": "isFirstCousinOf", 
+"target": "i37"
+}, 
+{
+"source": "i37", 
+"type": "isFatherOf", 
 "target": "i39"
 }, 
 {
-"source": "i38", 
+"source": "i37", 
 "type": "label", 
-"target": "&#1052;&#1072;&#1088;&#1080;&#1103; &#1060;&#1077;&#1076;&#1086;&#1088;&#1086;&#1074;&#1085;&#1072; &#1044;&#1072;&#1090;&#1089;&#1082;&#1072;&#1103;"
+"target": "Aleksandr III Aleksandrovich Romanov"
+}, 
+{
+"source": "i13", 
+"type": "isGrandParentOf", 
+"target": "i16"
+}, 
+{
+"source": "i13", 
+"type": "isFatherOf", 
+"target": "i14"
+}, 
+{
+"source": "i13", 
+"type": "label", 
+"target": "Karl Leopold Meklenburg-Shverinskij"
+}, 
+{
+"source": "i36", 
+"type": "isWifeOf", 
+"target": "i35"
+}, 
+{
+"source": "i36", 
+"type": "isGrandParentOf", 
+"target": "i39"
+}, 
+{
+"source": "i36", 
+"type": "isMotherOf", 
+"target": "i37"
+}, 
+{
+"source": "i36", 
+"type": "label", 
+"target": "Marija Aleksandrovna Gessenskaja"
+}, 
+{
+"source": "i15", 
+"type": "isFatherOf", 
+"target": "i16"
+}, 
+{
+"source": "i15", 
+"type": "label", 
+"target": "Anton Ulrih Braunshvejg-Volfenbjuttelskij"
+}, 
+{
+"source": "i7", 
+"type": "isGreatAuntOf", 
+"target": "i14"
+}, 
+{
+"source": "i7", 
+"type": "isFirstCousinOf", 
+"target": "i6"
+}, 
+{
+"source": "i7", 
+"type": "isFirstCousinOf", 
+"target": "i8"
+}, 
+{
+"source": "i7", 
+"type": "isAuntOf", 
+"target": "i10"
+}, 
+{
+"source": "i7", 
+"type": "isAuntOf", 
+"target": "i11"
+}, 
+{
+"source": "i7", 
+"type": "isFirstCousinOf", 
+"target": "i17"
+}, 
+{
+"source": "i7", 
+"type": "hasGrandParent", 
+"target": "i1"
+}, 
+{
+"source": "i7", 
+"type": "isFirstCousinOf", 
+"target": "i7"
+}, 
+{
+"source": "i7", 
+"type": "hasGrandParent", 
+"target": "i0"
+}, 
+{
+"source": "i7", 
+"type": "label", 
+"target": "Sofja Aleksevna Romanova"
+}, 
+{
+"source": "i9", 
+"type": "isMotherOf", 
+"target": "i11"
+}, 
+{
+"source": "i9", 
+"type": "isWifeOf", 
+"target": "i8"
+}, 
+{
+"source": "i9", 
+"type": "isMotherOf", 
+"target": "i10"
+}, 
+{
+"source": "i9", 
+"type": "isGrandParentOf", 
+"target": "i14"
+}, 
+{
+"source": "i9", 
+"type": "isGreatGrandParentOf", 
+"target": "i16"
+}, 
+{
+"source": "i9", 
+"type": "label", 
+"target": "Praskovja Fedorovna Saltykova"
+}, 
+{
+"source": "i35", 
+"type": "hasGrandParent", 
+"target": "i28"
+}, 
+{
+"source": "i35", 
+"type": "hasUncle", 
+"target": "i31"
+}, 
+{
+"source": "i35", 
+"type": "isSecondCousinOf", 
+"target": "i35"
+}, 
+{
+"source": "i35", 
+"type": "isFatherOf", 
+"target": "i37"
+}, 
+{
+"source": "i35", 
+"type": "isFirstCousinOf", 
+"target": "i35"
+}, 
+{
+"source": "i35", 
+"type": "isThirdCousinOf", 
+"target": "i35"
+}, 
+{
+"source": "i35", 
+"type": "hasGreatGrandParent", 
+"target": "i27"
+}, 
+{
+"source": "i35", 
+"type": "hasGreatGrandParent", 
+"target": "i26"
+}, 
+{
+"source": "i35", 
+"type": "hasGrandParent", 
+"target": "i30"
+}, 
+{
+"source": "i35", 
+"type": "isGrandParentOf", 
+"target": "i39"
+}, 
+{
+"source": "i35", 
+"type": "label", 
+"target": "Aleksandr II Nikolaevich Romanov"
+}, 
+{
+"source": "i2", 
+"type": "isGreatGrandParentOf", 
+"target": "i14"
+}, 
+{
+"source": "i2", 
+"type": "isGrandParentOf", 
+"target": "i20"
+}, 
+{
+"source": "i2", 
+"type": "isGreatGrandParentOf", 
+"target": "i22"
+}, 
+{
+"source": "i2", 
+"type": "isGreatGrandParentOf", 
+"target": "i26"
+}, 
+{
+"source": "i2", 
+"type": "isFatherOf", 
+"target": "i17"
+}, 
+{
+"source": "i2", 
+"type": "isGrandParentOf", 
+"target": "i10"
+}, 
+{
+"source": "i2", 
+"type": "isGrandParentOf", 
+"target": "i11"
+}, 
+{
+"source": "i2", 
+"type": "isGrandParentOf", 
+"target": "i24"
+}, 
+{
+"source": "i2", 
+"type": "isGrandParentOf", 
+"target": "i23"
+}, 
+{
+"source": "i2", 
+"type": "isFatherOf", 
+"target": "i6"
+}, 
+{
+"source": "i2", 
+"type": "isFatherOf", 
+"target": "i7"
+}, 
+{
+"source": "i2", 
+"type": "isFatherOf", 
+"target": "i8"
+}, 
+{
+"source": "i2", 
+"type": "label", 
+"target": "Aleksej Mihajlovich Romanov"
+}, 
+{
+"source": "i4", 
+"type": "isWifeOf", 
+"target": "i2"
+}, 
+{
+"source": "i4", 
+"type": "isGreatGrandParentOf", 
+"target": "i22"
+}, 
+{
+"source": "i4", 
+"type": "isGrandParentOf", 
+"target": "i20"
+}, 
+{
+"source": "i4", 
+"type": "isGreatGrandParentOf", 
+"target": "i26"
+}, 
+{
+"source": "i4", 
+"type": "isGrandParentOf", 
+"target": "i23"
+}, 
+{
+"source": "i4", 
+"type": "isMotherOf", 
+"target": "i17"
+}, 
+{
+"source": "i4", 
+"type": "isGrandParentOf", 
+"target": "i24"
+}, 
+{
+"source": "i4", 
+"type": "label", 
+"target": "Natalja Kirillovna Naryshkina"
+}, 
+{
+"source": "i11", 
+"type": "isGreatAuntOf", 
+"target": "i16"
+}, 
+{
+"source": "i11", 
+"type": "hasGrandParent", 
+"target": "i2"
+}, 
+{
+"source": "i11", 
+"type": "isSecondCousinOf", 
+"target": "i23"
+}, 
+{
+"source": "i11", 
+"type": "isSecondCousinOf", 
+"target": "i24"
+}, 
+{
+"source": "i11", 
+"type": "hasGreatGrandParent", 
+"target": "i1"
+}, 
+{
+"source": "i11", 
+"type": "isSecondCousinOf", 
+"target": "i20"
+}, 
+{
+"source": "i11", 
+"type": "isFirstCousinOf", 
+"target": "i24"
+}, 
+{
+"source": "i11", 
+"type": "isFirstCousinOf", 
+"target": "i10"
+}, 
+{
+"source": "i11", 
+"type": "isFirstCousinOf", 
+"target": "i11"
+}, 
+{
+"source": "i11", 
+"type": "hasGreatGrandParent", 
+"target": "i0"
+}, 
+{
+"source": "i11", 
+"type": "hasGrandParent", 
+"target": "i3"
+}, 
+{
+"source": "i11", 
+"type": "hasUncle", 
+"target": "i6"
+}, 
+{
+"source": "i11", 
+"type": "isAuntOf", 
+"target": "i14"
+}, 
+{
+"source": "i11", 
+"type": "isFirstCousinOf", 
+"target": "i20"
+}, 
+{
+"source": "i11", 
+"type": "isFirstCousinOf", 
+"target": "i23"
+}, 
+{
+"source": "i11", 
+"type": "hasAunt", 
+"target": "i7"
+}, 
+{
+"source": "i11", 
+"type": "isSecondCousinOf", 
+"target": "i10"
+}, 
+{
+"source": "i11", 
+"type": "isSecondCousinOf", 
+"target": "i11"
+}, 
+{
+"source": "i11", 
+"type": "label", 
+"target": "Anna Ivanovna Romanova"
+}, 
+{
+"source": "i16", 
+"type": "hasGrandParent", 
+"target": "i10"
+}, 
+{
+"source": "i16", 
+"type": "isThirdCousinOf", 
+"target": "i28"
+}, 
+{
+"source": "i16", 
+"type": "isFirstCousinOf", 
+"target": "i16"
+}, 
+{
+"source": "i16", 
+"type": "isThirdCousinOf", 
+"target": "i16"
+}, 
+{
+"source": "i16", 
+"type": "hasGrandParent", 
+"target": "i13"
+}, 
+{
+"source": "i16", 
+"type": "hasGreatAunt", 
+"target": "i11"
+}, 
+{
+"source": "i16", 
+"type": "hasGreatGrandParent", 
+"target": "i8"
+}, 
+{
+"source": "i16", 
+"type": "isSecondCousinOf", 
+"target": "i16"
+}, 
+{
+"source": "i16", 
+"type": "hasGreatGrandParent", 
+"target": "i9"
+}, 
+{
+"source": "i16", 
+"type": "label", 
+"target": "Ivan VI Antonovich Braunshvejg-Volfenbjuttelskij"
 }, 
 {
 "source": "i31", 
@@ -1156,23 +1666,13 @@
 }, 
 {
 "source": "i31", 
-"type": "isSecondCousinOf", 
-"target": "i31"
+"type": "isFirstCousinOf", 
+"target": "i33"
 }, 
 {
 "source": "i31", 
 "type": "isThirdCousinOf", 
 "target": "i31"
-}, 
-{
-"source": "i31", 
-"type": "hasGrandParent", 
-"target": "i26"
-}, 
-{
-"source": "i31", 
-"type": "isSecondCousinOf", 
-"target": "i33"
 }, 
 {
 "source": "i31", 
@@ -1181,13 +1681,23 @@
 }, 
 {
 "source": "i31", 
-"type": "hasGrandParent", 
-"target": "i27"
+"type": "isFirstCousinOf", 
+"target": "i31"
+}, 
+{
+"source": "i31", 
+"type": "isSecondCousinOf", 
+"target": "i33"
 }, 
 {
 "source": "i31", 
 "type": "hasGreatGrandParent", 
 "target": "i25"
+}, 
+{
+"source": "i31", 
+"type": "isSecondCousinOf", 
+"target": "i31"
 }, 
 {
 "source": "i31", 
@@ -1201,108 +1711,48 @@
 }, 
 {
 "source": "i31", 
-"type": "isFirstCousinOf", 
-"target": "i31"
-}, 
-{
-"source": "i31", 
-"type": "isFirstCousinOf", 
-"target": "i33"
-}, 
-{
-"source": "i31", 
-"type": "label", 
-"target": "&#1040;&#1083;&#1077;&#1082;&#1089;&#1072;&#1085;&#1076;&#1088; I &#1055;&#1072;&#1074;&#1083;&#1086;&#1074;&#1080;&#1095; &#1056;&#1086;&#1084;&#1072;&#1085;&#1086;&#1074;"
-}, 
-{
-"source": "i36", 
-"type": "isMotherOf", 
-"target": "i37"
-}, 
-{
-"source": "i36", 
-"type": "isWifeOf", 
-"target": "i35"
-}, 
-{
-"source": "i36", 
-"type": "isGrandParentOf", 
-"target": "i39"
-}, 
-{
-"source": "i36", 
-"type": "label", 
-"target": "&#1052;&#1072;&#1088;&#1080;&#1103; &#1040;&#1083;&#1077;&#1082;&#1089;&#1072;&#1085;&#1076;&#1088;&#1086;&#1074;&#1085;&#1072; &#1043;&#1077;&#1089;&#1089;&#1077;&#1085;&#1089;&#1082;&#1072;&#1103;"
-}, 
-{
-"source": "i13", 
-"type": "isFatherOf", 
-"target": "i14"
-}, 
-{
-"source": "i13", 
-"type": "isGrandParentOf", 
-"target": "i16"
-}, 
-{
-"source": "i13", 
-"type": "label", 
-"target": "&#1050;&#1072;&#1088;&#1083; &#1051;&#1077;&#1086;&#1087;&#1086;&#1083;&#1100;&#1076; &#1052;&#1077;&#1082;&#1083;&#1077;&#1085;&#1073;&#1091;&#1088;&#1075;-&#1064;&#1074;&#1077;&#1088;&#1080;&#1085;&#1089;&#1082;&#1080;&#1081;"
-}, 
-{
-"source": "i16", 
-"type": "isThirdCousinOf", 
-"target": "i16"
-}, 
-{
-"source": "i16", 
-"type": "hasGreatGrandParent", 
-"target": "i9"
-}, 
-{
-"source": "i16", 
 "type": "hasGrandParent", 
-"target": "i13"
+"target": "i27"
 }, 
 {
-"source": "i16", 
-"type": "isThirdCousinOf", 
+"source": "i31", 
+"type": "hasGrandParent", 
+"target": "i26"
+}, 
+{
+"source": "i31", 
+"type": "label", 
+"target": "Aleksandr I Pavlovich Romanov"
+}, 
+{
+"source": "i19", 
+"type": "isMotherOf", 
+"target": "i24"
+}, 
+{
+"source": "i19", 
+"type": "isMotherOf", 
+"target": "i23"
+}, 
+{
+"source": "i19", 
+"type": "isGrandParentOf", 
+"target": "i26"
+}, 
+{
+"source": "i19", 
+"type": "isWifeOf", 
+"target": "i17"
+}, 
+{
+"source": "i19", 
+"type": "isGreatGrandParentOf", 
 "target": "i28"
 }, 
 {
-"source": "i16", 
-"type": "hasGreatAunt", 
-"target": "i11"
-}, 
-{
-"source": "i16", 
-"type": "isSecondCousinOf", 
-"target": "i16"
-}, 
-{
-"source": "i16", 
-"type": "hasGreatGrandParent", 
-"target": "i8"
-}, 
-{
-"source": "i16", 
-"type": "hasGrandParent", 
-"target": "i10"
-}, 
-{
-"source": "i16", 
-"type": "isFirstCousinOf", 
-"target": "i16"
-}, 
-{
-"source": "i16", 
+"source": "i19", 
 "type": "label", 
-"target": "&#1048;&#1074;&#1072;&#1085; VI &#1040;&#1085;&#1090;&#1086;&#1085;&#1086;&#1074;&#1080;&#1095; &#1041;&#1088;&#1072;&#1091;&#1085;&#1096;&#1074;&#1077;&#1081;&#1075;-&#1042;&#1086;&#1083;&#1100;&#1092;&#1077;&#1085;&#1073;&#1102;&#1090;&#1090;&#1077;&#1083;&#1100;&#1089;&#1082;&#1080;&#1081;"
-}, 
-{
-"source": "i34", 
-"type": "isGrandParentOf", 
-"target": "i37"
+"target": "Ekaterina I Alekseevna Mihajlova"
 }, 
 {
 "source": "i34", 
@@ -1311,537 +1761,87 @@
 }, 
 {
 "source": "i34", 
-"type": "isMotherOf", 
-"target": "i35"
-}, 
-{
-"source": "i34", 
-"type": "isWifeOf", 
-"target": "i33"
-}, 
-{
-"source": "i34", 
-"type": "label", 
-"target": "&#1040;&#1083;&#1077;&#1082;&#1089;&#1072;&#1085;&#1076;&#1088;&#1072; &#1060;&#1077;&#1076;&#1086;&#1088;&#1086;&#1074;&#1085;&#1072; &#1055;&#1088;&#1091;&#1089;&#1089;&#1082;&#1072;&#1103;"
-}, 
-{
-"source": "i14", 
-"type": "hasGrandParent", 
-"target": "i8"
-}, 
-{
-"source": "i14", 
-"type": "isFirstCousinOf", 
-"target": "i14"
-}, 
-{
-"source": "i14", 
-"type": "isMotherOf", 
-"target": "i16"
-}, 
-{
-"source": "i14", 
-"type": "isSecondCousinOf", 
-"target": "i22"
-}, 
-{
-"source": "i14", 
-"type": "isWifeOf", 
-"target": "i15"
-}, 
-{
-"source": "i14", 
-"type": "isThirdCousinOf", 
-"target": "i22"
-}, 
-{
-"source": "i14", 
-"type": "isSecondCousinOf", 
-"target": "i14"
-}, 
-{
-"source": "i14", 
-"type": "hasGreatUncle", 
-"target": "i6"
-}, 
-{
-"source": "i14", 
-"type": "hasGreatAunt", 
-"target": "i7"
-}, 
-{
-"source": "i14", 
-"type": "hasGreatGrandParent", 
-"target": "i3"
-}, 
-{
-"source": "i14", 
-"type": "isSecondCousinOf", 
-"target": "i26"
-}, 
-{
-"source": "i14", 
-"type": "hasGreatGrandParent", 
-"target": "i2"
-}, 
-{
-"source": "i14", 
-"type": "isThirdCousinOf", 
-"target": "i14"
-}, 
-{
-"source": "i14", 
-"type": "hasGrandParent", 
-"target": "i9"
-}, 
-{
-"source": "i14", 
-"type": "isThirdCousinOf", 
-"target": "i26"
-}, 
-{
-"source": "i14", 
-"type": "hasAunt", 
-"target": "i11"
-}, 
-{
-"source": "i14", 
-"type": "label", 
-"target": "&#1040;&#1085;&#1085;&#1072; &#1051;&#1077;&#1086;&#1087;&#1086;&#1083;&#1100;&#1076;&#1086;&#1074;&#1085;&#1072; &#1052;&#1077;&#1082;&#1083;&#1077;&#1085;&#1073;&#1091;&#1088;&#1075;-&#1064;&#1074;&#1077;&#1088;&#1080;&#1085;&#1089;&#1082;&#1072;&#1103;"
-}, 
-{
-"source": "i22", 
-"type": "hasGreatGrandParent", 
-"target": "i4"
-}, 
-{
-"source": "i22", 
-"type": "hasGrandParent", 
-"target": "i18"
-}, 
-{
-"source": "i22", 
-"type": "isFirstCousinOf", 
-"target": "i22"
-}, 
-{
-"source": "i22", 
-"type": "isThirdCousinOf", 
-"target": "i26"
-}, 
-{
-"source": "i22", 
-"type": "hasGrandParent", 
-"target": "i17"
-}, 
-{
-"source": "i22", 
-"type": "isSecondCousinOf", 
-"target": "i14"
-}, 
-{
-"source": "i22", 
-"type": "isSecondCousinOf", 
-"target": "i22"
-}, 
-{
-"source": "i22", 
-"type": "hasGreatGrandParent", 
-"target": "i2"
-}, 
-{
-"source": "i22", 
-"type": "isThirdCousinOf", 
-"target": "i14"
-}, 
-{
-"source": "i22", 
-"type": "isSecondCousinOf", 
-"target": "i26"
-}, 
-{
-"source": "i22", 
-"type": "isThirdCousinOf", 
-"target": "i22"
-}, 
-{
-"source": "i22", 
-"type": "isFirstCousinOf", 
-"target": "i26"
-}, 
-{
-"source": "i22", 
-"type": "label", 
-"target": "&#1055;&#1077;&#1090;&#1088; II &#1040;&#1083;&#1077;&#1082;&#1089;&#1077;&#1077;&#1074;&#1080;&#1095; &#1056;&#1086;&#1084;&#1072;&#1085;&#1086;&#1074;"
-}, 
-{
-"source": "i27", 
-"type": "isMotherOf", 
-"target": "i28"
-}, 
-{
-"source": "i27", 
 "type": "isGrandParentOf", 
-"target": "i31"
-}, 
-{
-"source": "i27", 
-"type": "isGrandParentOf", 
-"target": "i33"
-}, 
-{
-"source": "i27", 
-"type": "isWifeOf", 
-"target": "i26"
-}, 
-{
-"source": "i27", 
-"type": "isGreatGrandParentOf", 
-"target": "i35"
-}, 
-{
-"source": "i27", 
-"type": "label", 
-"target": "&#1045;&#1082;&#1072;&#1090;&#1077;&#1088;&#1080;&#1085;&#1072; II &#1040;&#1083;&#1077;&#1082;&#1089;&#1077;&#1077;&#1074;&#1085;&#1072;"
-}, 
-{
-"source": "i11", 
-"type": "isGreatAuntOf", 
-"target": "i16"
-}, 
-{
-"source": "i11", 
-"type": "hasGrandParent", 
-"target": "i2"
-}, 
-{
-"source": "i11", 
-"type": "hasUncle", 
-"target": "i6"
-}, 
-{
-"source": "i11", 
-"type": "isFirstCousinOf", 
-"target": "i20"
-}, 
-{
-"source": "i11", 
-"type": "isSecondCousinOf", 
-"target": "i24"
-}, 
-{
-"source": "i11", 
-"type": "isFirstCousinOf", 
-"target": "i11"
-}, 
-{
-"source": "i11", 
-"type": "isAuntOf", 
-"target": "i14"
-}, 
-{
-"source": "i11", 
-"type": "isFirstCousinOf", 
-"target": "i24"
-}, 
-{
-"source": "i11", 
-"type": "isSecondCousinOf", 
-"target": "i23"
-}, 
-{
-"source": "i11", 
-"type": "hasGreatGrandParent", 
-"target": "i0"
-}, 
-{
-"source": "i11", 
-"type": "isSecondCousinOf", 
-"target": "i10"
-}, 
-{
-"source": "i11", 
-"type": "isFirstCousinOf", 
-"target": "i10"
-}, 
-{
-"source": "i11", 
-"type": "hasGreatGrandParent", 
-"target": "i1"
-}, 
-{
-"source": "i11", 
-"type": "isFirstCousinOf", 
-"target": "i23"
-}, 
-{
-"source": "i11", 
-"type": "hasAunt", 
-"target": "i7"
-}, 
-{
-"source": "i11", 
-"type": "isSecondCousinOf", 
-"target": "i20"
-}, 
-{
-"source": "i11", 
-"type": "isSecondCousinOf", 
-"target": "i11"
-}, 
-{
-"source": "i11", 
-"type": "hasGrandParent", 
-"target": "i3"
-}, 
-{
-"source": "i11", 
-"type": "label", 
-"target": "&#1040;&#1085;&#1085;&#1072; &#1048;&#1074;&#1072;&#1085;&#1086;&#1074;&#1085;&#1072; &#1056;&#1086;&#1084;&#1072;&#1085;&#1086;&#1074;&#1072;"
-}, 
-{
-"source": "i4", 
-"type": "isGrandParentOf", 
-"target": "i24"
-}, 
-{
-"source": "i4", 
-"type": "isWifeOf", 
-"target": "i2"
-}, 
-{
-"source": "i4", 
-"type": "isGrandParentOf", 
-"target": "i23"
-}, 
-{
-"source": "i4", 
-"type": "isGrandParentOf", 
-"target": "i20"
-}, 
-{
-"source": "i4", 
-"type": "isGreatGrandParentOf", 
-"target": "i22"
-}, 
-{
-"source": "i4", 
-"type": "isGreatGrandParentOf", 
-"target": "i26"
-}, 
-{
-"source": "i4", 
-"type": "isMotherOf", 
-"target": "i17"
-}, 
-{
-"source": "i4", 
-"type": "label", 
-"target": "&#1053;&#1072;&#1090;&#1072;&#1083;&#1100;&#1103; &#1050;&#1080;&#1088;&#1080;&#1083;&#1083;&#1086;&#1074;&#1085;&#1072; &#1053;&#1072;&#1088;&#1099;&#1096;&#1082;&#1080;&#1085;&#1072;"
-}, 
-{
-"source": "i30", 
-"type": "isWifeOf", 
-"target": "i28"
-}, 
-{
-"source": "i30", 
-"type": "isMotherOf", 
-"target": "i31"
-}, 
-{
-"source": "i30", 
-"type": "isGreatGrandParentOf", 
 "target": "i37"
 }, 
 {
-"source": "i30", 
-"type": "isMotherOf", 
+"source": "i34", 
+"type": "isWifeOf", 
 "target": "i33"
 }, 
 {
-"source": "i30", 
-"type": "isGrandParentOf", 
+"source": "i34", 
+"type": "isMotherOf", 
 "target": "i35"
 }, 
 {
-"source": "i30", 
+"source": "i34", 
 "type": "label", 
-"target": "&#1052;&#1072;&#1088;&#1080;&#1103; &#1060;&#1077;&#1076;&#1086;&#1088;&#1086;&#1074;&#1085;&#1072; &#1042;&#1102;&#1088;&#1090;&#1077;&#1084;&#1073;&#1077;&#1088;&#1075;&#1089;&#1082;&#1072;&#1103;"
+"target": "Aleksandra Fedorovna Prusskaja"
 }, 
 {
-"source": "i7", 
-"type": "isFirstCousinOf", 
-"target": "i6"
-}, 
-{
-"source": "i7", 
-"type": "isAuntOf", 
-"target": "i10"
-}, 
-{
-"source": "i7", 
-"type": "isFirstCousinOf", 
-"target": "i7"
-}, 
-{
-"source": "i7", 
-"type": "isGreatAuntOf", 
+"source": "i6", 
+"type": "isGreatUncleOf", 
 "target": "i14"
 }, 
 {
-"source": "i7", 
+"source": "i6", 
 "type": "hasGrandParent", 
 "target": "i0"
 }, 
 {
-"source": "i7", 
+"source": "i6", 
 "type": "isFirstCousinOf", 
 "target": "i17"
 }, 
 {
-"source": "i7", 
-"type": "hasGrandParent", 
-"target": "i1"
-}, 
-{
-"source": "i7", 
+"source": "i6", 
 "type": "isFirstCousinOf", 
 "target": "i8"
 }, 
 {
-"source": "i7", 
-"type": "isAuntOf", 
-"target": "i11"
-}, 
-{
-"source": "i7", 
-"type": "label", 
-"target": "&#1057;&#1086;&#1092;&#1100;&#1103; &#1040;&#1083;&#1077;&#1082;&#1089;&#1077;&#1074;&#1085;&#1072; &#1056;&#1086;&#1084;&#1072;&#1085;&#1086;&#1074;&#1072;"
-}, 
-{
-"source": "i10", 
-"type": "isSecondCousinOf", 
-"target": "i10"
-}, 
-{
-"source": "i10", 
-"type": "isFirstCousinOf", 
-"target": "i24"
-}, 
-{
-"source": "i10", 
-"type": "isGrandParentOf", 
-"target": "i16"
-}, 
-{
-"source": "i10", 
-"type": "hasGreatGrandParent", 
+"source": "i6", 
+"type": "hasGrandParent", 
 "target": "i1"
 }, 
 {
-"source": "i10", 
-"type": "hasGrandParent", 
-"target": "i2"
-}, 
-{
-"source": "i10", 
-"type": "isMotherOf", 
-"target": "i14"
-}, 
-{
-"source": "i10", 
-"type": "hasAunt", 
-"target": "i7"
-}, 
-{
-"source": "i10", 
-"type": "isSecondCousinOf", 
-"target": "i23"
-}, 
-{
-"source": "i10", 
-"type": "hasGreatGrandParent", 
-"target": "i0"
-}, 
-{
-"source": "i10", 
-"type": "isSecondCousinOf", 
-"target": "i11"
-}, 
-{
-"source": "i10", 
-"type": "isFirstCousinOf", 
-"target": "i11"
-}, 
-{
-"source": "i10", 
-"type": "hasUncle", 
-"target": "i6"
-}, 
-{
-"source": "i10", 
-"type": "isFirstCousinOf", 
-"target": "i20"
-}, 
-{
-"source": "i10", 
-"type": "isSecondCousinOf", 
-"target": "i20"
-}, 
-{
-"source": "i10", 
-"type": "hasGrandParent", 
-"target": "i3"
-}, 
-{
-"source": "i10", 
-"type": "isFirstCousinOf", 
-"target": "i23"
-}, 
-{
-"source": "i10", 
-"type": "isWifeOf", 
-"target": "i13"
-}, 
-{
-"source": "i10", 
-"type": "isSecondCousinOf", 
-"target": "i24"
-}, 
-{
-"source": "i10", 
-"type": "isFirstCousinOf", 
+"source": "i6", 
+"type": "isUncleOf", 
 "target": "i10"
 }, 
 {
-"source": "i10", 
+"source": "i6", 
+"type": "isUncleOf", 
+"target": "i11"
+}, 
+{
+"source": "i6", 
+"type": "isFirstCousinOf", 
+"target": "i6"
+}, 
+{
+"source": "i6", 
+"type": "isFirstCousinOf", 
+"target": "i7"
+}, 
+{
+"source": "i6", 
 "type": "label", 
-"target": "&#1045;&#1082;&#1072;&#1090;&#1077;&#1088;&#1080;&#1085;&#1072; &#1048;&#1074;&#1072;&#1085;&#1086;&#1074;&#1085;&#1072; &#1056;&#1086;&#1084;&#1072;&#1085;&#1086;&#1074;&#1072;"
+"target": "Fedor Alekseevich Romanov"
 }, 
 {
-"source": "i25", 
-"type": "isGreatGrandParentOf", 
-"target": "i31"
+"source": "i21", 
+"type": "isWifeOf", 
+"target": "i20"
 }, 
 {
-"source": "i25", 
-"type": "isGreatGrandParentOf", 
-"target": "i33"
+"source": "i21", 
+"type": "isMotherOf", 
+"target": "i22"
 }, 
 {
-"source": "i25", 
-"type": "isFatherOf", 
-"target": "i26"
-}, 
-{
-"source": "i25", 
-"type": "isGrandParentOf", 
-"target": "i28"
-}, 
-{
-"source": "i25", 
+"source": "i21", 
 "type": "label", 
-"target": "&#1050;&#1072;&#1088;&#1083; &#1060;&#1088;&#1080;&#1076;&#1088;&#1080;&#1093; &#1043;&#1086;&#1083;&#1100;&#1096;&#1090;&#1077;&#1081;&#1085;-&#1043;&#1086;&#1090;&#1090;&#1086;&#1088;&#1087;&#1089;&#1082;&#1080;&#1081;"
+"target": "Sharlotta Kristina Braunshvejg-Volfenbjuttelskaja"
 }
 ]
