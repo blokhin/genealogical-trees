@@ -1,4 +1,4 @@
 rdflib
-transliterate
+transliterate==1.10.2
 -e git://github.com/RDFLib/OWL-RL.git#egg=RDFClosure
 -e git://github.com/madprime/python-gedcom.git#egg=gedcom
