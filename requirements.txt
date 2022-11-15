@@ -2,3 +2,4 @@ rdflib
 transliterate
 -e git://github.com/RDFLib/OWL-RL.git#egg=RDFClosure
 -e git://github.com/madprime/python-gedcom.git#egg=gedcom
+setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
