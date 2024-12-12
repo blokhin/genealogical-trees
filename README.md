@@ -1,6 +1,7 @@
 Semantic Web Genealogical Trees
 ======
 [![DOI](https://zenodo.org/badge/18811/blokhin/genealogical-trees.svg)](https://zenodo.org/badge/latestdoi/18811/blokhin/genealogical-trees)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fblokhin%2Fgenealogical-trees.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fblokhin%2Fgenealogical-trees?ref=badge_shield)
 
 Rationale
 ------
@@ -40,3 +41,7 @@ Remark on reasoning
 ------
 
 Reasoning with the naive Python implementation of the OWL 2 RL Profile is very slow and takes hours for relatively big family trees. Therefore use of the fast native reasoner (like Fact++) is very desirable. Wrapped in the [owl-cpp](http://owl-cpp.sourceforge.net) Python bindings, Fact++ performs up to two orders of magnitude faster.
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fblokhin%2Fgenealogical-trees.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fblokhin%2Fgenealogical-trees?ref=badge_large)
